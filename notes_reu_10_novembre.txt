@@ -1,0 +1,38 @@
+noeud sans précédesseur,
+noeud intermédiair,
+noeud sans successeur
+-> 1/4 max de noeud sans précédécesseur pour les parents
+
+i = 1
+input lié à des intermediate
+2/3 input, 1/3 intermediate
+
+ASP
+---
+: pour qu'il y ait une condition
+
+A partir de maintenant
+----------------------
+Tester l'algo pas efficace qui est sur le github de mathieu
+le tester sur A,B et peut-être C, ça devrait marcher
+Tester le programme plus efficace mais qui a besoindes parents (les déterminer au hasard) -> A,B,C,D ça devrait fonctionner
+Noter les performances entre les deux programmes
+
+Reflechir au programme avec k classes
+k-classes.lp
+
+génerer le B_3_classes.lp
+voir si ça fonctionne et comprendre ce qu'il se passe, faire un bilan
+éventuellement améliorer le programme, essayer d'autres pistes (avant de regarder le code pour pas se faire polluer l'esprit)
+
+lien du github et rapport de la réunion
+
+ideal : intégrer la maximisation dans asp mais ça complexifie beaucoup le code
+double opti : maximiser les pseudos pertubation et maximiser la différence des readout
+
+Prochaines fois
+---------------
+faire ASP
+comprendre les programmes pas efficace et efficace
+faire un doodle
+faire des stats sur les performances des 
