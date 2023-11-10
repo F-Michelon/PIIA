@@ -1,0 +1,103 @@
+Les commentaires commencent par un %
+
+Un atome est un fait, une relation qui est considérée vraie. Par défaut, tout atome est considéré faux, jusqu'à ce qu'il soit explicitement statué comme vrai.
+
+a.
+Ici, on indique que le fait a est vrai.
+
+Le point . est un peu comme le point-virgule en C, ou le saut de ligne en Python : il termine chaque règle et atome du programme.
+
+a/1 est l'ensemble des atomes de prédicat a avec un seul argument.
+
+% Les atomes nb(X) sont vrais pour tout X entier de -23 à 42
+nb(-23..42).
+
+% l'atome ok est vrai SI les atomes b ET c sont vrais
+ok :- b ; c.
+
+Tout mot commencant par une majuscule est une variable.
+
+% l'atome ok(X) est vrai si l'atome a(X) est vrai
+ok(X) :- a(X).
+
+papa(P):- papa(P,_).  % une variable muette commence par un _
+
+% l'atome ko(X) est vrai pour tout X de nb_ex(X) qui n'est pas ok(X)
+ko(X):- nb_ex(X) ; not ok(X).
+
+Il n'existe pas réellement de ou en ASP ; il faut alors créer 2 règles, chacune implémentant un cas :
+
+% l'atome ok(X) est vrai si nb_ex(X) ou si nb_in(X)
+ok(X):- nb_ex(X).
+ok(X):- nb_in(X).
+
+Le programme traité par clingo est le choix suivant : 1 { a;b;c } 1, qui se traduit un élément parmis a, b ou c.
+
+Dans le programme, il est dit 1 { a;b;c } 1., c'est-à-dire qu'au moins une et qu'au plus un des trois atomes entre accolades est vrai. Si a et b sont vrais, alors il y a deux valeurs vraies parmis les valeurs entre accolades
+
+1 { meilleure_maman(metis) ; meilleure_maman(shmi) ;
+    meilleure_maman(padme) ; meilleure_maman(jobal) } 1.
+% Ou, c'est équivalent :
+1 { meilleure_maman(metis;shmi;padme;jobal) } 1.
+
+1 { meilleure_maman(M): maman(M,_) } 1.
+Ici, on dit «choisir exactement un M sachant que M doit apparaître comme premier argument d'un atome maman/2»
+
+{a;b;c}.
+nb(N):- N={a;b;c}.  % compte le nombre d'éléments
+
+b;c:-a.
+Ici, b OU c sera vrai si a est vrai.
+
+a;b;c est équivalent à 1{a;b;c}1
+
+% On choisis un nombre entre 1 et 100.
+1 { nb(1..100) } 1.
+
+% On écarte tout modèle dont le nombre choisis n'est pas multiple de 3.
+:- nb(N) ; (N\3) != 0.
+
+- le trait d'union est la marque explicite de la négation dichotomique.
+
+En ASP, il existe cinq types de tokens:
+
+les identifiants: 
+	par exemple a, hello_world ou a_3_on_y_va, mais pas A, _, Arachide ou _case (l'expression régulière est donc [a-z][a-z0-9A-Z_]*).
+les variables: 
+	un identifiant qui commence par une majuscule ou un underscore (exp. reg: [A-Z_][a-z0-9A-Z_]*).
+les nombres: 
+	seuls les nombres entiers sont gérés (expreg: -?[0-9]+).
+les textes/string: 
+	encadrés par des double-guillemets ", ils peuvent contenir n'importe quoi, sauf des double guillemets non précédés d'un antislash (sinon, ça termine le texte).
+les opérateurs: 
+	mathématiques (+ - / * / \ ^ ..) ou logiques (; , :- : { })
+
+% J'ai 3 copains dans ma classe
+copain(1..3).
+% Parfois certains ne viennent pas à la récré
+{ en_recre(1..3) }.
+% On joue au tarot quand on est tous les quatre
+on_joue_au_tarot:- en_recre(C): copain(C).
+Cet exemple génère 8 answer sets, dont un seul contient on_joue_au_tarot.
+
+Ici, le corps de la dernière règle implémente la condition en_recre(C) doit être vrai pour tout les copains C. Autrement dit, si il existe un copain C tel que en_recre(C) est faux, alors la condition est brisée, et le corps de la règle est faux, et par conséquent, on ne joue pas au tarot.
+
+Il est possible d'avoir plusieurs conditions à droite du :, et elles doivent être séparées par une virgule , (et non un point-virgule).
+
+#const ma_constante_avec_un_nom_a_rallonge = 42.
+#const m_constnte_sns_l_lettre_ = "a".
+Nous avons ici deux constantes, nommées ma_constante_avec_un_nom_a_rallonge et m_constnte_sns_l_lettre_, associées aux valeurs 42 et "a", respectivement.
+
+1 { nb(1..100) } 1.  % un modèle == un entier
+#maximize{N:nb(N)}.  % maximiser l'entier choisi
+Ici, c'est la deuxième ligne qui fait le travail d'optimisation : on dit à clingo de maximiser N, pour N le nombre choisi en ligne 1.
+Notez aussi que, pour minimiser, il suffit de remplacer maximize par minimize.
+
+val(1;3;18;23;42;67;72).
+sum(S):- S=#sum{V: val(V)}.
+
+total(S):- S=#sum{
+    10,1: valeurs(1,10);
+    10,2: valeurs(2,10)
+}.
+Ça change tout : les valeurs sont désormais différentes. On a donc bien deux valeurs à ajouter : 10,1 et 10,2. Ici, #sum se fiche du second argument pour additionner : il se contente de considérer le premier nombre. On atteint donc 10 + 10 = 20. C'est bien la solution !
