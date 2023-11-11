@@ -1,0 +1,38 @@
+Présents : Anthonin, Armel, Antoine, François, Matthieu, M. Lockman
+
+Problème pour le B : le programme ne fonctionne pas;
+Peu de liens de parenté dans B : 2 gènes liés sur 27;
+→ Générer des liens de parenté de manière aléatoire.
+
+3 types de noeuds :
+noeuds sans prédécesseur;
+noeuds sans successeurs;
+noeuds intermédiaires;
+→ Prendre ¼ nœuds sans prédécesseur pour les parents.
+
+Dans v_10 :
+i :  pourcentage d’input par rapport aux intermédiaires.
+→ ⅔ de inputs et ⅓ d’intermédiaires.
+
+Importer des données dans un programme ASP : 
+Soit avec clingo, donner les deux fichiers;
+Soit mettre en dur dans le fichier du programme #include données.
+
+Dans l’idée, le programme optimisé a été créé lorsqu’une contrainte sur le nombre d’input dans les prédécesseurs des intermédiaires a été introduite.
+
+2 points en ASP (cf. exemple du jeu de tarot) :
+“:” à droite lorsqu’il y a une condition. Pour la négation par défaut : création d’un lien de cause à effet entre les deux variables.
+
+A faire ensuite :
+Faire un bilan pour Carito
+Faire un Doodle pour la prochaine réu
+Tester l’algo “moins efficace” sur A, B (et C) qui est dans le github de Matthieu.
+Tester l’autre algo qui est plus efficace mais qui a besoin des parents sur A, B, C, D.
+(Générer des liens de parenté aléatoires)
+Fournir une analyse de performance pour comparer les deux et en fonction des machines, taille du jeu de données, etc.
+Tester l’algorithme à 3 classes:
+Faire le bilan de ce qu’on a compris dessus;
+Présenter les résultats;
+Proposer d’autres codages du problème à k-classes.
+
+Il serait idéal d’intégrer la double maximisation des readouts (maximiser le nombre de pseudo-perturbuations, minimiser la différence des readouts) directement dans le programme de recherche des pseudo-perturbations avec une priorité de l’une par rapport aux autres (“optimisation dans l’optimisation”).

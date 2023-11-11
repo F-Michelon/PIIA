@@ -1,0 +1,29 @@
+caspo et asp enseignant Lochman ?
+
+parents
+
+import données asp ? faire de façon de random
+
+! clingo -n 0 file.txt -const k=10 (-const) i=1
+
+i "pourcentage" d'input par rapport aux intermédiaires
+forcer (2/3 input)
+
+clingo appel les deux fichiers
+
+mettre en ""
+appel dans un des deux fichiers en dur 
+
+genexyz /trek( yrk ) (complexe)
+
+test problem.lp
+
+la suite
+	(voir peut-être pour une écriture de données plus propre)
+	test problem.lp (A, B, C~), v_10, k-classe (et amélioration, y réfléchir avant le code)
+	perf
+	compte rendu carito avec lien (mettre en public)
+
+
+
+idéal intégration maximisation readouts dans l'asp, optimisation dans l'optimisation (de façon séquentielle)
