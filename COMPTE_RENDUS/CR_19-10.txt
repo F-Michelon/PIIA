@@ -1,0 +1,50 @@
+Bonsoir,
+
+Voici le compte-rendu de la réunion de cet après-midi qui résume le déroulé de ce point et les sujets de discussions que nous avons évoqués :
+
+Données scRNAseq et PKN :
+    - Le seuil d'expression r > 2 limite le bruis, il est déterminé empiriquement par des biologistes,
+    - Il y a différents types d'ARN qui sont les molécules que l'on traduits pour la synthèse des protéines,
+    - On normalise des données pour qu'elles soient compatibles avec l'algorithme Caspo.
+oui et (également ou plus important) pour donner un choix plus précis à Caspo dans la détermination de réseaux booléens (RBs).
+    - Les stades de développements ne se suivent pas forcément, une cellule peut se différencier en placenta ou en cellule embryonnaire,
+oui, je le comprends aussi comme ça. Le temps de développement permet différents destins cellulaires.
+    - Grâce à des techniques de type manifold (plongement non linéaire), on peut représenter une certaine continuité ordonnée temporellement des différents stades cellulaires étudiés.
+Oui. On peut ordonner les cellules à partir de leur données d'expression (comptage) de gènes (ou mRNA)
+ 
+Pseudo perturbations et aux réseaux booléens :
+    - Le score de représentativité assure que les pseudo perturbations choisies pour inférer le réseau booléen représentent bien les comportements cellulaires,
+    - La perte MSE permet d'évaluer la cohérence des résultats des BNs avec ceux des données,
+    - La redondance est évaluée sur les cohortes des stades pour déterminer les sous-groupes cellulaires les plus adaptés,
+Je dirai que la redondance est issue du calcul de score de représentativité. Elle permet de voir comment l'ensemble de cellules dans un stade sera représenté avec les pseudo-perturbations choisisses.
+    - La maximisation des readouts sert de critère de choix entre deux cellules d'un même stades dont les réponses binarisées à des pseudo perturbations sont les mêmes et aussi équivalentes à celles d'une cellule de l'autre stade. Alors on va choisir celle qui maximise la différence entre ses readouts et ceux de la cellule de l'autre stade. On fait cela pour des raisons de compatibilités avec l'algorithme Caspo.
+On fait ça pour favoriser la différence dans les RBs apprises avec caspo.
+
+Algorithme Caspo :
+    - Explication de l'intérêt des GTTs (global truth tables) qui permettent de diminuer les 11 000 BNs à 91 GTTS
+                          grâce à la redondance des readsouts
+
+Pistes :
+ - Déterminer la complexité théorique des programmes logiques (complexité moyenne),
+
+ - Explorer le comportement des programmes en fonction de k (taille cohorte de gènes choisie pour les pseudo perturbations),
+
+ - Inférer les réseaux en contraignant l'algorithme à ce que les réseaux booléens (BN) obtenus pour chaque stade soient "cohérents" (par exemple : si gène A du BN du stade 1 vaut 0.9 à la fin de l'exécution alors gène A vaut 0.9 au début du stade 2, dans le cas où le stade 1 est suivi par le stade 2),
+
+ - Appliquer la méthodologie pour les n classes (ou stades) en exploitant les fluctuations d'expressions des gènes et les regrouper pour tracer une courbe d'expression fluctuant dynamiquement,
+
+ - Ajouter des coefficients aux cellules choisies relativement à des pseudo perturbations en fonction de leur représentativité,
+
+ - Développement d'une métrique évaluant la qualité biologique du BN.
+
+
+Liste des tâches pour la réunion du 26/10 :
+
+   - Faire des tutoriels ASP
+
+   - Lire l'article Guziolowski 2013 et en préparer une présentation
+
+   - Déterminer les sujets d'études parmi ceux évoqués
+
+
+N'hésitez pas à nous reprendre s'il y a un malentendu ou un manque de clarté dans ce compte-rendu et cela serait génial si vous pouviez nous transmettre des tutoriels facilement abordables d'ASP.

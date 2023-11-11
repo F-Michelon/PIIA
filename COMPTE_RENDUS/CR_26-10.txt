@@ -1,0 +1,12 @@
+Voici le compte-rendu de la réunion du 26/10.
+
+Nous avons évoqué dans un premier temps les nouveaux résultats obtenus vis-à-vis des pseudo perturbations lorsque l'on fait varier la taille du groupe de gène. On y voit une tendance décroissante plus cohérente avec l'intuition, plus k est grand plus le score de représentativité a tendance à diminuer.
+
+Ensuite, nous avons évoqué les pistes que nous aimerions approfondir à commencer par le développement d'une métrique biologique. L'étude biologique semble compliqué étant donné nos connaissances limitées en biologie mais d'autres études du genre pourrait être développées comme l'étude des familles de réseaux booléens obtenus pour chaque classe (potentiellement très différentes).
+
+Enfin, il a été convenu que nous pourrons nous concentrer sur des tâches simples avant la prochaine réunion du vendredi 10/11 à 15h30 à la faculté. En voici la liste :
+- nettoyage des données sur des toy datasets (suppression des gènes non actifs)
+- conversion des données en atome compatible avec le langage ASP
+- faire tourner les codes ASP sur ces données
+
+Pour cela, il faudra étudier les codes présent sur le git de Mathieu, lire le pdf supplementary_material et l'algorithme développé par le groupe précédent.

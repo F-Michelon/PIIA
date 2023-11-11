@@ -1,0 +1,29 @@
+Bonsoir,
+
+Voici un récapitulatif de la réunion du 13/10. Nous avons évoqué les points suivants :
+
+- présentation des membres ;
+- revues des ressources disponibles ;
+- première explications des méthodes appliquées et des résultats obtenus ;
+- questions/réponses.
+
+Voici un rapide compte-rendu des points que nous avons compris, n'hésitez pas à nous reprendre si vous y trouver un contre-sens.
+
+Les données scRNAseq sont stockées dans des matrices d'expressions de gènes. Chaque élément a_i,j de cette matrice représente l'activité du gène j pour dans la cellule i grâce à un scalaire positif ou nul. Si l'activité est supérieure ou égale à 2 alors on considère que le gène est exprimé et sinon il y a une incertitude. Ces données peuvent être très bruitées. On peut aussi les normalisées pour faciliter leurs études. Dans le cadre de l'étude chaque cellule fait partie d'un cluster correspondant à son stade de développement.
+
+On peut en déduire un graphe (Gene Regalutory Network ou PKN ) qui est un ensemble de nœuds représentant chacun un gène et dont les liens représentent les inhibitions ou activations qu'un gène entraine envers un autre. Cette représentation n'est pas complète, on aimerait avoir des information concernant la hiérarchie des gènes, leur ordre d'activation …
+
+L'objectif serait de construire un réseau booléen pour comprendre les mécanismes biologiques précis mis en œuvre. Pour cela, on utilise des pseudo perturbations qui sont des ensembles de vecteurs booléens d'un groupe de gènes bien choisis (si possible en évitant les gènes non activés). Ces pseudo perturbations doivent respecter certaines propriétés dans les différents groupes cellulaires. On les choisit de manière à maximiser le nombre de vecteur booléens et la redondance des comportements cellulaires entre les différents clusters et pour le groupe de gène choisis.
+
+On va alors calculer les réseaux booléens permettant de satisfaire l'ensemble de pseudo perturbations identifié. Il peut en y avoir beaucoup de solutions et cela peut nécessiter beaucoup de temps de calcul.
+À première vue, vous semblez avoir très bien compris le sujet, ses enjeux et caractéristiques.
+
+Lors de la réunion nous avons eu beaucoup d'informations et certains points restent flous pour nous. Nous espérons que les lectures et la prochaine réunion nous éclaireront un peu plus. Pour la semaine prochaine nous prévoyons de faire une présentation sur nos lectures en expliquant ce que nous avons compris.
+Parfait, d'ici là, si une forte interrogation vous vient et vous empêche d'avancer dans la compréhension d'un papier ou autre, n'hésitez pas.
+
+Nous avons convenus de nous retrouver jeudi 19/10 à 14h30, serait vous disponible Mathieu sur ce créneau ?
+OK pour moi, c'est noté.
+@Carito, où ça ? Centrale ?
+
+D'ailleurs une question est restée en suspend. Nous aimerions savoir comment ont été établis les matrices d'expressions. A-t-on utilisé des cellules provenant d'une même fécondation ou de plusieurs ? Etaient-elles viables, vouées à l'échec ou est-ce que on ne le sait pas ?
+L'expression des gènes identifiée provient de cellules de différents embryons. Brièvement, les embryons dans ce domaine sont des embryons cultivés in vitro. Ils sont cultivés jusqu'à différent temps de développement puis sacrifié pour pouvoir extraire les cellules d'intérêt et les séquencer. Ainsi, nous ne pouvons savoir si ces embryons auraient pu être viables ou non. Pour information, ces embryons sont issus de dons pour la science de spermatozoïdes et ovules. Une lourde réglementation est présente pour contrôler tout ce qui est fait dans ce domaine de recherche.
