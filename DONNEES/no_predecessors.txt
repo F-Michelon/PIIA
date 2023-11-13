@@ -1,0 +1,271 @@
+IFNA2 alternative form
+LGALS1
+TCF1E
+CD3D
+AES
+TAp63g (tetramer)
+CD40LG
+HTR2A
+p14ARF
+CD44
+NTN1
+HMOX1 promoter
+Disulfiram/Copper
+CYP3A4
+SERPINB5
+USF2
+SHH
+GR alpha (dimer)
+STAT5 (dimer)-active
+CFD
+TNFSF11
+insulin
+IL23R
+FOXM1C
+TCF1
+ERCC4
+SOD2
+CLEC4E
+NF kappa B1
+CD3E
+SHARP
+MAPT
+MVK
+TLR4
+CBP
+IKK alpha
+CFTR
+SFTPA2 polymorphism
+Cbp
+ERA
+Docetaxel/Chitin
+NRG1 alternative form
+VEGFA promoter
+LXRs
+NR1I2
+JAK1
+STAT4 (dimer)
+NLRC5
+IL32
+BCL2L1
+MAF
+PSEN2
+IL2R alpha
+E2F6
+NSC 689534/Copper
+IL1RN
+CXCR3
+TNFSF10
+GCN5
+FOXP3
+TYMP
+GRAIL
+GLI3A
+GLI2A
+Jnk1
+Vitallium analog/titanium dioxide
+Max
+NFAT1-c-4 (dimer)
+Fog1
+JUN (dimer)
+BACH1
+GATA1
+SIRT1
+dNp63b (tetramer)
+TAC1
+Fra1
+F2
+STAT1 (dimer)
+AP1S1
+NFAT1
+SMARCA4
+CEBPA
+HMGB1
+HEY1-2
+beta catenin
+GLI2
+WNT3A
+dNp63g (tetramer)
+FSHB
+PML
+TERT
+CSF2
+FCER2
+TYK2
+Protein Synthesis Inhibitors/Chitin
+E2F1 promoter
+MAML1-2
+BSG
+SRPRA
+FGF2
+EIF2A
+ESR2
+RB1CC1
+PLCgamma1
+TCF4
+EGR1_Csda
+CCND1
+FGF16
+TNIK
+ELK1
+JUNB (dimer)
+JDP2
+APP alternative form
+SNCA
+CYP4Z1
+MIR491
+NPM1
+Akt1
+CD247
+BRAF
+Clioquinol/Copper
+IKBKB
+CYP1A1 promoter
+Ferrosoferric Oxide/titanium dioxide
+KRAS
+JNK1-2-active
+PPARGC1A
+STK11
+TRIM33
+TP73
+tungsten carbide/Cobalt
+IL17A
+E2F1-3
+IL24
+IL2
+LCK
+PTGER1
+JUNB
+SIN3a
+ENO1
+TGFB2
+TP63
+STAT1-3 (dimer)
+ER alpha
+MDM2
+gamma
+ABCB4
+IFNA1
+AIB1
+IL15
+ALPK1
+DDIT4
+FOSNFAT1-c-4
+CRP
+Heterocyclic Compounds/Thiazoles
+CCAT1
+MAF (dimer)
+FOS
+Copper/Isatin/trimethylenediamine
+naphthalene/pyrrolo(2,1-c)(1,4)benzodiazepine
+NQO1
+RASSF5
+FOXO3
+FASLG
+STAT6 (dimer)
+Organoselenium Compounds/Copper
+JUND
+ALB
+SKI
+Thioctic Acid/Gold
+CD28
+HSPA1A
+MPO
+Polyethylene Glycols/Gold
+NF kappa B1 p50
+PKM
+TCF3
+PRODH
+MIR27B
+IAPP
+E2F7-8
+TGFA
+DP2
+PRKN
+NF Kappa B1
+MYCBP
+CITED2
+OSM
+IL33
+ESR1
+TRRAP
+VEGFC
+ormosil/Polyethylene Glycols
+HES1
+NFAT1-c-4
+ICAM1
+PKC theta
+KIT
+NFATc
+C5
+IFNB1
+STAT6 (cleaved dimer)
+EGFR
+FGF8
+TCF4E
+S100B
+RXRs
+p38alpha-beta-active
+MAPK12
+EPO
+HRAS
+CXCL8
+NFE2L2
+Plexin-D1
+beta
+IFNG
+GSN
+p53 (tetramer)
+CtBP
+IRF4
+ATG5
+TLE1
+TAp73a (tetramer)
+CCN1
+IL5
+TLR2
+RXRA
+p70S6K
+Methotrexate/Lipids analog
+SP1
+Niclosamide/Polyethyleneimine
+GR alpha (monomer)
+IL6 promoter
+CD3G
+JAK2
+IL18R
+HDAC1
+RB1
+DVL3
+IL23
+p107
+ERK1-2-active
+PP2A Heterotrimer
+3
+SFTPA1 polymorphism
+NGF
+STAM1-2
+MSI1
+Thiosemicarbazones/Copper
+NCoR1
+Sema4a
+dNp63a (tetramer)
+CNR2
+EDN1
+E2F4
+CGB3
+YY1
+p107-p130
+TIF1B
+BRM
+JAK3
+EGR4
+STAT3
+Copper/Isatin/2-(2-aminoethyl)pyridine
+ERA (dimer)
+RelA
+STAT3 (dimer)
+SOX30
+RBPJ
+Polyethyleneimine/Gold
+NICD

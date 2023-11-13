@@ -9,7 +9,8 @@
 %   - affinity(I,J): a pair of cells where their expression for the k selected genes 
 %     are the same for both cells. I and J belong to two different classes.
 
-
+#const k = 3.
+#const i = 1.
 % Generate combinations of k genes
 {selinput(G) : pert(C,G,S,CL), not intermediate(G)} = i .
 {selinter(G): intermediate(G)} = k-i.
