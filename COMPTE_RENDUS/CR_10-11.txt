@@ -1,0 +1,34 @@
+Nous avons évoqué premièrement notre travail sur les jeux de données jouets. Nous avons effectué un  nettoyage en supprimant les gènes dont l'expression est nulle pour chaque cellule et ce dans les différents fichiers. Enfin, nous avons créer un script python appelé data_to_asp.py (dans le dossier SCRIPT). Ce fichier, (imparfait) lit les jeux de données et crée un fihcier asp adapté aux programmes de résolutions transmis. Nous avons eu quelques difficultés pour faire tourner les scripts avec les fichiers asp générés, notamment à cause du manque d'information vis-à-vis de la parenté des gènes. Mais le code s'exécute sans souci.
+
+Nous avons pu échanger avec Matthieu et M. Lockman sur les différents points que nous souhaitions évoquer. En voici la liste des réponses à nos interrogations :
+
+Problème des liens de parenté:
+→ Générer des liens de parenté artificiel de manière aléatoire.
+
+Pour les problèmes de nom de variable dans les programmes ASP, on peut utiliser "NOM_VARIABLE"
+
+Définiton de la constante i dans le programme SCRIPT/v10.2.lp :
+il y a 3 types de gènes : gène sans prédécesseur, gène sans successeur et gène intermédiaire;
+→ La constante i impose une certaine représentativité des gènes sans prédécesseur. Il a été choisi i de façon à avoir ⅔ de inputs et ⅓ d’intermédiaires.
+On peut les définir dans le programme ou alors via l'appel : ! clingo -n 0 file.txt -const k=10 (-const) i=6
+
+Importation de données dans un programme ASP : 
+Soit avec clingo, donner les deux fichiers lors de l'appel;
+Soit mettre en dur dans le fichier du programme #include données (voir le programme k_classes).
+
+Token ":" en ASP :
+(cf. exemple du jeu de tarot dans AUTRES/notes_ASP.txt)
+“:” à droite lorsqu’il y a une condition. Pour la négation par défaut : permet la création d’un lien de cause à effet entre les deux variables.
+
+Peut-on intégrer la maximisation des readouts (maximiser le nombre de pseudo-perturbuations, minimiser la différence des readouts) directement dans le programme de recherche des pseudo-perturbations avec une priorité de l’une par rapport aux autres (“optimisation dans l’optimisation”) ? :
+Oui mais l'intérêt ne serait pas évident ou alors la complexité de la mise en oeuvre n'en vaut pas la peine actuellement.
+
+Pour la prochaine fois, voici la liste des tâches que nous avons identifiées :
+
+Tester l’algo “moins efficace” sur A, B (et C) qui est dans le github de Matthieu.
+Tester l’algo qui est plus efficace mais qui a besoin des parents sur A, B, C.
+Fournir une analyse de performance pour comparer les deux et en fonction des machines, taille du jeu de données, etc.
+Tester l’algorithme à 3 classes:
+Faire le bilan de ce qu’on a compris dessus;
+Présenter les résultats;
+Proposer d’autres codages du problème à k-classes.
