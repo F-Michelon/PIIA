@@ -1,0 +1,17 @@
+clingo version 5.6.2
+Reading from DONNEES/toy_datasets/asp_data_C.lp ...
+Solving...
+Answer: 1
+selgene(foxa1) selgene(hdac7) selgene(zeb1) selgene(ap1s1) selgene(foxp3)
+Optimization: 0
+Answer: 2
+affinity(e510943,e5373235) selgene(igf2) selgene(foxa1) selgene(cd44) selgene(ap1s1)
+Optimization: -1
+OPTIMUM FOUND
+
+Models       : 2
+  Optimum    : yes
+Optimization : -1
+Calls        : 1
+Time         : 0.444s (Solving: 0.02s 1st Model: 0.01s Unsat: 0.00s)
+CPU Time     : 0.031s

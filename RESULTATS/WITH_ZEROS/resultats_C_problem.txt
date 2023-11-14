@@ -1,0 +1,29 @@
+clingo version 5.6.2
+Reading from DONNEES/toy_datasets/asp_data_C.lp ...
+Solving...
+Answer: 1
+selgene(cd3d) selgene(clec4e) selgene(cd3e)
+Optimization: 0
+Answer: 2
+selgene(serpinb5) selgene(usf2) selgene(prdm14) affinity(e510949,e5131767)
+Optimization: -1
+Answer: 3
+selgene(serpinb5) selgene(usf2) selgene(prdm14) affinity(e510949,e5131767) affinity(e510935,e5373234)
+Optimization: -2
+Answer: 4
+selgene(serpinb5) selgene(usf2) selgene(prdm14) affinity(e5131762,e5131767) affinity(e510933,e5373234) affinity(e5130,e5373235)
+Optimization: -3
+Answer: 5
+selgene(egr1) selgene(sod2) selgene(prdm14) affinity(e510943,e5121033) affinity(e5131761,e5373234) affinity(e5131766,e5373237) affinity(e510945,e6111071)
+Optimization: -4
+Answer: 6
+selgene(lgals1) selgene(aes) selgene(ercc4) affinity(e5131760,e5121042) affinity(e5141788,e5131767) affinity(e5131770,e6182) affinity(e510945,e6184) affinity(e510943,e6111064) affinity(e5121037,e6121266)
+Optimization: -6
+OPTIMUM FOUND
+
+Models       : 6
+  Optimum    : yes
+Optimization : -6
+Calls        : 1
+Time         : 95.563s (Solving: 94.65s 1st Model: 0.02s Unsat: 91.10s)
+CPU Time     : 29.922s
