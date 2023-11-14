@@ -27,20 +27,20 @@ intermediate(egr1).
 intermediate(egf).
 intermediate(igf2).
 intermediate(foxa1).
-parent(htr2a, nr2f2).
-parent(il23r, prdm14).
-parent(clec4e, cyp3a4).
-parent(igf2, sod2).
-parent(egr1, tnfsf11).
-parent(shh, aes).
-parent(pou5f1p4, zeb1).
-parent(ercc4, hey1).
-parent(spen, serpinb5).
-parent(foxa1, usf2).
+parent(sod2, usf2).
+parent(ntn1, shh).
+parent(serpinb5, prdm14).
+parent(cd3e, cfd).
 parent(gata4, cd44).
-parent(cd3e, fgfr4).
-parent(cd3d, ntn1).
-parent(lgals1, cfd).
+parent(nr2f2, fgfr4).
+parent(cyp3a4, pou5f1p4).
+parent(lgals1, egr1).
+parent(il23r, htr2a).
+parent(spen, ercc4).
+parent(aes, clec4e).
+parent(hey1, egf).
+parent(zeb1, tnfsf11).
+parent(foxa1, igf2).
 pert(e5128,lgals1,1,early_te).
 pert(e5128,cd3d,0,early_te).
 pert(e5128,aes,0,early_te).
