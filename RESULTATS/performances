@@ -1,0 +1,13 @@
+,program_used,dataset_used,success,answers,time
+0,problem,B with zeros,True,"['selgene(lgals1)', 'selgene(aes)', 'selgene(sod2)', 'affinity(e510936,e5121042)', 'affinity(e510944,e5373235)', 'affinity(e5130,e5373237)', 'affinity(e5128,e6182)']",2.334
+1,v10.2,B with zeros,False,[],0.072
+2,v10.2noparents,B with zeros,True,"['affinity(e510933,e5121033)', 'affinity(e510935,e5121042)', 'selgene(egr1)', 'selgene(foxa1)', 'selgene(sod2)']",0.111
+3,problem,C with zeros,True,"['selgene(lgals1)', 'selgene(aes)', 'selgene(ercc4)', 'affinity(e5131760,e5121042)', 'affinity(e5141788,e5131767)', 'affinity(e5131770,e6182)', 'affinity(e510945,e6184)', 'affinity(e510943,e6111064)', 'affinity(e5121037,e6121266)']",95.56
+4,v10.2,C with zeros,True,"['affinity(e510943,e5373235)', 'selgene(igf2)', 'selgene(foxa1)', 'selgene(cd44)', 'selgene(ap1s1)']",0.444
+5,v10.2noparents,C with zeros,True,"['affinity(e510933,e5121033)', 'affinity(e510935,e5121042)', 'selgene(egr1)', 'selgene(egf)', 'selgene(sod2)']",0.581
+6,problem,B without zeros,True,"['selgene(lgals1)', 'selgene(egr1)', 'selgene(sod2)', 'affinity(1,8)', 'affinity(0,11)', 'affinity(7,11)', 'affinity(3,12)', 'affinity(8,14)', 'affinity(6,15)', 'affinity(13,15)', 'affinity(2,16)', 'affinity(13,16)', 'affinity(12,19)', 'affinity(13,20)', 'affinity(15,20)', 'affinity(16,20)', 'affinity(14,22)', 'affinity(17,22)']",1.220
+7,v10.2,B without zeros,False,[],0.046
+8,v10.2noparents,B without zeros,True,"['selgene(egr1)', 'selgene(foxa1)', 'affinity(2,6)', 'affinity(7,11)', 'selgene(aes)']",0.055
+9,problem,C without zeros,True,"['selgene(aes)', 'selgene(egr1)', 'selgene(usf2)', 'affinity(1,9)', 'affinity(7,21)', 'affinity(11,21)', 'affinity(2,40)', 'affinity(6,40)', 'affinity(19,40)', 'affinity(24,40)', 'affinity(31,40)', 'affinity(9,41)', 'affinity(29,41)', 'affinity(30,41)', 'affinity(0,47)', 'affinity(3,47)', 'affinity(15,47)', 'affinity(20,47)', 'affinity(32,47)', 'affinity(44,47)', 'affinity(23,49)', 'affinity(28,49)', 'affinity(34,49)', 'affinity(42,49)']",147.0
+10,v10.2,C without zeros,True,"['selgene(tgfb1)', 'selgene(gli1)', 'selgene(cfd)', 'selgene(cebpa)', 'selgene(bcl2l1)']",0.311
+11,v10.2noparents,C without zeros,True,"['affinity(0,3)', 'affinity(1,4)', 'affinity(30,41)', 'selgene(egr1)', 'selgene(foxa1)', 'selgene(usf2)']",0.472
