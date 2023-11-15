@@ -103,3 +103,5 @@ total(S):- S=#sum{
     10,2: valeurs(2,10)
 }.
 Ça change tout : les valeurs sont désormais différentes. On a donc bien deux valeurs à ajouter : 10,1 et 10,2. Ici, #sum se fiche du second argument pour additionner : il se contente de considérer le premier nombre. On atteint donc 10 + 10 = 20. C'est bien la solution !
+
+En general, ce que l'on fait c'est que l'on stocke le résultat dans un fichier, via une ligne de commande en bash du type "clingo -n 0 test.lp > resultat.out" (ici on redirige la sortie de la commande clingo dans un fichier). Puis on parse le fichier (ici, resultat.out) via python
