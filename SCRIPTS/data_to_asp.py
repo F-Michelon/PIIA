@@ -58,5 +58,5 @@ with open('../DONNEES/toy_datasets/asp_data_' + file_name + '.lp', 'w') as asp_d
     for p in parents:
         asp_data.write(f"parent({str(p[0]).lower().replace(' ', '_').replace('.', '')}, {str(p[1]).lower().replace(' ', '_').replace('.', '')}).\n")
     for index in data.index:
-        for j in range(9,38):
+        for j in range(9,27):
             asp_data.write(f"pert({str(data.iloc[index,0]).lower().replace(' ', '_').replace('.', '')},{str(data.keys()[j]).lower().replace(' ', '_').replace('.', '')},{str(data.iloc[index,j]).lower().replace(' ', '_').replace('.', '')},{str(data.iloc[index,2]).lower().replace(' ', '_').replace('.', '')}).\n")

@@ -1,0 +1,23 @@
+clingo version 5.6.2
+Reading from ...NEES/toy_datasets/asp_data_C_traite.lp ...
+Solving...
+Answer: 1
+selgene(egf) selgene(foxa1) selgene(cdx2)
+Optimization: 0
+Answer: 2
+affinity(0,7) selgene(egr1) selgene(egf) selgene(lgals1)
+Optimization: -1
+Answer: 3
+affinity(2,6) affinity(0,7) selgene(egr1) selgene(egf) selgene(lgals1)
+Optimization: -2
+Answer: 4
+affinity(0,3) affinity(1,4) affinity(30,41) selgene(egr1) selgene(foxa1) selgene(usf2)
+Optimization: -3
+OPTIMUM FOUND
+
+Models       : 4
+  Optimum    : yes
+Optimization : -3
+Calls        : 1
+Time         : 0.472s (Solving: 0.10s 1st Model: 0.01s Unsat: 0.08s)
+CPU Time     : 0.094s
