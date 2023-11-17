@@ -53,4 +53,3 @@ performances = pd.DataFrame({'program_used': program_used,
                                 'success': success, 
                                 'answers': answers, 
                                 'time': time}).to_csv(path + 'performances')
-    
