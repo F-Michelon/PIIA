@@ -1,0 +1,46 @@
+Voici le compte-rendu de la réunion du jeudi 16/11/2023.
+
+Cette réunion s'est divisée en 3 parties : présentation et discussion des résultats, analyse des codes ASP et proposition de pistes.
+
+Premièrement, nous avons regardé les résultats obtenus lors de la résolution avec les programmes problem.lp et v10.2.lp pour les jeux de données B et C avec et sans 0.
+Suite à ces résultats nous avons convenu de retravailler sur plusieurs points.
+
+Nous devions ajouter aux résultats l'usage mémoire avec gringo avec la commande gringo ___ > test. Lors de l'exécution de la commande, nous obtenons le résultat joint au mail. La commandes est-elle juste? Si oui, comment trouver l'usage mémoire dans le résultat?
+
+Ensuite, nous allons devoir travailler avec le jeu de données complet (PKN_TE_bin_mtx_with_annotations.csv).
+
+Enfin nous voulons :
+- Calculer le nombre combinatoire de solutions potentielles pour chaque problème en fonction du nombre de colonnes nulles;
+- Mettre en rapport le nombre combinatoire de solutions potentielles, le nombre de gènes à zéro, le temps d'exécution et l'usage mémoire.
+
+Petit point ASP (plutôt dans le but de garder une trace de ce que nous avons compris):
+tête : - corps .
+Si {} se trouve en tête du prédicat c'est un guessing, s'il se trouve dans le corps de la fonction c'est une énumération.
+Les accolades consomment beaucoup de mémoire. 
+Par exemple, 0{}1 : si dans l'accolade il y a 10 éléments possibles, il y a 2^10 possibilités
+
+Dans un deuxième temps, nous avons relu et discuté des codes ASP problem.lp et v10.2.lp. Nous avons retenu plusieurs points :
+- définition des sigles d'asp : selgene = gène sélectionnés et affinity = match entre 2 cellules
+- dans problem.lp, lignes 14 et 30 font un guessing et lignes 26 et 42 font une énumération. Ces 4 opérations consomment beaucoup de mémoire.
+- dans v10.2, la suppression des redondances permet de ne plus utiliser l'énumération mais des contraintes qui permettent d'améliorer la performance. Lignes 40-41 suppriment les motifs en V.
+- maximize : récupère l'optimal dans l'ensemble des answer sets qui ont été générés et filtrés par des contraintes
+
+En conclusion, en enlevant les énumérations et guessing et en les remplaçant par des contraintes, le programme devient bien plus efficace.
+
+Finalement, nous avons discuté des tâches à venir.
+Nous nous sommes vus aujourd'hui pour discuter des deux pistes proposées à la fin de la séance :
+1. avec le code à 2 classes (v10.2), passer à un programme à plusieurs (n) classes sans regarder le code déjà donné, qu'il faudrait par la suite optimiser. (Antoine et Armel)
+2. imaginer que le programme fonctionne et qu'on a des affinités pour n classes, comment gérer les redondances? Quel critère appliquer pour ne garder qu'une seule cellule par classe ? (Anthonin et François)
+
+Précisions du problème 2:
+Le programme ASP est fait pour nous donner des vecteurs identiques entre n classes avec k gènes sélectionnés mais on peut avoir des redondances qu'il faut filtrer.
+Pour le cas de 2 classes, on choisit de maximiser les readouts. Mais si on a 6 classes, il nous faut déterminer un critère pour déterminer quelles cellules seraient "intéressantes" à garder pour la suite.
+
+Pour la semaine prochaine, nous voulons :
+- continuer notre travail sur les programmes ASP problem.lp et v10.2.lp en considérant les commentaires de la première partie
+- commencer la réflexion sur les deux problèmes évoqués
+
+Nous avions prévu la prochaine réunion à 14h, jeudi 23 octobre. Est-il possible de décaler la réunion à 15h15 pour que François soit disponible?
+
+Pourriez vous également s'il vous plait nous envoyer les documents dont nous avons parlé ? Notamment le site internet pour visualiser le diagramme Umap ainsi qu'un document sur les spécifications de Caspo time series ? (afin de savoir quelle forme doivent prendre les résultats du deuxième problème)
+Enfin, dernier point : le fichier raw_mtx.csv fait plus de 100Mo (limite de git), est-il intéressant ? Si oui, y a-t-il une méthode d'ajout ?
