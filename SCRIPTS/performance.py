@@ -14,6 +14,9 @@ dataset_used = []
 success = []
 answers = []
 time = []
+ram = [] # todo
+memory = [] # todo
+solution_size = []# todo
 for file in onlyfiles_with_zeros:
     with open(path + 'WITH_ZEROS/' + file, 'r') as file:
         file_name = file.name.replace('/', ' ').split()[-1]
@@ -52,4 +55,7 @@ performances = pd.DataFrame({'program_used': program_used,
                                 'dataset_used': dataset_used, 
                                 'success': success, 
                                 'answers': answers, 
-                                'time': time}).to_csv(path + 'performances')
+                                'time': time,
+                                'ram' : ram,
+                                'memory' : memory,
+                                'solution_size' : solution_size}).to_csv(path + 'performances')

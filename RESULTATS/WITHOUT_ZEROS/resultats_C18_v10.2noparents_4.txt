@@ -1,0 +1,8 @@
+clingo version 5.6.2
+Reading from asp_data_C_traite_18.lp ...
+UNKNOWN
+
+Models       : 0+
+Calls        : 1
+Time         : 303.443s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.016s

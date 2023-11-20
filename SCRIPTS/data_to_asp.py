@@ -11,7 +11,7 @@ def load_data(filename):
 
 print("Write the file name you want to work on")
 file_name = input()
-path = '../DONNEES/toy_datasets/' + file_name + '.csv'
+path = '../' + file_name
 data = pd.read_csv(path)
 
 pkn_no_predecessors_file = '../DONNEES/no_predecessors.txt'
@@ -48,7 +48,7 @@ INPUTS:
  - input(G): gene G is an input, i.e. a node without any predecessor in the PKN
 """
 
-with open('../DONNEES/toy_datasets/asp_data_' + file_name + '.lp', 'w') as asp_data:
+with open('../' + file_name + '_asp_data.lp', 'w') as asp_data:
     for gene in inputs:
         asp_data.write(f"input({str(gene).lower().replace(' ', '_').replace('.', '')}).\n")
     for gene in readouts:
