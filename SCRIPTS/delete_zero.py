@@ -20,10 +20,11 @@ def enlever_les_zeros(name_file):
     for name in liste_colonne_a_enlever:
         dataframe = dataframe.drop(columns = name)
     dataframe = pd.concat([premieres_colonnes,dataframe],axis = 1)
-    dataframe.to_csv(name_file[:-4]+f"_traite_{len(liste_colonne_a_enlever)}.csv")
+    dataframe.to_csv(name_file[:-4]+f"_traite_{len(liste_colonne_a_enlever)}.csv", index=False)
     print(len(liste_colonne_a_enlever)/long_avant_modif)
     return dataframe
 
 enlever_les_zeros("../DONNEES/toy_datasets/B.csv")
 enlever_les_zeros("../DONNEES/toy_datasets/C.csv")
 enlever_les_zeros("../DONNEES/toy_datasets/D.csv")
+enlever_les_zeros("../DONNEES/real_datasets/2023_mediumAndLate.csv")
