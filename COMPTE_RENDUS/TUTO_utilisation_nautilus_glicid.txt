@@ -1,0 +1,110 @@
+TUTO utilisation nautilus et glicid
+
+Ce tuto est aussi développé sur ce site : https://doc.glicid.fr/GLiCID-PUBLIC/0.2/index.html
+
+--------------------------------------------------------------------------------------------------------------------------
+Etape 1 : Avoir accès à nautilus et glicid
+--------------------------------------------------------------------------------------------------------------------------
+
+Dans la suite on rencontrera souvent des problèmes pour les relatifs aux droits d'accès. Il sera alors possible 
+	soit d'insérer sudo avant votre commande comme ceci : "sudo [insert command]" ;
+	soit de changer les droits d'accès (que l'on peut visionner avec ls -l) avec la commande chmod.
+
+Ouvrir la WSL
+
+Créer un dossier ".ssh" s'il n'existe pas déjà (vérifier en tapant ls -a qui affiche les objets cachés)
+
+Déplacer vous dans ce fichier : cd .ssh
+
+Taper la commande ssh-keygen -t ed25519
+
+Vous obtiendrez deux clés ssh dans une avec une extension .pub. Afficher là avec la commande "cat filename.pub" puis copiez le contenu affiché.
+
+Rendez vous sur le lien suivant : https://clam.glicid.fr/ puis créez vous un compte. L'activation devrait prendre quelques temps (5min pour ma part). Quand c'est fait, allez dans mon profil et coller la clé que vous avez générée avant dans SSH Access et uploader là.
+
+Créer un fichier config dans .ssh avec le texte suivant :
+
+Host Bastion
+    Hostname bastion.glicid.fr
+    User [USERNAME]@ec-nantes.fr
+    IdentityFile ~/.ssh/id_ed25519
+    ForwardAgent yes
+
+Host glicid
+    Hostname login-001.glicid.fr
+    User [USERNAME]@ec-nantes.fr
+    ProxyJump Bastion
+    IdentityFile ~/.ssh/id_ed25519
+
+Host nautilus
+    Hostname nautilus-devel-001.nautilus.intra.glicid.fr
+    User [USERNAME]@ec-nantes.fr
+    ProxyJump glicid
+    IdentityFile ~/.ssh/id_ed25519
+
+Modifier [USERNAME] par votre nom d'utilisateur : fmichelon2020 pour moi
+
+Revener sur la wls et taper : "ssh nautilus" ou "ssh glicid", vous êtes connecté.
+
+--------------------------------------------------------------------------------------------------------------------------
+Etape 2 : Commandes à connaître
+--------------------------------------------------------------------------------------------------------------------------
+
+Local to Remote
+scp <file_name> nautilus:/scratch/users/<username>
+
+Remote to Local
+scp nautilus:/scratch/users/<username>/<file_name> /<local_path>
+
+Command Syntax                     Description
+sbatch  sbatch <job_id>            To submit job script for later execution (batch mode)
+srun    srun <resource-parameters> To run jobs interactively
+scancel scancel <job-id>           To terminate queued or running jobs
+sinfo   sinfo                      Get information about available nodes
+squeue  squeue -u                  Show information about jobs
+sacct   sacct                      Show information about current and previous jobs
+
+To submit your slurm script
+sinfo
+sbatch -p standard -qos=short <script-name>.slurm
+sbatch -M nautilus -p standard -qos=short <script-name>.slurm
+
+Sample script to run python code using conda environment
+#!/bin/bash
+#SBATCH --job-name=myjob    # create a short name for your job
+#SBATCH --nodes=1           # node count
+#SBATCH --ntasks=1          # total number of tasks across all nodes
+#SBATCH --cpus-per-task=1   # cpu-cores per task
+#SBATCH --mem-per-cpu=2G    # memory per cpu-core
+#SBATCH -–gres=gpu:4        # number of gpus per node
+#SBATCH --time=00:05:00     # total run time limit (HH:MM:SS)
+cd /scratch/user/<username> # go to your working directory
+module purge
+module load anaconda3/2023.3
+conda activate my-env
+python myscript.py
+
+Command                          Description
+module avail                     List modules
+module avail <package_name>      List all installed versions of python
+module load <package_name>       Load the default python version
+module load <pakage_name/3.11.5> Load a specific version of python
+module unload <package_name>     Unload python
+module list                      List currently loaded modules
+
+Guix
+Guix allows each user to manage his/her own packages
+
+Command                     Description
+guix pull                   You need to run this at least once(maybe weekly :p)
+guix search <package_name>  Look for a package to install
+guix install <package_name> To install a package
+guix remove <package_name>  To remove a package
+guix package -l             List of installed packages
+
+
+--------------------------------------------------------------------------------------------------------------------------
+Etape 3 : Utiliser nautilus et glicid
+--------------------------------------------------------------------------------------------------------------------------
+
+You should train and store your data in Scratch
