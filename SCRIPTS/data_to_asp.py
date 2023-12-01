@@ -11,7 +11,7 @@ def load_data(filename):
 
 print("Write the file name you want to work on")
 file_name = input()
-path = '../DONNEES/' + file_name + '.csv'
+path = '../DONNEES/toy_datasets/' + file_name + '.csv'
 data = pd.read_csv(path)
 
 pkn_no_predecessors_file = '../DONNEES/no_predecessors.txt'
