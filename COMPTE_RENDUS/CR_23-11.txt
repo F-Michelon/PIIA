@@ -1,0 +1,18 @@
+Voici le compte-rendu de la réunion du 23 novembre. La semaine prochaine nous auront 6h de créneaux pour travailler sur le projet contre 2h pour les dernières semaines, nous avons donc conclu que la prochaine réunion se tiendra la semaine du 4/12 au 10/12. Vous pourrez choisir un créneaux parmi ceux présent dans le lien doodle de nos disponibilités : ADD
+
+Nous avons commencer par évoquer les résultats obtenus sur les différents tests des programmes problem.lp et v10.2.lp avec et sans parents. Certains tests restent à faire mais nous avons pu constater que la suppression des gènes inactifs permet un gain certain pour la mémoire des fichiers de grounding.
+
+Nous avons évoqué la maximisation des readouts dans le cadre des trace ^pour le problème à mulit-classe. Une première approche pourra de traiter un cas "simple" ou l'on explore qu'une branche sur les deux du graphique UMAP. Pour faire un choix de cellule dans le cas d'un groupe cellulaire d'une même classe ayant un vecteur booléen similaire pour k gènes donnés, on pourra envisager différentes méthodes : faire un choix séquentiel (type algorithme glouton) ou global en prenant comme critère la moyenne des readouts du dit groupe ou une autre méthode. Nous voulons obtenir au final, un maximum de traces différentes dans l'optique d'obtenir les meilleurs résultats possible en terme de réseaux booléens.
+
+Pour mettre en place les pistes évoquées, il faudra générer des données de readouts fictives en prenant en compte la distribution des readouts dans le fichier raw_mtx ou alors de façon uniforme ou alors en utilisant directement le fichier raw_mtx. On travaillera sur les classes UMAP early, medium et late TE (voir lien UMAP et chercher UMAP clusters).
+
+Vis-à-vis de l'algorithme k-classe, il a été convenu qu'il faudra, pour la prochaine réunion, travailler sur un programme fonctionnel sans influence dans un premier temps et éventuellement de le comparer avec l'algorithme existant et de produire une version améliorer des deux approches.
+
+Pour la prochaine réunion, il faudra :
+- réaliser les tests manquant en testant aussi l'option --parallele-mode qui permet de paralléliser les calculs (en mode compete potentiellement voir doc clingo) ;
+- prendre k = 10 (ou une valeur intermédiaire à définir) pour les fichiers C et D ;
+- indexer les nom de cellules et de classes par des entiers et définir si possible les atomes d'une façon optimiser (gene(1...23000). plutôt que que gene(1). \n ... \n gene(23000).) ;
+- se renseigner vis-à-vis de l'utilisation du super calculateur de centrale ;
+- lire article https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006538 ;
+- générer les données de readouts ;
+- créer, tester et améliorer le programme k-classes.
