@@ -108,3 +108,7 @@ Etape 3 : Utiliser nautilus et glicid
 --------------------------------------------------------------------------------------------------------------------------
 
 You should train and store your data in Scratch
+
+Lire dans INFAVA sur hippocampus dans la section 2, les différents pdfs
+
+TODO
