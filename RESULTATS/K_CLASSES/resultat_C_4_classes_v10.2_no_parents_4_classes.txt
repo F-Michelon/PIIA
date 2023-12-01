@@ -1,3 +1,18 @@
 clingo version 5.6.2
 Reading from ...S/toy_datasets/C_4_classes_asp_data.lp ...
 Solving...
+Answer: 1
+selgene(4) selgene(96) selgene(53)
+Optimization: 0
+Answer: 2
+affinity(e47641,e5121034,e6121277,e5121033) selgene(4) selgene(96) selgene(42)
+Optimization: -1
+Answer: 3
+affinity(e46610,e510936,e6111070,e5121042) affinity(e46613,e510943,e6121277,e6111076) selgene(4) selgene(96) selgene(1)
+Optimization: -2
+Answer: 4
+affinity(e46625,e5121027,e6121271,e5121042) affinity(e46610,e5121031,e6121277,e5161889) affinity(e46613,e5121034,e6111070,e6111065) selgene(71) selgene(78) selgene(1)
+Optimization: -3
+Answer: 5
+affinity(e46625,e5121027,e6121271,e5121042) affinity(e46610,e5121031,e6121277,e5161889) affinity(e46616,e510936,e6121280,e6172) affinity(e46613,e5121034,e6111070,e6111065) selgene(71) selgene(78) selgene(1)
+Optimization: -4
