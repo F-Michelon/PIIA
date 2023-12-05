@@ -24,7 +24,7 @@ selpert(E,V,S,C) :- selinter(V), pert(E,V,S,C).
 % Generate a equal/4 predicate for cells I and J, from two different classes, where their expression for the gene G is equal
 equal(I,J,X,G) :- selpert(I,G,S1,C1), selpert(J,G,S2,C2), selpert(X,G,S3,C3), I!=J, I!=X, J!=X, S1==S2, S2==S3.
 
-pot_affi(I,J,X) :- k={equal(I,J,X,_)},  selpert(I,_,_,C1), selpert(J,_,_,C2), selpert(X,_,_,C3) C1<C2, C2<C3, I!=J, I!=X, J!=X.
+pot_affi(I,J,X) :- k={equal(I,J,X,_)},  selpert(I,_,_,C1), selpert(J,_,_,C2), selpert(X,_,_,C3), C1<C2, C2<C3, I!=J, I!=X, J!=X.
 
 % Generate, or not, an affinity/3 predicate when the number of countequal/4
 % is equal to k for cells I and J of different classes, which guarantees that all genes are similarly expressed in both cells I and J
