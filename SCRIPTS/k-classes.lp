@@ -2,7 +2,7 @@
 % atom(numéro cellule, stage, nom gène, expression gène)
 
 % Fichier des atomes
-#include "données/B_3_classes.lp".
+%#include "données/B_3_classes.lp".
 
 % constante k
 #const k = 3.
