@@ -9,4 +9,11 @@ test calcul sur nautilus (a priori sur un noeud déjà)
 voir rendez-vous du 11/01
 
 redemander mathieu expressio gène
-	normalisation ~intérêt
+	normalisation ~intérêt ?
+		changer le critère de normalisation
+	ajout d'une contrainte pour que les traces des readouts ne soit pas horizontale (au moins  points)
+	peut-être utiliser la moyenne si vraie donnée 
+	descente de gradient
+	nettoyage code, fonctionner par classe
+
+réunion 21/12 à 15h LS2N
