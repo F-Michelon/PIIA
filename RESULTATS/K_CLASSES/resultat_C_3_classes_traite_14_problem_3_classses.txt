@@ -1,0 +1,11 @@
+clingo version 5.6.2
+Reading from SCRIPTS/problem_3_classes.lp ...
+Solving...
+Answer: 1
+selgene(58) selgene(83) selgene(85)
+SATISFIABLE
+
+Models       : 1+
+Calls        : 1
+Time         : 1.048s (Solving: 0.02s 1st Model: 0.02s Unsat: 0.00s)
+CPU Time     : 0.313s

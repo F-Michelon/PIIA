@@ -1,0 +1,23 @@
+clingo version 5.6.2
+Reading from ...S/toy_datasets/B_4_classes_asp_data.lp ...
+Solving...
+Answer: 1
+selgene(12) selgene(13) selgene(14)
+Optimization: 0
+Answer: 2
+selgene(12) selgene(13) selgene(14) affinity(e46609,e510943,e6121486,e5373235)
+Optimization: -1
+Answer: 3
+selgene(4) selgene(17) selgene(25) affinity(e46613,e5121027,e6121486,e5373237) affinity(e47643,e5132,e6121484,e6182)
+Optimization: -2
+Answer: 4
+selgene(3) selgene(17) selgene(24) affinity(e46609,e5121027,e6121280,e5121042) affinity(e47643,e510936,e6131377,e5131767) affinity(e46616,e5128,e6121484,e6180)
+Optimization: -3
+OPTIMUM FOUND
+
+Models       : 4
+  Optimum    : yes
+Optimization : -3
+Calls        : 1
+Time         : 448.131s (Solving: 431.94s 1st Model: 0.18s Unsat: 413.65s)
+CPU Time     : 382.953s

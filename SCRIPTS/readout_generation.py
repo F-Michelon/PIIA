@@ -31,8 +31,9 @@ data = []
 for i in range(Nb_classes):
     for j in random_index:
         for k in range(N_cells_per_pseudoperturbation):
-            data.append(np.concatenate((D.iloc[j].values[:-1], np.random.random(size=N_readouts))))
+            data.append(np.concatenate((D.iloc[j].values[:-1], np.random.random(size=N_readouts), [list(random_index).index(j)])))
 
 D_new = pd.DataFrame(np.array(data))
+D_new = D_new.rename(columns={140 : 'vect_bool_alike'})
 D_new['classes'] = [0 for i in range(120)] + [1 for i in range(120)] + [2 for i in range(120)]
 D_new.to_csv("../DONNEES/toy_datasets/readout_fictifs_D_3", index=False)
