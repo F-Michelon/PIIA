@@ -1,0 +1,12 @@
+présentation pour prochaine réunion + rapport éventuel
+
+algo k-classes (3 et 4)
+	essayer de trouver une methode généralisante
+	etudiez les perfs (temps, espace de recherche qui explose avec la recherche d'affinité)
+
+parallèlisation
+test calcul sur nautilus (a priori sur un noeud déjà)
+voir rendez-vous du 11/01
+
+redemander mathieu expressio gène
+	normalisation ~intérêt

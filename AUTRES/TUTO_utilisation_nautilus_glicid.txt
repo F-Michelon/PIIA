@@ -2,6 +2,7 @@ TUTO utilisation nautilus et glicid
 
 Ce tuto est aussi développé sur ce site : https://doc.glicid.fr/GLiCID-PUBLIC/0.2/index.html
 
+Ou dans ce lien : https://indico.mathrice.fr/event/507/ ou https://indico.mathrice.fr/event/507/attachments/1036/1490/Getting%20Started%20With%20Nautilus_%20Beginner%20Session.pdf
 --------------------------------------------------------------------------------------------------------------------------
 Etape 1 : Avoir accès à nautilus et glicid
 --------------------------------------------------------------------------------------------------------------------------
