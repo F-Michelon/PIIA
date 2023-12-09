@@ -124,7 +124,7 @@ def choix3cel(index_vect_bool,List_3_cels,List_index_same_vect_bool,df,cel_to_ch
 def calculate_score(gene,vecClass1,vecClass2,df):
     """
     Fonction qui, pour un gène,
-    calcule le score de différence entre les vecteur booléen.
+    calcule le score de différence entre les vecteurs booléens.
     """
     return np.linalg.norm(df.iloc[vecClass1][gene].values - df.iloc[vecClass2][gene].values)
 # #Test
