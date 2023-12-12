@@ -1,0 +1,24 @@
+Lors de la réunion, Antoine et Armel ont présenté leur travail concernant le programme ASP à k classes. Pour cela, ils ont transformé le programme problem.lp et v10.2.lp pour qu'ils fonctionnent avec 3 et 4 classes. Les programmes sont disponibles sur le git.
+Comme mentionné par mail et lors de la réunion, les programmes n'ont pas trouvé la solution optimale pour tous les jeux de données. Le document performances_k_classes sur le git résument les résultats.
+Lors de la réunion, nous avons vu que les sources de complexité étaient les suivantes :
+- nombre d'arguments dans les prédicats
+- nombre de contraintes
+- nombre combinatoire de l'espace de recherche
+
+Nous allons donc réaliser une étude de complexité plus approfondie. Pour cela, nous allons récupérer le grounding avec gringo -t asp.lp > out.txt et essayer de "paralléliser" en compétition sur plusieurs CPU avec clingo -t 20 asp.lp.
+
+Pour réduire la complexité de nos programmes à k classes, il faut donc pas augmenter le nombre d'argument dans les prédicats mais définir une classe de référence.
+
+Une fois que nous aurons notre programme ASP amélioré, nous allons le comparer avec le code k classes de l'année dernière en l'adaptant pour le rendre compatible avec nos outils de formatage des données.
+
+En parallèle, nous prévoyons de commencer à prendre en main le cluster d'abord en lançant les programmes à 2 classes puis notre programme à k classes amélioré. Pour cela nous devons voir comment utiliser l'ASP sur le cluster.
+
+Concernant le travail effectué par Anthonin et moi-même sur le développement d'un algorithme d'obtention des "meilleures" traces possibles en multi classe, nous avons évoqué différents points. Les scripts développés sont disponibles sur le github (SCRIPTS/readout_discrimination.py et SCRIPTS/readout_generation.py). Nous avons dans un premier temps développé une création de pseudo permutations fictives avec les readouts effectués comme convenu lors de notre dernier point. Une fois les données générées, nous avons implémenté une première méthodes de discrimination dans le premier script afin d'obtenir les meilleures traces possibles pour l'algorithme de génération de réseaux booléens.
+
+Nous travaillons à améliorer ces scripts pour les rendre plus généralisable afin d'implémenter plusieurs méthodes (moyenne, différence au carré, etc ...) et d'ajouter une contrainte empêchant une trace horizontale.
+
+Nous avons évoqué certains points relatifs au fichier meistermannbruneauetalprocessed-test\AI_project\matrices\real_datasetsraw_mtx.csv qui contient les informations d'expressions des gènes. Nous avons compris qu'une normalisation min max était effectuée sur l'ensemble des données pour obtenir les valeurs des readouts mais nous nous demandons l'intérêt de cette transformation car la matrice d'expression est creuse et il y a quelques valeurs autour de 1000 2000 qui écrase toute expression plus faible. Ainsi les traces seraient très horizontal avec quelques rares points autour de 1 ce qui ne nous permet d'obtenir des traces très variées pour l'algorithme caspo. Pourrez t-on appliquée à une autre transformation moins abrupte pour obtenir une diversité plus grande en readouts ?
+
+Concernant le cluster de centrale, j'ai pu assister à la réunion et me familiariser avec l'outil. Il y a certains points sur lesquels il faudra travailler cependant pour y appliquer nos codes comme l'installation de clasp et de l'ASP. Une réunion d'utilisation avancée est prévue pour le 11 janvier.
+
+Nous vous proposons le vendredi 21, 15h, au LS2N pour le prochain rendez-vous. Nous vous présenterons alors le travail effectué depuis le début d'année. Merci de nous confirmez votre présence.
