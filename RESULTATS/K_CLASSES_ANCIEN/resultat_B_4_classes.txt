@@ -1,0 +1,23 @@
+clingo version 5.6.2
+Reading from ...S/toy_datasets/B_4_classes_asp_data.lp ...
+Solving...
+Answer: 1
+selgene(0) selgene(1) selgene(23)
+Optimization: 0
+Answer: 2
+selgene(0) selgene(1) selgene(23) match(e510943)
+Optimization: -1
+Answer: 3
+selgene(1) selgene(3) selgene(24) match(e5128) match(e5121027)
+Optimization: -2
+Answer: 4
+selgene(3) selgene(13) selgene(27) match(e510934) match(e510936) match(e510943)
+Optimization: -3
+OPTIMUM FOUND
+
+Models       : 4
+  Optimum    : yes
+Optimization : -3
+Calls        : 1
+Time         : 2.137s (Solving: 2.04s 1st Model: 0.00s Unsat: 2.03s)
+CPU Time     : 2.137s
