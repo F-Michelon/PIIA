@@ -1,0 +1,20 @@
+clingo version 5.6.2
+Reading from ...S/toy_datasets/B_traite_12_asp_data.lp ...
+Solving...
+Answer: 1
+selgene(3) selgene(12) selgene(6)
+Optimization: 0
+Answer: 2
+selgene(3) selgene(12) affinity(e5130,e5373235) selgene(8)
+Optimization: -1
+Answer: 3
+selgene(3) selgene(12) affinity(e510933,e5121033) affinity(e510935,e5121042) selgene(15)
+Optimization: -2
+OPTIMUM FOUND
+
+Models       : 3
+  Optimum    : yes
+Optimization : -2
+Calls        : 1
+Time         : 0.033s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.033s
