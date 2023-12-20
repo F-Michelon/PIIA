@@ -1,0 +1,9 @@
+clingo version 5.6.2
+Reading from ...S/toy_datasets/C_traite_18_asp_data.lp ...
+Solving...
+UNSATISFIABLE
+
+Models       : 0
+Calls        : 1
+Time         : 0.509s (Solving: 0.01s 1st Model: 0.00s Unsat: 0.01s)
+CPU Time     : 0.509s

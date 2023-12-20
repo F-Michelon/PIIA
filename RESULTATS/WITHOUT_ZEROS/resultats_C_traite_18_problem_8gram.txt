@@ -1,0 +1,36 @@
+clingo version 5.6.2
+Reading from ...S/toy_datasets/C_traite_18_asp_data.lp ...
+Solving...
+Answer: 1
+selgene(3) selgene(18) selgene(75)
+Optimization: 0
+Answer: 2
+selgene(18) selgene(35) selgene(51) affinity(e510935,e6182)
+Optimization: -1
+Answer: 3
+selgene(18) selgene(35) selgene(51) affinity(e5132,e5121042) affinity(e510935,e6182)
+Optimization: -2
+Answer: 4
+selgene(18) selgene(35) selgene(51) affinity(e5132,e5373235) affinity(e510935,e6182) affinity(e5121039,e6111064)
+Optimization: -3
+Answer: 5
+selgene(35) selgene(51) selgene(76) affinity(e5121031,e5373237) affinity(e5132,e6182) affinity(e5131781,e6188) affinity(e5131762,e6111064)
+Optimization: -4
+Answer: 6
+selgene(18) selgene(51) selgene(59) affinity(e5131770,e5373234) affinity(e5131761,e6180) affinity(e510934,e6182) affinity(e510936,e6184) affinity(e5121028,e6111074)
+Optimization: -5
+Answer: 7
+selgene(19) selgene(61) selgene(65) affinity(e5131761,e5131767) affinity(e5128,e5355) affinity(e5121027,e5373237) affinity(e5131781,e6180) affinity(e5121037,e6111074) affinity(e5121029,e6121272)
+Optimization: -6
+Answer: 8
+selgene(19) selgene(39) selgene(61) affinity(e510933,e5131767) affinity(e5121027,e5373237) affinity(e5121034,e6172) affinity(e5131781,e6178) affinity(e5121037,e6184) affinity(e510945,e6111074) affinity(e5121029,e6121272)
+Optimization: -7
+SATISFIABLE
+
+INTERRUPTED  : 1
+Models       : 8+
+  Optimum    : unknown
+Optimization : -7
+Calls        : 1
+Time         : 1433.881s (Solving: 1431.86s 1st Model: 0.21s Unsat: 0.00s)
+CPU Time     : 1433.733s
