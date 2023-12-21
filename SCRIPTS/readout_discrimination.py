@@ -158,7 +158,7 @@ def maximize_score(df):
     init = define_3_cel_for_each_vect(df,long_vect_bool,vect_find[0],vect_find[1])
     iter = 0
     score = compute_score_global(init, df)
-    while iter < 10000:
+    while iter < 10:
         iter += 1
         init_copy = init.copy()
         #score = 
@@ -175,8 +175,7 @@ def maximize_score(df):
     return init
 
 import timeit
-
-temps_execution  = timeit.timeit(maximize_score(D),number = 1)
+temps_execution  = timeit.timeit("maximize_score(D)",globals=globals(),number = 1)
 print(temps_execution)
 
 courbe_recherche = [[0.745570745611005, 200],
@@ -247,3 +246,45 @@ courbe_recherche = [[0.745570745611005, 200],
                     [0.7724791976066105, 6700],
                     [0.7724791976066105, 6800],
                     [0.7724791976066105, 6900],
+                    [0.7724791976066105, 7000],
+                    [0.7724791976066105, 7100],
+                    [0.7724791976066105, 7200],
+                    [0.7724791976066105, 7300],
+                    [0.7724791976066105, 7400],
+                    [0.7724791976066105, 7500],
+                    [0.7724791976066105, 7600],
+                    [0.7724791976066105, 7700],
+                    [0.7724791976066105, 7800],
+                    [0.7724791976066105, 7900],
+                    [0.7724791976066105, 8000],
+                    [0.7724791976066105, 8100],
+                    [0.7724791976066105, 8200],
+                    [0.7724791976066105, 8300],
+                    [0.7724791976066105, 8400],
+                    [0.7724791976066105, 8500],
+                    [0.7724791976066105, 8600],
+                    [0.7724791976066105, 8700],
+                    [0.7724791976066105, 8800],
+                    [0.7724791976066105, 8900],
+                    [0.7724791976066105, 9000],
+                    [0.7724791976066105, 9100],
+                    [0.7724791976066105, 9200],
+                    [0.7724791976066105, 9300],
+                    [0.7724791976066105, 9400],
+                    [0.7724791976066105, 9500],
+                    [0.7724791976066105, 9600],
+                    [0.7724791976066105, 9700],
+                    [0.7724791976066105, 9800],
+                    [0.7724791976066105, 9900],
+                    [0.7724791976066105, 10000]]
+
+import matplotlib.pyplot as plt
+plt.figure()
+Y = [item[0] for item in courbe_recherche]
+X = [item[1] for item in courbe_recherche]
+plt.plot(X,Y)
+plt.ylabel("score")
+plt.xlabel("Nombre d'execution")
+plt.title("Évolution du score en fonction du nombre d'execution")
+plt.grid()
+plt.show()

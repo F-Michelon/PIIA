@@ -11,7 +11,7 @@ def enlever_les_zeros(name_file):
     for elt in dataframe.columns[0:8].values:
         dataframe = dataframe.drop(columns=elt)
     
-    #On fait la somlme cumulatiove sur l'axe des ordonnées
+    #On fait la somme cumulative sur l'axe des ordonnées
     cumsum = dataframe.cumsum(axis = 0).iloc[-1]
     liste_colonne_a_enlever = []
     for i in range(len(cumsum)):
