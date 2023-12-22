@@ -1,0 +1,38 @@
+Présentation projet PIIA
+
+Remarques sur la présentation
+-----------------------------
+Pour le 22 mars : mise en contexte + importantes
+diapo 4 : premier auteur, année
+faire un plan avec une flèche : partie exploration puis K classe, parallèle à la discrimination
+motiver l'utilisation de l'informatique dans ce sujet
+partie bio importante
+
+les programmes sont à nommer plus clairement
+parler de la problématique bio dès le début
+
+difficulté à présenter les deux algorithme
+
+aller de la motivation à la formulation du problème
+
+montrer des exemples, schéman etc... puis le code
+
+pas de moitié français et moitié anglais -> choisir une seule langue
+
+
+Remarques sur le contenu
+------------------------
+réduire cette partie
+
+mettre un graphe avec un petit message
+
+faire la différence entre les résultats sur données réelles et données artificielle pour la discrimination de readout
+
+montrer un workflow du programme de recherche aléatoire : local_search (type connu de programme)
+tester avec d'autres départ et prendre le meilleur des score et recommencer avec ça comme départ
+visualiser les readouts obtenus
+-> les tracer (en utilisant le programme maison de mathieu ?)
+-> quelles forment ont-elles ?
+
+Supprimer les gènes qui sont toujours nuls
+enlever les pseudos perturbation de 120 gènes -> utiliser un entier
