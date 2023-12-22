@@ -1,0 +1,30 @@
+Voici le compte-rendu 21/12 :
+
+Cette réunion a commencé par la présentation des travaux et démarches effectués depuis le lancement du projet. De nombreuses remarques et améliorations ont été proposées :
+
+Ajouter une partie mise en contexte du sujet en démontrant l'intérêt de l'informatique dans la problématique biologique étudiée et présenter ensuite les objectifs du sujet ;
+Articuler les discours de façon à respecter le timing prévu ;
+Détailler les noms des auteurs et l'année de parution des articles cités ;
+Montrer l'évolution chronologique des du projet à travers un schéma simple ;
+Simplifier les noms de variables, de programmes évoqués (v10.2no_parents --> A) ;
+Présenter les données en détails pour chaque algorithme ;
+Proposer des exemples sur des cas simples pour les algorithmes détaillés et expliciter les différences avec l'algorithme précédent ;
+Choisir une langue sur l'entièreté de la présentation ;
+Alléger les slides (1 slide = 1 information) ; 
+Modifier les figures pour de clarté et moins de redondance (dans la couleurs ou les traits des courbes mais aussi dans les axes) ;
+Exposer les résultats chiffrés sur la diminution de l'espace de recherche avec la suppression des 0 ;
+Modifier clasp en caspoTS.
+
+Enfin, nous avons mis en lumières de nombreuses pistes pour la partie discrimination de readouts à k classes et pour la partie algorithme à k classes. En voici la liste :
+
+    Pour la partie Discrimination :
+Explorer les algorithmes de type local search ;
+Tester avec d'autres initialisation ;
+Visualisation les traces ;
+Faire des analyses fonctionnelle sur les traces en sortie ;
+Supprimer les gènes avec des expressions toujours nulles avant la normalisation ;
+
+    Pour la partie k classes :
+Lancer l'algo de k classes sur le cluster ECN.
+
+La prochaine réunion est prévue pour le 11/01/24 à 14h au LS2N.
