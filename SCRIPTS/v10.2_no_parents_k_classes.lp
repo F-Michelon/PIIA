@@ -19,7 +19,7 @@ ref(early_te).
 {selgene(G) : pert(C,G,S,CL)} = k.
 
 % Generate a equal/4 predicate for cells I and J, from two different classes, one being the reference classe R and the other a different class S where their expression for the gene G is equal
-equal(I,J,G,S) :- pert(I,G,S1,R), pert(J,G,S2,S), I!=J, S1==S2, S!=R.
+equal(I,J,G,S) :- ref(R), pert(I,G,S1,R), pert(J,G,S2,S), selgene(G), I!=J, S1==S2, S!=R.
 match_pert(I,J) :- equal(I,J,_,_). %simplify the predicate
 
 
@@ -33,7 +33,7 @@ pot_affi(I) :- nb_class(N), N-1 == #count {S : affi_pert(I,_,S)}, match_pert(I,_
 
 % I1 and I2 are 2 different cells in the reference class early_te
 % If there is a J cell in another class which has an affinity with the 2, then they all have the same vector
-:- affinity(I), affi_pert(I1,J,_), affi_pert(I2,J,_), I1 < I2.
+:- affinity(I2), affi_pert(I1,J,_), affi_pert(I2,J,_), I1 < I2.
 
 % Maximize the number of pairs of cells
 #maximize{1, I : affinity(I)}.

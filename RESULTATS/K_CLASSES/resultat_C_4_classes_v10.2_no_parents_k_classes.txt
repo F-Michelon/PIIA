@@ -1,0 +1,35 @@
+clingo version 5.6.2
+Reading from ...S/toy_datasets/C_4_classes_asp_data.lp ...
+Solving...
+Answer: 1
+selgene(0) selgene(1) selgene(74)
+Optimization: 0
+Answer: 2
+selgene(0) selgene(1) selgene(74) affinity(e510936)
+Optimization: -1
+Answer: 3
+selgene(0) selgene(1) selgene(74) affinity(e510936) affinity(e5121027)
+Optimization: -2
+Answer: 4
+selgene(0) selgene(74) selgene(92) affinity(e510934) affinity(e510943) affinity(e510933)
+Optimization: -3
+Answer: 5
+selgene(1) selgene(72) selgene(74) affinity(e510936) affinity(e510943) affinity(e5121027) affinity(e5131760)
+Optimization: -4
+Answer: 6
+selgene(72) selgene(74) selgene(92) affinity(e510936) affinity(e510943) affinity(e510944) affinity(e5121027) affinity(e510933)
+Optimization: -5
+Answer: 7
+selgene(33) selgene(46) selgene(74) affinity(e5128) affinity(e510934) affinity(e510944) affinity(e5131762) affinity(e5131766) affinity(e510933)
+Optimization: -6
+Answer: 8
+selgene(72) selgene(78) selgene(91) affinity(e510934) affinity(e510936) affinity(e510943) affinity(e510944) affinity(e5121034) affinity(e5131770) affinity(e510933)
+Optimization: -7
+OPTIMUM FOUND
+
+Models       : 8
+  Optimum    : yes
+Optimization : -7
+Calls        : 1
+Time         : 2933.574s (Solving: 2932.40s 1st Model: 0.02s Unsat: 2690.30s)
+CPU Time     : 727.391s

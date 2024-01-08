@@ -18,7 +18,7 @@ selpert(E,V,S,C) :- selgene(V), pert(E,V,S,C).
 % Generate an input predicate for genes that are inputs
 selinput(G) :- selgene(G), input(G).
 
-% Generate a equal/4 predicate for cells I and J, from two different classes, where their expression for the gene G is equal
+% Generate a equal/4 predicate for cells I and J, from three different classes, where their expression for the gene G is equal
 equal(I,J,X,G) :- selpert(I,G,S1,C1), selpert(J,G,S2,C2), selpert(X,G,S3,C3), C1<C2, C2<C3, S1==S2, S2==S3.
 
 % Count the number of equal/4 predicates between 3 cells of different classes, among the k selected genes

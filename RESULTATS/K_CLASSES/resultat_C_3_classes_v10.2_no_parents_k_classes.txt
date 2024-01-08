@@ -1,0 +1,89 @@
+clingo version 5.6.2
+Reading from ...S/toy_datasets/C_3_classes_asp_data.lp ...
+Solving...
+Answer: 1
+selgene(0) selgene(1) selgene(42)
+Optimization: 0
+Answer: 2
+selgene(0) selgene(1) selgene(42) affinity(e5132)
+Optimization: -1
+Answer: 3
+selgene(0) selgene(1) selgene(42) affinity(e5132) affinity(e510936)
+Optimization: -2
+Answer: 4
+selgene(0) selgene(1) selgene(42) affinity(e5132) affinity(e510936) affinity(e5131760)
+Optimization: -3
+Answer: 5
+selgene(0) selgene(1) selgene(42) affinity(e5132) affinity(e510936) affinity(e5121031) affinity(e5131760)
+Optimization: -4
+Answer: 6
+selgene(0) selgene(1) selgene(42) affinity(e5132) affinity(e510936) affinity(e5121031) affinity(e5131760) affinity(e5131761)
+Optimization: -5
+Answer: 7
+selgene(0) selgene(1) selgene(42) affinity(e5132) affinity(e510936) affinity(e5121031) affinity(e5131760) affinity(e5131761) affinity(e5131770)
+Optimization: -6
+Answer: 8
+selgene(0) selgene(1) selgene(42) affinity(e5132) affinity(e510936) affinity(e510943) affinity(e5121031) affinity(e5131760) affinity(e5131761) affinity(e5131770)
+Optimization: -7
+Answer: 9
+selgene(0) selgene(1) selgene(42) affinity(e5132) affinity(e510936) affinity(e510943) affinity(e5121031) affinity(e5121037) affinity(e5131760) affinity(e5131761) affinity(e5131770)
+Optimization: -8
+Answer: 10
+selgene(0) selgene(1) selgene(42) affinity(e5132) affinity(e510936) affinity(e510943) affinity(e5121027) affinity(e5121031) affinity(e5121037) affinity(e5131760) affinity(e5131761) affinity(e5131770)
+Optimization: -9
+Answer: 11
+selgene(0) selgene(1) selgene(42) affinity(e5132) affinity(e510936) affinity(e510943) affinity(e5121027) affinity(e5121031) affinity(e5121034) affinity(e5121037) affinity(e5131760) affinity(e5131761) affinity(e5131770)
+Optimization: -10
+Answer: 12
+selgene(0) selgene(1) selgene(42) affinity(e5132) affinity(e510936) affinity(e510943) affinity(e5121027) affinity(e5121031) affinity(e5121034) affinity(e5121037) affinity(e5121039) affinity(e5131760) affinity(e5131761) affinity(e5131770)
+Optimization: -11
+Answer: 13
+selgene(0) selgene(1) selgene(42) affinity(e5128) affinity(e5132) affinity(e510936) affinity(e510943) affinity(e5121027) affinity(e5121031) affinity(e5121034) affinity(e5121037) affinity(e5121039) affinity(e5131760) affinity(e5131761) affinity(e5131770)
+Optimization: -12
+Answer: 14
+selgene(0) selgene(1) selgene(42) affinity(e5128) affinity(e5132) affinity(e510936) affinity(e510943) affinity(e5121027) affinity(e5121031) affinity(e5121034) affinity(e5121037) affinity(e5121039) affinity(e5131760) affinity(e5131761) affinity(e5131766) affinity(e5131770)
+Optimization: -13
+Answer: 15
+selgene(0) selgene(42) selgene(74) affinity(e5128) affinity(e5130) affinity(e5132) affinity(e510933) affinity(e510944) affinity(e5121027) affinity(e5121029) affinity(e5121034) affinity(e5121039) affinity(e5131760) affinity(e5131761) affinity(e5131766) affinity(e5131770) affinity(e5131781)
+Optimization: -14
+Answer: 16
+selgene(0) selgene(72) selgene(74) affinity(e5132) affinity(e510933) affinity(e510935) affinity(e510943) affinity(e510945) affinity(e5121028) affinity(e5121031) affinity(e5121034) affinity(e5121037) affinity(e5121039) affinity(e5131760) affinity(e5131761) affinity(e5131766) affinity(e5131770) affinity(e5141788)
+Optimization: -15
+Answer: 17
+selgene(0) selgene(72) selgene(74) affinity(e5132) affinity(e510933) affinity(e510934) affinity(e510935) affinity(e510943) affinity(e510945) affinity(e5121028) affinity(e5121031) affinity(e5121034) affinity(e5121037) affinity(e5121039) affinity(e5131760) affinity(e5131761) affinity(e5131766) affinity(e5131770) affinity(e5141788)
+Optimization: -16
+Answer: 18
+selgene(0) selgene(72) selgene(74) affinity(e5132) affinity(e510933) affinity(e510934) affinity(e510935) affinity(e510943) affinity(e510945) affinity(e5121028) affinity(e5121031) affinity(e5121034) affinity(e5121037) affinity(e5121039) affinity(e5131760) affinity(e5131761) affinity(e5131762) affinity(e5131766) affinity(e5131770) affinity(e5141788)
+Optimization: -17
+Answer: 19
+selgene(0) selgene(72) selgene(74) affinity(e5132) affinity(e510933) affinity(e510934) affinity(e510935) affinity(e510943) affinity(e510945) affinity(e510949) affinity(e5121028) affinity(e5121031) affinity(e5121034) affinity(e5121037) affinity(e5121039) affinity(e5131760) affinity(e5131761) affinity(e5131762) affinity(e5131766) affinity(e5131770) affinity(e5141788)
+Optimization: -18
+Answer: 20
+selgene(0) selgene(72) selgene(74) affinity(e5132) affinity(e510933) affinity(e510934) affinity(e510935) affinity(e510943) affinity(e510944) affinity(e510945) affinity(e510949) affinity(e5121028) affinity(e5121031) affinity(e5121034) affinity(e5121037) affinity(e5121039) affinity(e5131760) affinity(e5131761) affinity(e5131762) affinity(e5131766) affinity(e5131770) affinity(e5141788)
+Optimization: -19
+Answer: 21
+selgene(0) selgene(72) selgene(74) affinity(e5132) affinity(e510933) affinity(e510934) affinity(e510935) affinity(e510943) affinity(e510944) affinity(e510945) affinity(e510949) affinity(e5121028) affinity(e5121031) affinity(e5121034) affinity(e5121037) affinity(e5121039) affinity(e5131760) affinity(e5131761) affinity(e5131762) affinity(e5131766) affinity(e5131770) affinity(e5131781) affinity(e5141788)
+Optimization: -20
+Answer: 22
+selgene(0) selgene(72) selgene(74) affinity(e5132) affinity(e510933) affinity(e510934) affinity(e510935) affinity(e510943) affinity(e510944) affinity(e510945) affinity(e510949) affinity(e5121027) affinity(e5121028) affinity(e5121031) affinity(e5121034) affinity(e5121037) affinity(e5121039) affinity(e5131760) affinity(e5131761) affinity(e5131762) affinity(e5131766) affinity(e5131770) affinity(e5131781) affinity(e5141788)
+Optimization: -21
+Answer: 23
+selgene(0) selgene(72) selgene(74) affinity(e5132) affinity(e510933) affinity(e510934) affinity(e510935) affinity(e510943) affinity(e510944) affinity(e510945) affinity(e510949) affinity(e5121027) affinity(e5121028) affinity(e5121029) affinity(e5121031) affinity(e5121034) affinity(e5121037) affinity(e5121039) affinity(e5131760) affinity(e5131761) affinity(e5131762) affinity(e5131766) affinity(e5131770) affinity(e5131781) affinity(e5141788)
+Optimization: -22
+Answer: 24
+selgene(0) selgene(72) selgene(74) affinity(e5130) affinity(e5132) affinity(e510933) affinity(e510934) affinity(e510935) affinity(e510943) affinity(e510944) affinity(e510945) affinity(e510949) affinity(e5121027) affinity(e5121028) affinity(e5121029) affinity(e5121031) affinity(e5121034) affinity(e5121037) affinity(e5121039) affinity(e5131760) affinity(e5131761) affinity(e5131762) affinity(e5131766) affinity(e5131770) affinity(e5131781) affinity(e5141788)
+Optimization: -23
+Answer: 25
+selgene(0) selgene(72) selgene(74) affinity(e5128) affinity(e5130) affinity(e5132) affinity(e510933) affinity(e510934) affinity(e510935) affinity(e510943) affinity(e510944) affinity(e510945) affinity(e510949) affinity(e5121027) affinity(e5121028) affinity(e5121029) affinity(e5121031) affinity(e5121034) affinity(e5121037) affinity(e5121039) affinity(e5131760) affinity(e5131761) affinity(e5131762) affinity(e5131766) affinity(e5131770) affinity(e5131781) affinity(e5141788)
+Optimization: -24
+Answer: 26
+selgene(6) selgene(19) selgene(32) affinity(e5128) affinity(e5130) affinity(e5132) affinity(e510933) affinity(e510934) affinity(e510935) affinity(e510936) affinity(e510943) affinity(e510944) affinity(e510945) affinity(e510949) affinity(e5121027) affinity(e5121028) affinity(e5121029) affinity(e5121031) affinity(e5121034) affinity(e5121037) affinity(e5121039) affinity(e5131760) affinity(e5131761) affinity(e5131762) affinity(e5131766) affinity(e5131770) affinity(e5131781) affinity(e5141788)
+Optimization: -25
+OPTIMUM FOUND
+
+Models       : 26
+  Optimum    : yes
+Optimization : -25
+Calls        : 1
+Time         : 0.874s (Solving: 0.03s 1st Model: 0.02s Unsat: 0.00s)
+CPU Time     : 0.156s
