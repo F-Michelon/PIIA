@@ -1,0 +1,17 @@
+clingo version 5.6.2
+Reading from ...asets/B_4_classes_traite_4_asp_data.lp ...
+Solving...
+Answer: 1
+selgene(0) selgene(1) selgene(20)
+Optimization: 0
+Answer: 2
+selgene(0) selgene(3) selgene(23) affinity(e510935)
+Optimization: -1
+OPTIMUM FOUND
+
+Models       : 2
+  Optimum    : yes
+Optimization : -1
+Calls        : 1
+Time         : 1.599s (Solving: 1.48s 1st Model: 0.00s Unsat: 1.07s)
+CPU Time     : 0.734s

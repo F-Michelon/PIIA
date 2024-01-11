@@ -22,6 +22,7 @@ def enlever_les_zeros(name_file):
     dataframe = pd.concat([premieres_colonnes,dataframe],axis = 1)
     dataframe.to_csv(name_file[:-4]+f"_traite_{len(liste_colonne_a_enlever)}.csv", index=False)
     print(len(liste_colonne_a_enlever)/long_avant_modif)
+    print(long_avant_modif)
     return dataframe
 
 enlever_les_zeros("../DONNEES/toy_datasets/C_3_classes.csv")
