@@ -7,6 +7,13 @@ import random
 
 # TODO décrire la tête des données formattage
 # paramétriser l'ensemble des données numérique
+'''
+Les données possèdent la forme suivante :
+    - des vecteurs booléens de 120 gènes ;
+    - puis 20 gènes de readouts ;
+    - vect_bool_alike : attribu décrivant l'appartenance aux différents vecteurs booléens (pas forcémment utile pour l'instant) ;
+    - classe : attribu détaillant l'appartenance aux différentes classes (entre 0 et nclasse - 1).
+'''
 
 class Discrimination:
     def __init__(self, data, optim, long_vect_bool):
