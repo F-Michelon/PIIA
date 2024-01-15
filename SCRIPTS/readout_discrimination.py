@@ -36,6 +36,7 @@ class Discrimination:
         print(f"init = {self.init}")
         print(f"long_vect_bool = {self.long_vect_bool}")
         print(f"nb_classe = {self.nb_classe}")
+        return ""
         
     def plot(self) -> None:
         nb_gene = 5
@@ -185,8 +186,10 @@ class Discrimination:
         """
         Fonction qui cherche le maximum du score
         """
-        self.find_same_vect_bool()
-        self.define_3_cel_for_each_vect()
+        if self.bool_vect == None :
+            self.find_same_vect_bool()
+        if self.init == None :
+            self.define_3_cel_for_each_vect()
         iter = 0
         no_change_iter = 0
         self.compute_score_global()
@@ -220,21 +223,21 @@ class Discrimination:
         for i in range(max_iter_global):
             for j in range(len(Liste_discrimination)):
                 print(f"Maximisation du n°{j} en cours")
-                D = Liste_discrimination[j]
-                D.maximize_score(max_iter_tmp)
-                if D.score > max_score:
-                    max_score = D.score
+                Liste_discrimination[j].maximize_score(max_iter_tmp)
+                if Liste_discrimination[j].score > max_score:
+                    max_score = Liste_discrimination[j].score
                     id_max_score = j
-            for D in Liste_discrimination:
-                D.init = copy.deepcopy(Liste_discrimination[id_max_score].init)
-                D.score = max_score
-                D.data = Liste_discrimination[id_max_score].data
-                D.optimization = Liste_discrimination[id_max_score].optimization
-                D.same_vect_bool = Liste_discrimination[id_max_score].same_vect_bool
-                D.bool_vect = Liste_discrimination[id_max_score].bool_vect
-                D.long_vect_bool = Liste_discrimination[id_max_score].long_vect_bool
-                D.nb_classe = Liste_discrimination[id_max_score].nb_classe
-                print(D,Liste_discrimination[id_max_score])
+            for j in range(len(Liste_discrimination)):
+                Liste_discrimination[j].init = copy.deepcopy(Liste_discrimination[id_max_score].init)
+                Liste_discrimination[j].score = max_score
+                Liste_discrimination[j].data = Liste_discrimination[id_max_score].data
+                Liste_discrimination[j].optimization = Liste_discrimination[id_max_score].optimization
+                Liste_discrimination[j].same_vect_bool = Liste_discrimination[id_max_score].same_vect_bool
+                Liste_discrimination[j].bool_vect = Liste_discrimination[id_max_score].bool_vect
+                Liste_discrimination[j].long_vect_bool = Liste_discrimination[id_max_score].long_vect_bool
+                Liste_discrimination[j].nb_classe = Liste_discrimination[id_max_score].nb_classe
+                #print(Liste_discrimination[j],Liste_discrimination[id_max_score])
+                #print(id(Liste_discrimination[j]),id(Liste_discrimination[id_max_score]))
             print(f"Le score maximal a été trouvé par le numéro {id_max_score} et vaut {max_score}")
         
         Liste_discrimination[id_max_score].plot()
