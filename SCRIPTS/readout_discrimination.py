@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import random
+import copy
 
 # TODO décrire la tête des données formattage
 # paramétriser l'ensemble des données numérique
@@ -25,6 +26,16 @@ class Discrimination:
         self.init = None
         self.long_vect_bool = long_vect_bool
         self.nb_classe = len(self.data['classes'].unique())
+    
+    def __repr__(self) -> str:
+        print(f"data = {self.data.head(5)}")
+        print(f"score = {self.score}")
+        print(f"optimization  = {self.optimization}")
+        print(f"same_vect_bool = {self.same_vect_bool}")
+        print(f"bool_vect = {self.bool_vect}")
+        print(f"init = {self.init}")
+        print(f"long_vect_bool = {self.long_vect_bool}")
+        print(f"nb_classe = {self.nb_classe}")
         
     def plot(self) -> None:
         nb_gene = 5
@@ -215,7 +226,15 @@ class Discrimination:
                     max_score = D.score
                     id_max_score = j
             for D in Liste_discrimination:
-                D.init = Liste_discrimination[id_max_score].init
+                D.init = copy.deepcopy(Liste_discrimination[id_max_score].init)
+                D.score = max_score
+                D.data = Liste_discrimination[id_max_score].data
+                D.optimization = Liste_discrimination[id_max_score].optimization
+                D.same_vect_bool = Liste_discrimination[id_max_score].same_vect_bool
+                D.bool_vect = Liste_discrimination[id_max_score].bool_vect
+                D.long_vect_bool = Liste_discrimination[id_max_score].long_vect_bool
+                D.nb_classe = Liste_discrimination[id_max_score].nb_classe
+                print(D,Liste_discrimination[id_max_score])
             print(f"Le score maximal a été trouvé par le numéro {id_max_score} et vaut {max_score}")
         
         Liste_discrimination[id_max_score].plot()
@@ -229,7 +248,7 @@ D = pd.read_csv(PATH)
 
 # #Test
 discrimination = Discrimination(D, None, 120)
-discrimination.recherche_parallele(10,50,5)
+discrimination.recherche_parallele(3,5,20)
 #discrimination.maximize_score(10)
 #discrimination.plot()
 
