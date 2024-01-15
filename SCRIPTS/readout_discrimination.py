@@ -170,7 +170,7 @@ class Discrimination:
             score += self.compute_score(gene)
         self.score = score / len(self.data.keys()[self.long_vect_bool:-2])
 
-    def maximize_score(self):
+    def maximize_score(self,max_iter):
         """
         Fonction qui cherche le maximum du score
         """
@@ -179,7 +179,7 @@ class Discrimination:
         iter = 0
         no_change_iter = 0
         self.compute_score_global()
-        while iter < 1000 and no_change_iter < 100:
+        while iter < max_iter and no_change_iter < 100:
             iter += 1
             old_init = self.init.copy()
             old_score = self.score.copy()
@@ -196,7 +196,32 @@ class Discrimination:
             no_change_iter += 1 * (no_change)
             if iter%10 == 0:
                 print(self.score, iter, no_change_iter)
-                self.plot()
+                #self.plot()
+            
+    def recherche_parallele(self,nb_parallele,max_iter_global,max_iter_tmp):
+        """
+        Fonction qui fait plusieurs recherche en partant de points différents et
+        qui regarde qui avance le plus vite pour les faire tous progresser
+        """
+        Liste_discrimination = [Discrimination(self.data,None,120) for i in range(nb_parallele)]
+        
+        max_score,id_max_score = 0,0
+        for i in range(max_iter_global):
+            for j in range(len(Liste_discrimination)):
+                print(f"Maximisation du n°{j} en cours")
+                D = Liste_discrimination[j]
+                D.maximize_score(max_iter_tmp)
+                if D.score > max_score:
+                    max_score = D.score
+                    id_max_score = j
+            for D in Liste_discrimination:
+                D.init = Liste_discrimination[id_max_score].init
+            print(f"Le score maximal a été trouvé par le numéro {id_max_score} et vaut {max_score}")
+        
+        Liste_discrimination[id_max_score].plot()
+                    
+            
+        
 
 PATH = "../DONNEES/toy_datasets/readout_fictifs_D_3.csv"
 
@@ -204,5 +229,7 @@ D = pd.read_csv(PATH)
 
 # #Test
 discrimination = Discrimination(D, None, 120)
-discrimination.maximize_score()
-discrimination.plot()
+discrimination.recherche_parallele(10,50,5)
+#discrimination.maximize_score(10)
+#discrimination.plot()
+
