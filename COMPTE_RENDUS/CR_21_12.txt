@@ -23,6 +23,7 @@ Tester avec d'autres initialisation ;
 Visualisation les traces ;
 Faire des analyses fonctionnelle sur les traces en sortie ;
 Supprimer les gènes avec des expressions toujours nulles avant la normalisation ;
+Descente de gradient.
 
     Pour la partie k classes :
 Lancer l'algo de k classes sur le cluster ECN.

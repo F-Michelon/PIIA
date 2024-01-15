@@ -67,8 +67,13 @@ sacct   sacct                      Show information about current and previous j
 
 To submit your slurm script
 sinfo
-sbatch -p standard -qos=short <script-name>.slurm
-sbatch -M nautilus -p standard -qos=short <script-name>.slurm
+BUGGED
+	sbatch -p standard -qos=short <script-name>.slurm
+	sbatch -M nautilus -p standard -qos=short <script-name>.slurm
+sbatch -p standard -q short script.slurm
+
+To check what jobs are running
+squeue -u $USER
 
 Sample script to run python code using conda environment
 #!/bin/bash
@@ -79,11 +84,12 @@ Sample script to run python code using conda environment
 #SBATCH --mem-per-cpu=2G    # memory per cpu-core
 #SBATCH -–gres=gpu:4        # number of gpus per node
 #SBATCH --time=00:05:00     # total run time limit (HH:MM:SS)
-cd /scratch/user/<username> # go to your working directory
+cd ../../../../scratch/users/<username> (fmichelon2020@ec-nantes.fr) # go to your working directory
 module purge
 module load anaconda3/2023.3
 conda activate my-env
 python myscript.py
+clingo -n 0 test.lp > output
 
 Command                          Description
 module avail                     List modules
