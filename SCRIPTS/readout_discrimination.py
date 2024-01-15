@@ -65,6 +65,9 @@ class Discrimination:
         return ""
         
     def plot(self) -> None:
+        """
+        Fonction permettant d'afficher les readouts des cellules pour les gènes selectionnés pour l'optimisation
+        """"
         nb_gene = len(self.genes_to_optim)
         #Partie récupération des données
         values_readouts = []
@@ -97,14 +100,6 @@ class Discrimination:
             ax.set_yticks([0,0.25,0.5,0.75,1])
             ax.set_title(f"Readouts du gène n°{self.genes_to_optim[i]}")
         ax.legend()
-
-        # for readouts_same_vect_bool in values_readouts:
-        #     for i,(ax,data_1_gene) in enumerate(zip(axs.flatten(),readouts_same_vect_bool)):
-        #         ax.plot(classes,data_1_gene,label=f"v b n°{i}")
-        #         ax.set_xticks([i+1 for i in range(self.nb_classes)])
-        #         ax.set_yticks([0,0.25,0.5,0.75,1])
-        #         ax.set_title(f"Readouts du gène n°{self.genes_to_optim[i]}")
-        #         ax.legend()
         
             #ax.text(0.5, 0.5, f"Trace des readouts pour tous les vecteurs booléen différents", ha='center', va='bottom', transform=ax.transAxes, fontsize=12, color='red')
         plt.tight_layout()
@@ -119,23 +114,38 @@ class Discrimination:
         
         Renvoie
         -------
-        List_index_same_vect_bool : List[List[int]]
+        List_index_same_vect_bool : List[List[List[int]]]
             Une liste contenant des sous listes.
             Chaque sous-liste correspond à un vecteur booléen différent
-            Ces sous-listes contiennent les indexes (pour le dataframe)
-            des cellules qui ont le même vecteur booléen
+            Ces sous-listes sont divisée en sous-sous-listes qui correspondent chacune à une classe
+            Ces sous-sous-listes contiennent les indexes (pour le dataframe) des cellules qui ont le même vecteur booléen
+            
+            Exemple :
+                
+                .....______....________........_______....._______.....  -> chaque ___ corespond à des cellules qui ont la même classe et le même vecteur booléen
+        data :  [ [ [1,5,19] , [2,7,23] ] , [ [3,10,26] , [4,12,30] ] ]
+                ..‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾...‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾..  -> chaque ‾‾‾ corespond à des cellules qui ont le même vecteur booléen mais pas forcément la même classe
+                
+                Interprétation : les cellules 1 et 19 ont le même vecteurs booléen et sont dans la même classe
+                                 les cellules 1 et 23 ont le même vecteurs booléen et ne sont pas dans la même classe
+                                 les cellules 1 et 3 n'ont pas le même vecteur booléen et ne sont pas dans la même classes
+            
         List_bool_vect : List[List[bool]]
             Une liste contenant des sous listes.
             Chaque sous liste correspond à un vecteur booléen différent
         """
         N = len(self.data)
+        #La liste des différents vecteurs booléen existant dans le dataframe :
         List_bool_vect = []
+        #La liste des cellules qui ont le même vecteur booléen :
+        #(chaque cellule est représentée par un entier qui correspond au numéro de la ligne où elle se trouve dans le dataframe)
         List_index_same_vect_bool = []
+        
         for i in range(N):
             vect_bool = [[self.data.iloc[i][k] for k in range(self.long_vect_bool)]] #Le vecteur booléen de la ligne i du tableau
             if not(vect_bool in List_bool_vect): #S'il existe pas déja
                 List_bool_vect.append(vect_bool) #On l'ajoute à la liste
-                index_bool_classes = [[] for i in range(self.nb_classes)]
+                index_bool_classes = [[] for i in range(self.nb_classes)] #On crée des sous-liste, une pour chaque classe
                 index_bool_classes[self.class_cell(i)].append(i)
                 List_index_same_vect_bool.append(index_bool_classes) #Et on ajoute son indice à la liste des numéros de chaque vecteurs boléens
             
