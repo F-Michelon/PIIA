@@ -17,7 +17,27 @@ Les données possèdent la forme suivante :
 '''
 
 class Discrimination:
-    def __init__(self, data, optim, long_vect_bool):
+    ###FIXME###
+    ###Ajouter descriptiuon de l'ensemble des paramètres###
+    
+    def __init__(self, data, optim, long_vect_bool,genes_to_optim = None, children=None):
+        """
+        Parameters
+        ----------
+        data : pandas.dataframe
+            Les données possèdent la forme suivante :
+            - des vecteurs booléens ;
+            - puis les gènes de readouts ;
+            - classes : attribu détaillant l'appartenance aux différentes classes (entre 0 et nclasse - 1).
+        
+        optim : str or None
+            Si optim vaut 'p' : on applique la recherche en parallèle
+            SI optim vaut 's' : on 
+        
+        genes_to_optim : List[str] or int
+            La liste des gènes sur lesquels on calculs les scores
+            si un entier n est choisi on prendra les n premiers
+        """
         self.data = data
         self.score = 0
         self.optimization = optim
@@ -25,7 +45,13 @@ class Discrimination:
         self.bool_vect = None
         self.init = None
         self.long_vect_bool = long_vect_bool
-        self.nb_classe = len(self.data['classes'].unique())
+        self.nb_classes = len(self.data['classes'].unique())
+        if genes_to_optim is None:
+            genes_to_optim = [str(i+self.long_vect_bool) for i in range(len(data.keys())-long_vect_bool-1)]
+        elif type(genes_to_optim) == int:
+            genes_to_optim = [str(i+self.long_vect_bool) for i in range(genes_to_optim)]
+        self.genes_to_optim = genes_to_optim
+        self.children = children
     
     def __repr__(self) -> str:
         print(f"data = {self.data.head(5)}")
@@ -35,34 +61,54 @@ class Discrimination:
         print(f"bool_vect = {self.bool_vect}")
         print(f"init = {self.init}")
         print(f"long_vect_bool = {self.long_vect_bool}")
-        print(f"nb_classe = {self.nb_classe}")
+        print(f"nb_classes = {self.nb_classes}")
         return ""
         
     def plot(self) -> None:
-        nb_gene = 5
+        nb_gene = len(self.genes_to_optim)
         #Partie récupération des données
         values_readouts = []
-        for list_3_cels in self.init:
+        for list_cells in self.init:
             readouts_genes = [[] for i in range(nb_gene)]
-            for numero_cel in list_3_cels:
-                data_cel = self.data.loc[numero_cel][self.long_vect_bool:self.long_vect_bool+5]
+            for numero_cel in list_cells:
+                data_cel = self.data.loc[numero_cel][self.genes_to_optim]
                 for numero_gene in range(nb_gene):
                     readouts_genes[numero_gene].append(data_cel[numero_gene])
             values_readouts.append(readouts_genes)
         print(values_readouts)
         
         #Partie dessin avec matplotlib
-        classes = [i for i in range(1,self.nb_classe+1)]
-        fig, axs = plt.subplots(nb_gene, 1, figsize=(5, 10))
-    
-        for readouts_same_vect_bool in values_readouts:
-            for i,(ax,data_1_gene) in enumerate(zip(axs.flatten(),readouts_same_vect_bool)):
-                ax.plot(classes,data_1_gene)
-                ax.set_xticks([1,2,3])
-                ax.set_yticks([0,0.25,0.5,0.75,1])
-                ax.set_title(f"Readouts du gène n°{i}")
+        classes = [i for i in range(1,self.nb_classes+1)]
+        shape = (nb_gene,1)
+        for i in range(2,6):
+            if nb_gene%i == 0 and nb_gene!=i:
+                shape = (nb_gene//i,i)
+        
+        if shape == (nb_gene,1):
+            fig, axs = plt.subplots(shape[0], shape[1], figsize=(shape[1]*6, shape[0]*3))
+        else :
+            fig, axs = plt.subplots(shape[0], shape[1], figsize=(shape[0]*5, shape[1]*3))
+        
+        for i,ax in enumerate(axs.flatten()):
+            for j,readouts_same_vect_bool in enumerate(values_readouts):
+                data_1_gene = readouts_same_vect_bool[i]
+                ax.plot(classes,data_1_gene,label = f"vb n°{j}")
+            ax.set_xticks([i+1 for i in range(self.nb_classes)])
+            ax.set_yticks([0,0.25,0.5,0.75,1])
+            ax.set_title(f"Readouts du gène n°{self.genes_to_optim[i]}")
+        ax.legend()
+
+        # for readouts_same_vect_bool in values_readouts:
+        #     for i,(ax,data_1_gene) in enumerate(zip(axs.flatten(),readouts_same_vect_bool)):
+        #         ax.plot(classes,data_1_gene,label=f"v b n°{i}")
+        #         ax.set_xticks([i+1 for i in range(self.nb_classes)])
+        #         ax.set_yticks([0,0.25,0.5,0.75,1])
+        #         ax.set_title(f"Readouts du gène n°{self.genes_to_optim[i]}")
+        #         ax.legend()
+        
             #ax.text(0.5, 0.5, f"Trace des readouts pour tous les vecteurs booléen différents", ha='center', va='bottom', transform=ax.transAxes, fontsize=12, color='red')
         plt.tight_layout()
+        plt.legend()
         plt.show()
 
 
@@ -89,7 +135,7 @@ class Discrimination:
             vect_bool = [[self.data.iloc[i][k] for k in range(self.long_vect_bool)]] #Le vecteur booléen de la ligne i du tableau
             if not(vect_bool in List_bool_vect): #S'il existe pas déja
                 List_bool_vect.append(vect_bool) #On l'ajoute à la liste
-                index_bool_classes = [[] for i in range(self.nb_classe)]
+                index_bool_classes = [[] for i in range(self.nb_classes)]
                 index_bool_classes[self.class_cell(i)].append(i)
                 List_index_same_vect_bool.append(index_bool_classes) #Et on ajoute son indice à la liste des numéros de chaque vecteurs boléens
             
@@ -105,7 +151,7 @@ class Discrimination:
         # Renvoie le numéro de la classe de la cellule
         return self.data['classes'][index_cell]
 
-    def define_3_cel_for_each_vect(self):
+    def define_cells_for_each_vect(self):
         """
         Fonction qui, pour chaque vecteur booléen différent,
         prend au hasard trois cellules qui partagent ce même vecteur booléen
@@ -113,31 +159,32 @@ class Discrimination:
         
         Renvoie
         -------
-        List_3_cels_for_each_vect : List[List[int]]
+        List_cells_for_each_vect : List[List[int]]
             La liste des indexes dans le dataframe des cellules choisies,
+            ###FIXME####
             il y en a 12 au total, 3 cellules pour chaque vecteurs
             et il y a 4 vecteurs différents
         """
-        List_3_cels_for_each_vect = []
+        List_cells_for_each_vect = []
         nb_vectors_diff = len(self.bool_vect)
         for v in range(nb_vectors_diff):
             
-            List_3_cels = [0, 0, 0] #La liste des 3 cellules qu'on va choisir
+            List_cells = [0 for i in range(self.nb_classes)] #La liste des nb_classes cellules qu'on va choisir
             i = 0
             
-            while i < self.nb_classe:
+            while i < self.nb_classes:
                 #On prend une cellule aléatoirement dans la liste des cellules qui ont le même vecteur booléen 
                 indice_cel = random.sample(self.same_vect_bool[v][i], 1)[0] #On prend son indice dans le dataframe
-                List_3_cels[i] = indice_cel
+                List_cells[i] = indice_cel
                 i = i + 1
                 
             #Une fois qu'on a choisi nos 3 cellules (une pour chaque classe)
             #On peut l'ajouter à la liste globale
-            List_3_cels_for_each_vect.append(List_3_cels)
+            List_cells_for_each_vect.append(List_cells)
         
-        self.init = List_3_cels_for_each_vect
+        self.init = List_cells_for_each_vect
 
-    def choix3cel(self, index_vect_bool, nb_cell_to_change=1):
+    def choixcells(self, index_vect_bool, nb_cell_to_change=1):
         ### TODO ajout argument pour changer plus de 1 cellules
         
         """
@@ -150,7 +197,7 @@ class Discrimination:
         nb_cell_to_change = Nombre de cellules à changer, supérieur à 1, FIXME add max value depend nb cell per bool vect
         """
         
-        cells_to_change = np.random.randint(0, self.nb_classe, nb_cell_to_change)
+        cells_to_change = np.random.randint(0, self.nb_classes, nb_cell_to_change)
         for cell_to_change in cells_to_change:
             index_cel_to_change = self.init[index_vect_bool][cell_to_change]
             class_to_change = self.class_cell(index_cel_to_change)
@@ -162,43 +209,46 @@ class Discrimination:
             
             self.init[index_vect_bool][cell_to_change] = index_new_cel
 
-    def calculate_score(self, id_gene, vecClass1, vecClass2):
+    def calculate_score(self, gene, vecClass1, vecClass2):
         """
         Fonction qui, pour un gène,
         calcule le score de différence entre les vecteurs booléens.
         """
-        return np.linalg.norm(self.data.iloc[vecClass1][id_gene].values - self.data.iloc[vecClass2][id_gene].values)
+        return np.linalg.norm(self.data.iloc[vecClass1][gene].values - self.data.iloc[vecClass2][gene].values)
 
     def compute_score(self, gene):
         score = 0
-        for i in range(self.nb_classe):
+        cpt = 0
+        for i in range(self.nb_classes):
             for j in range(i + 1, len(self.bool_vect)):
+                cpt += 1
                 score += self.calculate_score(gene, self.init[i], self.init[j])
-        return score / 6
+        return score / cpt
 
     def compute_score_global(self):
         score = 0
-        for gene in self.data.keys()[self.long_vect_bool:-2]:
+        for gene in self.genes_to_optim:
             score += self.compute_score(gene)
-        self.score = score / len(self.data.keys()[self.long_vect_bool:-2])
+        self.score = score / len(self.genes_to_optim)
 
     def maximize_score(self,max_iter):
         """
         Fonction qui cherche le maximum du score
         """
-        if self.bool_vect == None :
+        if self.bool_vect is None :
             self.find_same_vect_bool()
-        if self.init == None :
-            self.define_3_cel_for_each_vect()
+        if self.init is None :
+            self.define_cells_for_each_vect()
+        if self.score is None :
+            self.compute_score_global()
         iter = 0
         no_change_iter = 0
-        self.compute_score_global()
         while iter < max_iter and no_change_iter < 100:
             iter += 1
             old_init = self.init.copy()
-            old_score = self.score.copy()
+            old_score = copy.copy(self.score)
             for i in range(len(self.bool_vect)):
-                self.choix3cel(i, nb_cell_to_change=int(1 + (no_change_iter > 10) + (no_change_iter > 30)))
+                self.choixcells(i, nb_cell_to_change=int(1 + (no_change_iter > 10) + (no_change_iter > 30)))
                 self.compute_score_global()
                 if old_score >= self.score:
                     self.init = old_init
@@ -217,8 +267,8 @@ class Discrimination:
         Fonction qui fait plusieurs recherche en partant de points différents et
         qui regarde qui avance le plus vite pour les faire tous progresser
         """
-        Liste_discrimination = [Discrimination(self.data,None,120) for i in range(nb_parallele)]
-        
+        Liste_discrimination = [Discrimination(self.data,None,self.long_vect_bool,self.genes_to_optim) for i in range(nb_parallele)]
+        self.children = Liste_discrimination
         max_score,id_max_score = 0,0
         for i in range(max_iter_global):
             for j in range(len(Liste_discrimination)):
@@ -230,14 +280,6 @@ class Discrimination:
             for j in range(len(Liste_discrimination)):
                 Liste_discrimination[j].init = copy.deepcopy(Liste_discrimination[id_max_score].init)
                 Liste_discrimination[j].score = max_score
-                Liste_discrimination[j].data = Liste_discrimination[id_max_score].data
-                Liste_discrimination[j].optimization = Liste_discrimination[id_max_score].optimization
-                Liste_discrimination[j].same_vect_bool = Liste_discrimination[id_max_score].same_vect_bool
-                Liste_discrimination[j].bool_vect = Liste_discrimination[id_max_score].bool_vect
-                Liste_discrimination[j].long_vect_bool = Liste_discrimination[id_max_score].long_vect_bool
-                Liste_discrimination[j].nb_classe = Liste_discrimination[id_max_score].nb_classe
-                #print(Liste_discrimination[j],Liste_discrimination[id_max_score])
-                #print(id(Liste_discrimination[j]),id(Liste_discrimination[id_max_score]))
             print(f"Le score maximal a été trouvé par le numéro {id_max_score} et vaut {max_score}")
         
         Liste_discrimination[id_max_score].plot()
@@ -245,13 +287,13 @@ class Discrimination:
             
         
 
-PATH = "../DONNEES/toy_datasets/readout_fictifs_D_3.csv"
+PATH = "../DONNEES/toy_datasets/readout_fictifs.csv"
 
 D = pd.read_csv(PATH)
 
 # #Test
-discrimination = Discrimination(D, None, 120)
-discrimination.recherche_parallele(3,5,20)
+discrimination = Discrimination(D, None, 10,['10','11','13','14','17','19'])
+discrimination.recherche_parallele(3,2,20)
 #discrimination.maximize_score(10)
 #discrimination.plot()
 
