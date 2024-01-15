@@ -1,0 +1,7 @@
+Name,Embryo,clusterUmap,Pseudotime,Dataset,EmbryoDay,Stage,clusterEmbryoCells,G1,G2,G3
+I1,-,early_TE,-,-,-,-,-,1,0,1
+I2,-,early_TE,-,-,-,-,-,1,1,1
+J1,-,medium_TE,-,-,-,-,-,1,0,1
+J2,-,medium_TE,-,-,-,-,-,1,0,1
+K1,-,late_TE,-,-,-,-,-,1,0,1
+K2,-,late_TE,-,-,-,-,-,1,0,0
