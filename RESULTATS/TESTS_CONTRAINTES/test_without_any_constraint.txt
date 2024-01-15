@@ -1,0 +1,17 @@
+clingo version 5.6.2
+Reading from .../SCRIPTS/v10.2_no_parents_k_classes.lp ...
+Solving...
+Answer: 1
+selgene(0) selgene(1) selgene(2)
+Optimization: 0
+Answer: 2
+selgene(0) selgene(1) selgene(2) affinity(e5128)
+Optimization: -1
+OPTIMUM FOUND
+
+Models       : 2
+  Optimum    : yes
+Optimization : -1
+Calls        : 1
+Time         : 0.003s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.003s

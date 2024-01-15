@@ -1,0 +1,9 @@
+﻿Name,Embryo,clusterUmap,Pseudotime,Dataset,EmbryoDay,Stage,clusterEmbryoCells,CDX2,LGALS1,CD3D
+E5.1.28,E5.1,early_TE,37.29483831,Petropoulos2016,5.0,B,K01,1,1,0
+E5.13.1767,E5.13,medium_TE,40.82947221,Petropoulos2016,5.0,B,K02,1,1,0
+E6.11.1070,E6.11,late_TE,53.42734661,Petropoulos2016,6.0,B,K03,1,1,0
+E5.13.1767,E5.13,medium_TE,40.82947221,Petropoulos2016,5.0,B,K04,1,1,0
+E5.1.28,E5.1,early_TE,37.29483831,Petropoulos2016,5.0,B,K05,0,1,0
+E5.13.1767,E5.13,medium_TE,40.82947221,Petropoulos2016,5.0,B,K06,0,1,0
+E6.11.1070,E6.11,late_TE,53.42734661,Petropoulos2016,6.0,B,K07,0,1,0
+E5.1.28,E5.1,early_TE,37.29483831,Petropoulos2016,5.0,B,K08,0,1,0
