@@ -18,6 +18,34 @@ class Discrimination:
         self.init = None
         self.long_vect_bool = long_vect_bool
         self.nb_classe = len(self.data['classes'].unique())
+        
+    def plot(self) -> None:
+        nb_gene = 5
+        #Partie récupération des données
+        values_readouts = []
+        for list_3_cels in self.init:
+            readouts_genes = [[] for i in range(nb_gene)]
+            for numero_cel in list_3_cels:
+                data_cel = self.data.loc[numero_cel][self.long_vect_bool:self.long_vect_bool+5]
+                for numero_gene in range(nb_gene):
+                    readouts_genes[numero_gene].append(data_cel[numero_gene])
+            values_readouts.append(readouts_genes)
+        print(values_readouts)
+        
+        #Partie dessin avec matplotlib
+        classes = [i for i in range(1,self.nb_classe+1)]
+        fig, axs = plt.subplots(nb_gene, 1, figsize=(5, 10))
+    
+        for readouts_same_vect_bool in values_readouts:
+            for i,(ax,data_1_gene) in enumerate(zip(axs.flatten(),readouts_same_vect_bool)):
+                ax.plot(classes,data_1_gene)
+                ax.set_xticks([1,2,3])
+                ax.set_yticks([0,0.25,0.5,0.75,1])
+                ax.set_title(f"Readouts du gène n°{i}")
+            #ax.text(0.5, 0.5, f"Trace des readouts pour tous les vecteurs booléen différents", ha='center', va='bottom', transform=ax.transAxes, fontsize=12, color='red')
+        plt.tight_layout()
+        plt.show()
+
 
     def find_same_vect_bool(self):
         """
@@ -159,7 +187,9 @@ class Discrimination:
                     no_change_iter = 0
                     no_change = False
             no_change_iter += 1 * (no_change)
-            if iter%10 == 0: print(self.score, iter, no_change_iter)
+            if iter%10 == 0:
+                print(self.score, iter, no_change_iter)
+                self.plot()
 
 PATH = "../DONNEES/toy_datasets/readout_fictifs_D_3.csv"
 
@@ -168,6 +198,7 @@ D = pd.read_csv(PATH)
 # #Test
 discrimination = Discrimination(D, None, 120)
 discrimination.maximize_score()
+discrimination.plot()
 # choix3cel(0,test_init[0],test_find[0],D)
 # print(test_init[0])
 # print(test_init[1])
