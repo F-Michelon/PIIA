@@ -1,0 +1,14 @@
+clingo version 5.6.2
+Reading from ...y_datasets/test_contrainte_asp_data.lp ...
+Solving...
+Answer: 1
+selgene(0) selgene(1) selgene(2)
+Optimization: 0
+OPTIMUM FOUND
+
+Models       : 1
+  Optimum    : yes
+Optimization : 0
+Calls        : 1
+Time         : 0.005s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.000s

@@ -25,6 +25,34 @@ class Discrimination:
         self.init = None
         self.long_vect_bool = long_vect_bool
         self.nb_classe = len(self.data['classes'].unique())
+        
+    def plot(self) -> None:
+        nb_gene = 5
+        #Partie récupération des données
+        values_readouts = []
+        for list_3_cels in self.init:
+            readouts_genes = [[] for i in range(nb_gene)]
+            for numero_cel in list_3_cels:
+                data_cel = self.data.loc[numero_cel][self.long_vect_bool:self.long_vect_bool+5]
+                for numero_gene in range(nb_gene):
+                    readouts_genes[numero_gene].append(data_cel[numero_gene])
+            values_readouts.append(readouts_genes)
+        print(values_readouts)
+        
+        #Partie dessin avec matplotlib
+        classes = [i for i in range(1,self.nb_classe+1)]
+        fig, axs = plt.subplots(nb_gene, 1, figsize=(5, 10))
+    
+        for readouts_same_vect_bool in values_readouts:
+            for i,(ax,data_1_gene) in enumerate(zip(axs.flatten(),readouts_same_vect_bool)):
+                ax.plot(classes,data_1_gene)
+                ax.set_xticks([1,2,3])
+                ax.set_yticks([0,0.25,0.5,0.75,1])
+                ax.set_title(f"Readouts du gène n°{i}")
+            #ax.text(0.5, 0.5, f"Trace des readouts pour tous les vecteurs booléen différents", ha='center', va='bottom', transform=ax.transAxes, fontsize=12, color='red')
+        plt.tight_layout()
+        plt.show()
+
 
     def find_same_vect_bool(self):
         """
@@ -166,7 +194,9 @@ class Discrimination:
                     no_change_iter = 0
                     no_change = False
             no_change_iter += 1 * (no_change)
-            if iter%10 == 0: print(self.score, iter, no_change_iter)
+            if iter%10 == 0:
+                print(self.score, iter, no_change_iter)
+                self.plot()
 
 PATH = "../DONNEES/toy_datasets/readout_fictifs_D_3.csv"
 
@@ -175,125 +205,4 @@ D = pd.read_csv(PATH)
 # #Test
 discrimination = Discrimination(D, None, 120)
 discrimination.maximize_score()
-# choix3cel(0,test_init[0],test_find[0],D)
-# print(test_init[0])
-# print(test_init[1])
-# print(calculate_score('139', test_init[0], test_init[1], D))
-# print(compute_score('139', test_init, D))
-# print(compute_score_global(test_init, D))
-
-
-# import timeit
-# temps_execution  = timeit.timeit("maximize_score(D)",globals=globals(),number = 1)
-# print(temps_execution)
-
-# courbe_recherche = [[0.745570745611005, 200],
-#                     [0.7498832203326453, 300],
-#                     [0.7504543307124744, 400],
-#                     [0.7504543307124744, 500],
-#                     [0.7504543307124744, 600],
-#                     [0.7518329620768774, 700],
-#                     [0.7518329620768774, 800],
-#                     [0.7518329620768774, 900],
-#                     [0.7518329620768774, 1000],
-#                     [0.7518329620768774, 1100],
-#                     [0.7518329620768774, 1200],
-#                     [0.7518329620768774, 1300],
-#                     [0.7518329620768774, 1400],
-#                     [0.7518329620768774, 1500],
-#                     [0.7518329620768774, 1600],
-#                     [0.7540423627869316, 1700],
-#                     [0.7540423627869316, 1800],
-#                     [0.7586052478056338, 1900],
-#                     [0.7586052478056338, 2000],
-#                     [0.7586052478056338, 2100],
-#                     [0.7586052478056338, 2200],
-#                     [0.7586052478056338, 2300],
-#                     [0.7586052478056338, 2400],
-#                     [0.7586052478056338, 2500],
-#                     [0.7586052478056338, 2600],
-#                     [0.7586052478056338, 2700],
-#                     [0.7586052478056338, 2800],
-#                     [0.7586052478056338, 2900],
-#                     [0.7586052478056338, 3000],
-#                     [0.7586052478056338, 3100],
-#                     [0.7586052478056338, 3200],
-#                     [0.7586052478056338, 3300],
-#                     [0.7695919195382717, 3400],
-#                     [0.7695919195382717, 3500],
-#                     [0.7695919195382717, 3600],
-#                     [0.7695919195382717, 3700],
-#                     [0.7695919195382717, 3800],
-#                     [0.7695919195382717, 3900],
-#                     [0.7695919195382717, 4000],
-#                     [0.7695919195382717, 4100],
-#                     [0.7695919195382717, 4200],
-#                     [0.7695919195382717, 4300],
-#                     [0.7695919195382717, 4400],
-#                     [0.7695919195382717, 4500],
-#                     [0.7695919195382717, 4600],
-#                     [0.7724791976066105, 4700],
-#                     [0.7724791976066105, 4800],
-#                     [0.7724791976066105, 4900],
-#                     [0.7724791976066105, 5000],
-#                     [0.7724791976066105, 5100],
-#                     [0.7724791976066105, 5200],
-#                     [0.7724791976066105, 5300],
-#                     [0.7724791976066105, 5400],
-#                     [0.7724791976066105, 5500],
-#                     [0.7724791976066105, 5600],
-#                     [0.7724791976066105, 5700],
-#                     [0.7724791976066105, 5800],
-#                     [0.7724791976066105, 5900],
-#                     [0.7724791976066105, 6000],
-#                     [0.7724791976066105, 6100],
-#                     [0.7724791976066105, 6200],
-#                     [0.7724791976066105, 6300],
-#                     [0.7724791976066105, 6400],
-#                     [0.7724791976066105, 6500],
-#                     [0.7724791976066105, 6600],
-#                     [0.7724791976066105, 6700],
-#                     [0.7724791976066105, 6800],
-#                     [0.7724791976066105, 6900],
-#                     [0.7724791976066105, 7000],
-#                     [0.7724791976066105, 7100],
-#                     [0.7724791976066105, 7200],
-#                     [0.7724791976066105, 7300],
-#                     [0.7724791976066105, 7400],
-#                     [0.7724791976066105, 7500],
-#                     [0.7724791976066105, 7600],
-#                     [0.7724791976066105, 7700],
-#                     [0.7724791976066105, 7800],
-#                     [0.7724791976066105, 7900],
-#                     [0.7724791976066105, 8000],
-#                     [0.7724791976066105, 8100],
-#                     [0.7724791976066105, 8200],
-#                     [0.7724791976066105, 8300],
-#                     [0.7724791976066105, 8400],
-#                     [0.7724791976066105, 8500],
-#                     [0.7724791976066105, 8600],
-#                     [0.7724791976066105, 8700],
-#                     [0.7724791976066105, 8800],
-#                     [0.7724791976066105, 8900],
-#                     [0.7724791976066105, 9000],
-#                     [0.7724791976066105, 9100],
-#                     [0.7724791976066105, 9200],
-#                     [0.7724791976066105, 9300],
-#                     [0.7724791976066105, 9400],
-#                     [0.7724791976066105, 9500],
-#                     [0.7724791976066105, 9600],
-#                     [0.7724791976066105, 9700],
-#                     [0.7724791976066105, 9800],
-#                     [0.7724791976066105, 9900],
-#                     [0.7724791976066105, 10000]]
-
-# import matplotlib.pyplot as plt
-# plt.figure()
-# Y = [item[0] for item in courbe_recherche]
-# X = [item[1] for item in courbe_recherche]
-# plt.plot(X,Y)
-# plt.ylabel("score")
-# plt.xlabel("Nombre d'execution")
-# plt.title("Évolution du score en fonction du nombre d'execution")
-# plt.grid()
-# plt.show()
+discrimination.plot()

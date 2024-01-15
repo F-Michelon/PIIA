@@ -33,11 +33,12 @@ pot_affi(I) :- nb_class(N), N-1 == #count {S : affi_pert(I,_,S)}, match_pert(I,_
 % the other N-1 classes
 0{affinity(I)}1 :- pot_affi(I).
 
+%Contrainte 1
 % I1 and I2 are 2 different cells in the reference class
 % If there is a cell J in another class which has an affinity with the 2, then they all have the same vector
-:- affinity(I2), affi_pert(I1,J,_), affi_pert(I2,J,_), I1 < I2.
+%:- affinity(I2), affi_pert(I1,J,_), affi_pert(I2,J,_), I1 < I2.
 
-%comment
+%Contrainte 2
 :- affinity(I), affi_pert(I,J1,S), affi_pert(I,J2,S), J1 < J2.
 
 % Maximize the number of pairs of cells
