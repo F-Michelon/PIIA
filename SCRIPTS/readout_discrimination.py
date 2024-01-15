@@ -67,7 +67,7 @@ class Discrimination:
     def plot(self) -> None:
         """
         Fonction permettant d'afficher les readouts des cellules pour les gènes selectionnés pour l'optimisation
-        """"
+        """
         nb_gene = len(self.genes_to_optim)
         #Partie récupération des données
         values_readouts = []
