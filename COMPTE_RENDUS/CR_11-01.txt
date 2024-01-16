@@ -1,0 +1,11 @@
+Bonjour,
+
+Voici le compte rendu de la réunion du 11/01.
+
+Joint à ce mail se trouve la présentation avec les explications lignes par lignes de notre code.
+
+Nous avons prévu d'étudier plus précisément la deuxième contrainte en :
+- regardant sur un exemple simple si elle est utile
+- la remplaçant par une autre contrainte qui se trouvera plus haut dans le code
+
+Pour cela, nous allons créer une dataset simple avec 3 ou 4 classes, 2 cellules et quelques gènes. Ainsi nous pourrons vérifier le résultat à la main.
