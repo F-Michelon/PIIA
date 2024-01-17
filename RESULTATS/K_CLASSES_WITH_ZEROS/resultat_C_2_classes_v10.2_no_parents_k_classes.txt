@@ -1,0 +1,38 @@
+clingo version 5.6.2
+Reading from .../SCRIPTS/v10.2_no_parents_k_classes.lp ...
+Solving...
+Answer: 1
+selgene(0) selgene(1) selgene(23)
+Optimization: 0
+Answer: 2
+selgene(0) selgene(1) selgene(23) affinity(e510933)
+Optimization: -1
+Answer: 3
+selgene(0) selgene(1) selgene(23) affinity(e510936) affinity(e510933)
+Optimization: -2
+Answer: 4
+selgene(0) selgene(1) selgene(23) affinity(e510936) affinity(e510943) affinity(e510933)
+Optimization: -3
+Answer: 5
+selgene(0) selgene(1) selgene(23) affinity(e510936) affinity(e510943) affinity(e510944) affinity(e510933)
+Optimization: -4
+Answer: 6
+selgene(1) selgene(23) selgene(42) affinity(e5130) affinity(e510936) affinity(e510943) affinity(e510944) affinity(e5121039)
+Optimization: -5
+Answer: 7
+selgene(1) selgene(23) selgene(74) affinity(e510934) affinity(e510936) affinity(e510943) affinity(e510944) affinity(e510945) affinity(e5131760)
+Optimization: -6
+Answer: 8
+selgene(1) selgene(42) selgene(74) affinity(e5130) affinity(e510934) affinity(e510936) affinity(e5121027) affinity(e5121034) affinity(e5131761) affinity(e510933)
+Optimization: -7
+Answer: 9
+selgene(1) selgene(42) selgene(74) affinity(e5130) affinity(e510934) affinity(e510936) affinity(e5121027) affinity(e5121034) affinity(e5131761) affinity(e5131781) affinity(e510933)
+Optimization: -8
+OPTIMUM FOUND
+
+Models       : 9
+  Optimum    : yes
+Optimization : -8
+Calls        : 1
+Time         : 352.445s (Solving: 352.14s 1st Model: 0.00s Unsat: 352.14s)
+CPU Time     : 352.429s

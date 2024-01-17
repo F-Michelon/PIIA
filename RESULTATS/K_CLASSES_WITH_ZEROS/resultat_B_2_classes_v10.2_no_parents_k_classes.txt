@@ -1,0 +1,29 @@
+clingo version 5.6.2
+Reading from .../SCRIPTS/v10.2_no_parents_k_classes.lp ...
+Solving...
+Answer: 1
+selgene(0) selgene(1) selgene(23)
+Optimization: 0
+Answer: 2
+selgene(0) selgene(1) selgene(23) affinity(e510943)
+Optimization: -1
+Answer: 3
+selgene(0) selgene(1) selgene(23) affinity(e510943) affinity(e510944)
+Optimization: -2
+Answer: 4
+selgene(0) selgene(1) selgene(23) affinity(e510936) affinity(e510943) affinity(e510944)
+Optimization: -3
+Answer: 5
+selgene(0) selgene(1) selgene(24) affinity(e510934) affinity(e510936) affinity(e5121027) affinity(e510933)
+Optimization: -4
+Answer: 6
+selgene(1) selgene(23) selgene(24) affinity(e5132) affinity(e510943) affinity(e510944) affinity(e510945) affinity(e5121027)
+Optimization: -5
+OPTIMUM FOUND
+
+Models       : 6
+  Optimum    : yes
+Optimization : -5
+Calls        : 1
+Time         : 0.801s (Solving: 0.73s 1st Model: 0.00s Unsat: 0.72s)
+CPU Time     : 0.799s
