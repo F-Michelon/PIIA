@@ -241,10 +241,13 @@ class Discrimination:
             score += self.compute_score(gene)
         self.score = score / len(self.genes_to_optim)
 
-    def maximize_score(self,max_iter):
+    def maximize_score(self,max_iter,when_print = 10,svg_score = False):
         """
         Fonction qui cherche le maximum du score
         """
+        if svg_score == True:
+            Liste_score = []
+        
         if self.bool_vect is None :
             self.find_same_vect_bool()
         if self.init is None :
@@ -268,31 +271,43 @@ class Discrimination:
                     no_change_iter = 0
                     no_change = False
             no_change_iter += 1 * (no_change)
-            if iter%10 == 0:
+            Liste_score.append(self.score)
+            if iter%when_print == 0:
                 print(self.score, iter, no_change_iter)
-                #self.plot()
+                
+        if svg_score == True:
+            return Liste_score
             
-    def recherche_parallele(self,nb_parallele,max_iter_global,max_iter_tmp):
+    def recherche_parallele(self,nb_parallele,max_iter_global,max_iter_tmp,when_print = 10,svg_score = False):
         """
         Fonction qui fait plusieurs recherche en partant de points différents et
         qui regarde qui avance le plus vite pour les faire tous progresser
         """
         Liste_discrimination = [Discrimination(self.data,None,self.long_vect_bool,self.genes_to_optim) for i in range(nb_parallele)]
+        Liste_evolutions_scores = [[] for i in range(nb_parallele)]
         self.children = Liste_discrimination
         max_score,id_max_score = 0,0
         for i in range(max_iter_global):
-            for j in range(len(Liste_discrimination)):
+            for j in range(nb_parallele):
                 print(f"Maximisation du n°{j} en cours")
-                Liste_discrimination[j].maximize_score(max_iter_tmp)
+                
+                if svg_score == False :
+                    Liste_discrimination[j].maximize_score(max_iter_tmp,when_print)
+                else :
+                    evolution_score = Liste_discrimination[j].maximize_score(max_iter_tmp,when_print,True)
+                    Liste_evolutions_scores[j] = Liste_evolutions_scores[j] + evolution_score
+                    
                 if Liste_discrimination[j].score > max_score:
-                    max_score = Liste_discrimination[j].score
                     id_max_score = j
+                    max_score = Liste_discrimination[j].score
             for j in range(len(Liste_discrimination)):
                 Liste_discrimination[j].init = copy.deepcopy(Liste_discrimination[id_max_score].init)
-                Liste_discrimination[j].score = max_score
+                Liste_discrimination[j].score = copy.deepcopy(max_score)
             print(f"Le score maximal a été trouvé par le numéro {id_max_score} et vaut {max_score}")
         
         Liste_discrimination[id_max_score].plot()
+        if svg_score == True :
+            return Liste_evolutions_scores
                     
             
         
@@ -303,7 +318,22 @@ D = pd.read_csv(PATH)
 
 # #Test
 discrimination = Discrimination(D, None, 10,['10','11','13','14','17','19'])
-discrimination.recherche_parallele(3,2,20)
+nb_parallele,max_iter_global,max_iter_tmp,when_print = 5,1,100,10
+Listes_scores = discrimination.recherche_parallele(nb_parallele,max_iter_global,max_iter_tmp,when_print,True)
+
+plt.figure()
+abscisse = []
+# for i in range(max_iter_global*(max_iter_tmp//when_print)):
+#     abscisse.append(i*when_print)
+#     abscisse.append(i*when_print+0.001)
+abscisse = [i for i in range(max_iter_tmp*max_iter_global)]
+for i in range(nb_parallele):
+    plt.plot(abscisse,Listes_scores[i],label=f"thread n°{i}")
+plt.legend()
+plt.ylabel("Score")
+plt.xlabel("Nombre d'itération")
+plt.show()
+
 #discrimination.maximize_score(10)
 #discrimination.plot()
 
