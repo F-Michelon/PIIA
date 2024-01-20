@@ -64,9 +64,11 @@ scancel scancel <job-id>           To terminate queued or running jobs
 sinfo   sinfo                      Get information about available nodes
 squeue  squeue -u                  Show information about jobs
 sacct   sacct                      Show information about current and previous jobs
+sinfo
+
 
 To submit your slurm script
-sinfo
+
 BUGGED
 	sbatch -p standard -qos=short <script-name>.slurm
 	sbatch -M nautilus -p standard -qos=short <script-name>.slurm
@@ -85,11 +87,10 @@ Sample script to run python code using conda environment
 #SBATCH -–gres=gpu:4        # number of gpus per node
 #SBATCH --time=00:05:00     # total run time limit (HH:MM:SS)
 cd ../../../../scratch/users/<username> (fmichelon2020@ec-nantes.fr) # go to your working directory
-module purge
-module load anaconda3/2023.3
-conda activate my-env
 python myscript.py
 clingo -n 0 test.lp > output
+
+!!! il faut load son env avant de lancer le script ou alors le faire dans une commande batch
 
 Command                          Description
 module avail                     List modules
