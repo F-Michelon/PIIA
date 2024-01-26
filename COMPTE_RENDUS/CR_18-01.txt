@@ -1,0 +1,29 @@
+Voici le compte-rendu de la dernière réunion :
+
+Pour la partie discrimination de readouts, de nombreuses pistes de travail ont été évoquées :
+
+Evaluer la vitesse de convergence empirique des différentes méthodes d'optimisation
+Ajouter des option de sauvegardes des figures de trace et de convergence
+Prévoir un temps d'échange pour utiliser caspo time series
+Prendre en compte la complexité de l'évolution des classes Umap
+Utiliser les readouts associés au pkn
+"readouts": ["ATF3", "CD4", "CEBPB", "CEBPD", "DDIT3", "DEC1", "EOMES", "ETV5", "GSR", "HESX1", "HEY1", "HEY2", "NKX3-1", "PKM", "PSAT1", "SOD1", "TBX21", "TGFB1", "ZEB1"]
+Réflechir aux types de données à donner en entrée du réseau booléen
+Définir des plots plus intuitifs du type suivant =
+
+id_ vecteur_bool \ id_gene ||  a            b           c
+-----------------------------------------------------------------------
+1                                         ||  trace1    trace1  trace1
+-----------------------------------------------------------------------
+2                                         ||  trace2
+-----------------------------------------------------------------------
+3                                         ||  etc ..
+-----------------------------------------------------------------------
+4                                         ||
+-----------------------------------------------------------------------
+
+Pour la partie k-classe :
+
+Se familiariser avec glicid
+Utiliser la parallèlisation avec des appels de ce type = clingo -t nb_processeurs
+Retester l'algorithme développé en le comparant aux autres algorithmes auxquels on aura supprimer les contraintes de type de gène (input, intermediare, ..) et de parentés.

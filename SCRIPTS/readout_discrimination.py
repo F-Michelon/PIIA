@@ -6,23 +6,17 @@ import matplotlib.pyplot as plt
 import random
 import copy
 
-# TODO décrire la tête des données formattage
-# paramétriser l'ensemble des données numérique
 '''
 Les données possèdent la forme suivante :
-    - des vecteurs booléens de 120 gènes ;
-    - puis 20 gènes de readouts ;
-    - vect_bool_alike : attribu décrivant l'appartenance aux différents vecteurs booléens (pas forcémment utile pour l'instant) ;
+    - des vecteurs booléens de long_vect_bool (paramètre initialisation) gènes ;
+    - puis k gènes de readouts ;
     - classe : attribu détaillant l'appartenance aux différentes classes (entre 0 et nclasse - 1).
 '''
 
 class Discrimination:
-    ###FIXME###
-    ###Ajouter descriptiuon de l'ensemble des paramètres###
-    
-    def __init__(self, data, optim, long_vect_bool,genes_to_optim = None, children=None):
+    def __init__(self, data, optimization, long_vect_bool, genes_to_optim = None, children=None):
         """
-        Parameters
+        Paramètres
         ----------
         data : pandas.dataframe
             Les données possèdent la forme suivante :
@@ -30,17 +24,49 @@ class Discrimination:
             - puis les gènes de readouts ;
             - classes : attribu détaillant l'appartenance aux différentes classes (entre 0 et nclasse - 1).
         
-        optim : str or None
+        optimization : str ou None
             Si optim vaut 'p' : on applique la recherche en parallèle
-            SI optim vaut 's' : on 
+            SI optim vaut 's' : on
+
+        long_vect_bool : int
+            Taille des vecteurs booléens du jeu de données.
         
-        genes_to_optim : List[str] or int
-            La liste des gènes sur lesquels on calculs les scores
-            si un entier n est choisi on prendra les n premiers
+        genes_to_optim : List[str] ou int ou None
+            La liste des gènes sur lesquels on calculs les scores.
+            Si un entier n est choisi on prendra les n premiers.
+            Si aucune valeur n'est choisie, tous les gènes seront utilisés.
+
+        children : List[Discrimination] ou None
+            Liste des objets Discrimination recherchant en parallèle les meilleures traces possibles.
+
+        Attribus
+        --------
+        score : float
+            Variable de stockage du score, positive.
+
+        same_vect_bool : List[List[List[int]]]
+            Une liste contenant des sous listes.
+            Chaque sous-liste correspond à un vecteur booléen différent
+            Ces sous-listes sont divisée en sous-sous-listes qui correspondent chacune à une classe
+            Ces sous-sous-listes contiennent les indexes (pour le dataframe) des cellules qui ont le même vecteur booléen
+
+        bool_vect : List[List[bool]]
+            Une liste contenant des sous listes.
+            Chaque sous liste correspond à un vecteur booléen différent
+        
+        init : List[List[int]]
+            Liste contenant les sous-listes des différentes traces, chacune associée à un vecteur.
+            Chaque sous-liste contient les indices de k cellules des k différentes classes ayant toutes le même vecteur booléen.  
+        
+        nb_classes : int
+            Nombre de classes différentes.
+        
+        genes_to_optim : List[str]
+            Liste contenant les clés associés au dataframe data des gènes surlesquels on va optimiser.
         """
         self.data = data
         self.score = 0
-        self.optimization = optim
+        self.optimization = optimization
         self.same_vect_bool = None
         self.bool_vect = None
         self.init = None
@@ -54,15 +80,7 @@ class Discrimination:
         self.children = children
     
     def __repr__(self) -> str:
-        print(f"data = {self.data.head(5)}")
-        print(f"score = {self.score}")
-        print(f"optimization  = {self.optimization}")
-        print(f"same_vect_bool = {self.same_vect_bool}")
-        print(f"bool_vect = {self.bool_vect}")
-        print(f"init = {self.init}")
-        print(f"long_vect_bool = {self.long_vect_bool}")
-        print(f"nb_classes = {self.nb_classes}")
-        return ""
+        return f"data = {self.data.head(5)}\nscore = {self.score}\noptimization  = {self.optimization}\nsame_vect_bool = {self.same_vect_bool}\nbool_vect = {self.bool_vect}\ninit = {self.init}\nlong_vect_bool = {self.long_vect_bool}\nnb_classes = {self.nb_classes}"
         
     def plot(self) -> None:
         """
