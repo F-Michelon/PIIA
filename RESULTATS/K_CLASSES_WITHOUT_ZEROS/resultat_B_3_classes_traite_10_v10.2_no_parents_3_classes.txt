@@ -2,19 +2,25 @@ clingo version 5.6.2
 Reading from ...sets/B_3_classes_traite_10_asp_data.lp ...
 Solving...
 Answer: 1
-selgene(13) selgene(14) selgene(8)
+selgene(0) selgene(17) selgene(19)
 Optimization: 0
 Answer: 2
-affinity(e510935,e6121271,e5121042) selgene(3) selgene(13) selgene(17)
+affinity(e510943,e6121277,e5373235) selgene(7) selgene(8) selgene(9)
 Optimization: -1
 Answer: 3
-affinity(e510933,e6121277,e5121033) affinity(e510935,e6121271,e5121042) selgene(3) selgene(13) selgene(17)
+affinity(e510933,e6111070,e5121033) affinity(e510943,e6121277,e5373235) selgene(7) selgene(8) selgene(9)
 Optimization: -2
+Answer: 4
+affinity(e510933,e6121278,e5121033) affinity(e510936,e6111070,e5121042) affinity(e510943,e6121277,e5373235) selgene(2) selgene(7) selgene(9)
+Optimization: -3
+Answer: 5
+affinity(e510943,e6121486,e5121033) affinity(e510934,e6121271,e5121042) affinity(e510935,e6131379,e5373234) affinity(e510933,e6121277,e5373237) selgene(0) selgene(3) selgene(18)
+Optimization: -4
 OPTIMUM FOUND
 
-Models       : 3
+Models       : 5
   Optimum    : yes
-Optimization : -2
+Optimization : -4
 Calls        : 1
-Time         : 1.592s (Solving: 0.04s 1st Model: 0.01s Unsat: 0.03s)
-CPU Time     : 1.297s
+Time         : 3.426s (Solving: 1.30s 1st Model: 0.00s Unsat: 1.05s)
+CPU Time     : 1.469s

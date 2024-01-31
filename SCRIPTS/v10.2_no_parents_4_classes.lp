@@ -10,32 +10,20 @@
 %     are the same for both cells. I and J belong to two different classes.
 
 #const x = 3.
-#const i = 1.
-% Generate combinations of x genes
-{selinput(G) : pert(C,G,S,CL), not intermediate(G)} = i .
-{selinter(G): intermediate(G)} = x-i.
+%NEW
+{selinput(G) : pert(C,G,S,CL)} = x.
 
-%1{selinput(G)  : parent(G,I), input(G)} :- selinter(I).
-
-% Generate the corresponding perturbation vectors
+% NEW
 selpert(E,V,S,C) :- selinput(V), pert(E,V,S,C).
-selpert(E,V,S,C) :- selinter(V), pert(E,V,S,C).
 
 % Generate a equal/5 predicate for cells I and J, from two different classes, where their expression for the gene G is equal
 equal(I, J, K, L, G) :- selpert(I,G,S1,C1), selpert(J,G,S2,C2), selpert(K,G,S3,C3), selpert(L,G,S4,C4), C1<C2, C2<C3, C3<C4, S1==S2, S2==S3, S3==S4.
 
-
-pot_affi(I, J, K, L) :- x={equal(I,J,K,L,_)},  selpert(I,_,_,C1), selpert(J,_,_,C2), selpert(K,_,_,C3), selpert(L,_,_,C4), C1<C2, C2<C3, C3<C4, I!=J, I!=K, I!=L, J!=K, J!=L, K!=L.
+pot_affi(I, J, K, L) :- x={equal(I,J,K,L,_)}, selpert(I,_,_,C1), selpert(J,_,_,C2), selpert(K,_,_,C3), selpert(L,_,_,C4), C1<C2, C2<C3, C3<C4, I!=J, I!=K, I!=L, J!=K, J!=L, K!=L.
 
 % Generate, or not, an affinity/4 predicate when the number of countequal/5
 % is equal to x for cells I and J of different classes, which guarantees that all genes are similarly expressed in both cells I and J
 0{affinity(I,J, K, L)}1 :- pot_affi(I,J, K, L).
-
-% % Count the number of input genes expressed at 1 for each affinity/4
-nbInputOnes(C,N) :- N={pert(C,G,1,_) : selinput(G), input(G)}, affinity(C,_,_,_).
-
-% % Forbid the affinity/4 where the number of input genes expressed at 1 is less than 1
-:- affinity(C,_,_,_), nbInputOnes(C,N), N < 1.
 
 :- affinity(I,J1,_,_), affinity(I,J2,_,_), J1!=J2.
 :- affinity(I1,J,_,_), affinity(I2,J,_,_), I1!=I2.
@@ -57,7 +45,6 @@ nbInputOnes(C,N) :- N={pert(C,G,1,_) : selinput(G), input(G)}, affinity(C,_,_,_)
 
 
 selgene(G) :- selinput(G).
-selgene(G) :- selinter(G).
 
 % Maximize the number of pairs of cells
 #maximize{1, I : affinity(I,_,_,_)}.
