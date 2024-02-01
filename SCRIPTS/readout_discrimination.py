@@ -155,9 +155,12 @@ class Discrimination:
             for j in range(shape[1]):
                 data_1_gene = values_readouts[i][j]
                 axs[i][j].plot(classes, data_1_gene)
-                axs[i][j].axis('off')
+                axs[i][j].set_xticks([])
+                axs[i][j].set_yticks([])
+                if j == 0:
+                    axs[i][j].set_ylabel(f"pseudo perturbation {i + 1}", rotation=0, labelpad=60)
                 if i == 0:
-                    axs[i][j].set_title(f"{self.genes_to_optim[j]}")
+                    axs[i][j].set_title(f"gène \nn°{self.genes_to_optim[j]}")
 
         for ax in fig.get_axes():
             ax.label_outer()
@@ -165,7 +168,6 @@ class Discrimination:
         if path is not None:
             plt.savefig(path)
         plt.show()
-
 
     def find_same_vect_bool(self):
         """
@@ -453,5 +455,6 @@ if discrimination.init is None :
     discrimination.define_cells_for_each_vect()
 if discrimination.score is None :
     discrimination.compute_score_global()
+discrimination.plot2()
 nb_parallele,max_iter_global,max_iter_tmp,when_print = 2,100,10,10
-Listes_scores = discrimination.recherche_parallele(nb_parallele,max_iter_global,max_iter_tmp,when_print,True)
+# Listes_scores = discrimination.recherche_parallele(nb_parallele,max_iter_global,max_iter_tmp,when_print,True)
