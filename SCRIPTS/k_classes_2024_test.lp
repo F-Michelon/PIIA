@@ -26,6 +26,9 @@ match_pert(I,J) :- equal(I,J,_,_). %simplify the predicate
 % Generate a affi_pert/3 predicate for cells I and J that have the same k expressions of genes G, ie they have the same boolean vector
 affi_pert(I,J,S) :- k == #count{G : equal(I,J,G,S)},  match_pert(I,J), class(S).
 
+% selaffi(I, J1) :- affi_pert(I,J1,S), affi_pert(I,J2,S), J1 < J2.
+% existing_affi(I, J2) :- affi_pert(I,J1,S), affi_pert(I,J2,S), J1 < J2.
+
 % Generate a pot_affi/1 predicate where all the classes have the same boolean vector
 pot_affi(I) :- nb_class(N), N-1 == #count {S : affi_pert(I,_,S)}, match_pert(I,_).
 
@@ -36,13 +39,8 @@ pot_affi(I) :- nb_class(N), N-1 == #count {S : affi_pert(I,_,S)}, match_pert(I,_
 % Contrainte 1
 % I1 and I2 are 2 different cells in the reference class
 % If there is a cell J in another class which has an affinity with the 2, then they all have the same vector
-% existing_affinity(I2):- affinity(I1), pot_affi(I2), affi_pert(I1,J,_), affi_pert(I2,J,_), I1 < I2.
-
-#hide. [I,J,S] : pot_affi(I1), pot_affi(I2), I1 == I2, affi_pert(I1,J1,S), affi_pert(I2,J2,S), J1 < J2.
-
-%Contrainte 2
-%:- affinity(I), affi_pert(I,J1,S), affi_pert(I,J2,S), J1 < J2.
-:- affinity(J1), pot_affi(J2), affi_pert(J1,J3,S), affi_pert(J2,J4,S), J1==J2, J3!=J4.
+same_affi(I1, I2) :- affi_pert(I1,J,_), affi_pert(I2,J,_), I1 < I2.
+:- affinity(I2), same_affi(I1, I2).
 
 % Maximize the number of pairs of cells
 #maximize{1, I : affinity(I)}.
