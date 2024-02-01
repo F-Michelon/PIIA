@@ -1,0 +1,29 @@
+clingo version 5.6.2
+Reading from ...A7/PIIA/SCRIPTS/v10.2_no_parents-v2.lp ...
+Solving...
+Answer: 1
+selgene(0) selgene(1) selgene(29)
+Optimization: 0
+Answer: 2
+affinity(e510936,e5121042) selgene(0) selgene(1) selgene(29)
+Optimization: -1
+Answer: 3
+affinity(e510933,e5121033) affinity(e510936,e5121042) selgene(0) selgene(1) selgene(29)
+Optimization: -2
+Answer: 4
+affinity(e510934,e5121033) affinity(e510936,e5121042) affinity(e510933,e5373234) selgene(0) selgene(1) selgene(27)
+Optimization: -3
+Answer: 5
+affinity(e510934,e5121033) affinity(e510933,e5373234) affinity(e510943,e5373235) affinity(e510945,e6182) selgene(7) selgene(27) selgene(28)
+Optimization: -4
+Answer: 6
+affinity(e510934,e5121033) affinity(e510944,e5121042) affinity(e510936,e5131767) affinity(e510933,e5355) affinity(e510943,e5373235) selgene(3) selgene(7) selgene(24)
+Optimization: -5
+OPTIMUM FOUND
+
+Models       : 6
+  Optimum    : yes
+Optimization : -5
+Calls        : 1
+Time         : 0.965s (Solving: 0.90s 1st Model: 0.00s Unsat: 0.80s)
+CPU Time     : 0.965s

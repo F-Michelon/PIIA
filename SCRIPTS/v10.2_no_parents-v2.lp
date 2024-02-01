@@ -10,16 +10,22 @@
 %     are the same for both cells. I and J belong to two different classes.
 
 #const k = 3.
-#const i = 1.
-% Generate combinations of k genes
-{selinput(G) : pert(C,G,S,CL), not intermediate(G)} = i .
-{selinter(G): intermediate(G)} = k-i.
 
-%1{selinput(G)  : parent(G,I), input(G)} :- selinter(I).
+% Generate combinations of k genes
+% {selinput(G) : pert(C,G,S,CL), not intermediate(G)} = i.
+% {selinter(G): intermediate(G)} = k-i.
+
+% NEW
+{selinput(G) : pert(C,G,S,CL)} = k.
+
+% 1{selinput(G)  : parent(G,I), input(G)} :- selinter(I).
 
 % Generate the corresponding perturbation vectors
+% selpert(E,V,S,C) :- selinput(V), pert(E,V,S,C).
+% selpert(E,V,S,C) :- selinter(V), pert(E,V,S,C).
+
+% NEW
 selpert(E,V,S,C) :- selinput(V), pert(E,V,S,C).
-selpert(E,V,S,C) :- selinter(V), pert(E,V,S,C).
 
 % Generate a equal/3 predicate for cells I and J, from two different classes, where their expression for the gene G is equal
 equal(I,J,G) :- selpert(I,G,S1,C1), selpert(J,G,S2,C2), I!=J, S1==S2.
@@ -32,10 +38,10 @@ pot_affi(I,J) :- k={equal(I,J,_)},  selpert(I,_,_,C1), selpert(J,_,_,C2), C1<C2,
 0{affinity(I,J)}1 :- pot_affi(I,J).
 
 % % Count the number of input genes expressed at 1 for each affinity/2
-nbInputOnes(C,N) :- N={pert(C,G,1,_) : selinput(G), input(G)}, affinity(C,_).
+% nbInputOnes(C,N) :- N={pert(C,G,1,_) : selinput(G), input(G)}, affinity(C,_).
 
 % % Forbid the affinity/2 where the number of input genes expressed at 1 is less than 1
-:- affinity(C,_), nbInputOnes(C,N), N < 1.
+% :- affinity(C,_), nbInputOnes(C,N), N < 1.
 
 :- affinity(I,J1), affinity(I,J2), J1!=J2.
 :- affinity(I1,J), affinity(I2,J), I1!=I2.
@@ -45,7 +51,7 @@ nbInputOnes(C,N) :- N={pert(C,G,1,_) : selinput(G), input(G)}, affinity(C,_).
 
 
 selgene(G) :- selinput(G).
-selgene(G) :- selinter(G).
+% selgene(G) :- selinter(G).
 
 % Maximize the number of pairs of cells
 #maximize{1, I : affinity(I,_)}.
