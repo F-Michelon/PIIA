@@ -95,13 +95,12 @@ class Discrimination:
                 for numero_gene in range(nb_gene):
                     readouts_genes[numero_gene].append(data_cel[numero_gene])
             values_readouts.append(readouts_genes)
-        print(values_readouts)
         
         #Partie dessin avec matplotlib
         classes = [i for i in range(1,self.nb_classes+1)]
         shape = (nb_gene,1)
         for i in range(2,6):
-            if nb_gene%i == 0 and nb_gene!=i:
+            if nb_gene % i == 0 and nb_gene != i:
                 shape = (nb_gene//i,i)
         
         if shape == (nb_gene,1):
@@ -109,22 +108,66 @@ class Discrimination:
         else :
             fig, axs = plt.subplots(shape[0], shape[1], figsize=(shape[0]*5, shape[1]*3))
         
-        for i,ax in enumerate(axs.flatten()):
-            for j,readouts_same_vect_bool in enumerate(values_readouts):
+        for i, ax in enumerate(axs.flatten()):
+            for j, readouts_same_vect_bool in enumerate(values_readouts):
                 data_1_gene = readouts_same_vect_bool[i]
                 ax.plot(classes,data_1_gene,label = f"vb n°{j}")
             ax.set_xticks([i+1 for i in range(self.nb_classes)])
             ax.set_yticks([0,0.25,0.5,0.75,1])
             ax.set_title(f"Readouts du gène n°{self.genes_to_optim[i]}")
         ax.legend()
-        
-            #ax.text(0.5, 0.5, f"Trace des readouts pour tous les vecteurs booléen différents", ha='center', va='bottom', transform=ax.transAxes, fontsize=12, color='red')
         plt.tight_layout()
         plt.legend()
         if path is not None:
             plt.savefig(path)
         plt.show()
 
+    def plot2(self, path=None) -> None:
+        """
+        Fonction permettant d'afficher les readouts des cellules pour les gènes selectionnés pour l'optimisation
+        
+        Paramètres
+        ----------
+        path : str
+            Chemin où l'on enregistre les graphes affichés. Si None, rien n'est enregistré.
+        """
+        nb_gene = len(self.genes_to_optim)
+        # Partie récupération des données
+        values_readouts = []
+        for list_cells in self.init:
+            readouts_genes = [[] for i in range(nb_gene)]
+            for numero_cel in list_cells:
+                data_cel = self.data.loc[numero_cel][self.genes_to_optim]
+                for numero_gene in range(nb_gene):
+                    readouts_genes[numero_gene].append(data_cel[numero_gene])
+            values_readouts.append(readouts_genes)
+        values_readouts = np.array(values_readouts)
+
+        # Partie dessin avec matplotlib
+        classes = [i for i in range(1,self.nb_classes+1)]
+        shape = (len(self.init), nb_gene)
+        
+        fig = plt.figure()
+        gs = fig.add_gridspec(shape[0], shape[1], hspace=0, wspace=0)
+        axs = gs.subplots(sharex='col', sharey='row')
+
+        for i in range(shape[0]):
+            for j in range(shape[1]):
+                data_1_gene = values_readouts[i][j]
+                axs[i][j].plot(classes, data_1_gene)
+                axs[i][j].set_xticks([])
+                axs[i][j].set_yticks([])
+                if j == 0:
+                    axs[i][j].set_ylabel(f"pseudo perturbation {i + 1}", rotation=0, labelpad=60)
+                if i == 0:
+                    axs[i][j].set_title(f"gène \nn°{self.genes_to_optim[j]}")
+
+        for ax in fig.get_axes():
+            ax.label_outer()
+        
+        if path is not None:
+            plt.savefig(path)
+        plt.show()
 
     def find_same_vect_bool(self):
         """
@@ -385,7 +428,7 @@ class Discrimination:
             if verbose:
                 print(f"Le score maximal a été trouvé par le numéro {id_max_score} et vaut {max_score}")
         
-        Liste_discrimination[id_max_score].plot()
+        Liste_discrimination[id_max_score].plot2()
         if svg_score == True :
             plt.figure()
             abscisse = []
@@ -405,6 +448,13 @@ PATH = "../DONNEES/toy_datasets/readout_fictifs.csv"
 D = pd.read_csv(PATH)
 
 # Test
-discrimination = Discrimination(D, None, 10,['10','11','13','14','17','19'])
-nb_parallele,max_iter_global,max_iter_tmp,when_print = 5,1,100,10
-Listes_scores = discrimination.recherche_parallele(nb_parallele,max_iter_global,max_iter_tmp,when_print,True)
+discrimination = Discrimination(D, None, 10) #, ['10','11','13','14','17','19'])
+if discrimination.bool_vect is None :
+    discrimination.find_same_vect_bool()
+if discrimination.init is None :
+    discrimination.define_cells_for_each_vect()
+if discrimination.score is None :
+    discrimination.compute_score_global()
+discrimination.plot2()
+nb_parallele,max_iter_global,max_iter_tmp,when_print = 2,100,10,10
+# Listes_scores = discrimination.recherche_parallele(nb_parallele,max_iter_global,max_iter_tmp,when_print,True)
