@@ -24,7 +24,7 @@ class Discrimination:
 
         long_vect_bool : int
             Taille des vecteurs booléens du jeu de données.
-        
+
         genes_to_optim : List[str] ou int ou None
             La liste des gènes sur lesquels on calculs les scores.
             Si un entier n est choisi on prendra les n premiers.
@@ -47,14 +47,14 @@ class Discrimination:
         bool_vect : List[List[bool]]
             Une liste contenant des sous listes.
             Chaque sous liste correspond à un vecteur booléen différent
-        
+
         init : List[List[int]]
             Liste contenant les sous-listes des différentes traces, chacune associée à un vecteur.
             Chaque sous-liste contient les indices de k cellules des k différentes classes ayant toutes le même vecteur booléen.  
-        
+
         nb_classes : int
             Nombre de classes différentes.
-        
+
         genes_to_optim : List[str]
             Liste contenant les clés associés au dataframe data des gènes surlesquels on va optimiser.
         """
@@ -75,57 +75,11 @@ class Discrimination:
     
     def __repr__(self) -> str:
         return f"data = {self.data.head(5)}\nscore = {self.score}\noptimization  = {self.optimization}\nsame_vect_bool = {self.same_vect_bool}\nbool_vect = {self.bool_vect}\ninit = {self.init}\nlong_vect_bool = {self.long_vect_bool}\nnb_classes = {self.nb_classes}"
-        
-    def plot(self, path=None) -> None:
-        """
-        Fonction permettant d'afficher les readouts des cellules pour les gènes selectionnés pour l'optimisation
-        
-        Paramètres
-        ----------
-        path : str
-            Chemin où l'on enregistre les graphes affichés. Si None, rien n'est enregistré.
-        """
-        nb_gene = len(self.genes_to_optim)
-        #Partie récupération des données
-        values_readouts = []
-        for list_cells in self.init:
-            readouts_genes = [[] for i in range(nb_gene)]
-            for numero_cel in list_cells:
-                data_cel = self.data.loc[numero_cel][self.genes_to_optim]
-                for numero_gene in range(nb_gene):
-                    readouts_genes[numero_gene].append(data_cel[numero_gene])
-            values_readouts.append(readouts_genes)
-        
-        #Partie dessin avec matplotlib
-        classes = [i for i in range(1,self.nb_classes+1)]
-        shape = (nb_gene,1)
-        for i in range(2,6):
-            if nb_gene % i == 0 and nb_gene != i:
-                shape = (nb_gene//i,i)
-        
-        if shape == (nb_gene,1):
-            fig, axs = plt.subplots(shape[0], shape[1], figsize=(shape[1]*6, shape[0]*3))
-        else :
-            fig, axs = plt.subplots(shape[0], shape[1], figsize=(shape[0]*5, shape[1]*3))
-        
-        for i, ax in enumerate(axs.flatten()):
-            for j, readouts_same_vect_bool in enumerate(values_readouts):
-                data_1_gene = readouts_same_vect_bool[i]
-                ax.plot(classes,data_1_gene,label = f"vb n°{j}")
-            ax.set_xticks([i+1 for i in range(self.nb_classes)])
-            ax.set_yticks([0,0.25,0.5,0.75,1])
-            ax.set_title(f"Readouts du gène n°{self.genes_to_optim[i]}")
-        ax.legend()
-        plt.tight_layout()
-        plt.legend()
-        if path is not None:
-            plt.savefig(path)
-        plt.show()
 
     def plot2(self, path=None) -> None:
         """
         Fonction permettant d'afficher les readouts des cellules pour les gènes selectionnés pour l'optimisation
-        
+
         Paramètres
         ----------
         path : str
@@ -449,11 +403,11 @@ D = pd.read_csv(PATH)
 
 # Test
 discrimination = Discrimination(D, None, 10) #, ['10','11','13','14','17','19'])
-if discrimination.bool_vect is None :
+if discrimination.bool_vect is None:
     discrimination.find_same_vect_bool()
-if discrimination.init is None :
+if discrimination.init is None:
     discrimination.define_cells_for_each_vect()
-if discrimination.score is None :
+if discrimination.score is None:
     discrimination.compute_score_global()
 discrimination.plot2()
 nb_parallele,max_iter_global,max_iter_tmp,when_print = 2,100,10,10
