@@ -2,34 +2,29 @@ clingo version 5.6.2
 Reading from ...sets/C_3_classes_traite_14_asp_data.lp ...
 Solving...
 Answer: 1
-selgene(0) selgene(1) selgene(35)
+selgene(0) selgene(1) selgene(2) selgene(3) selgene(4) selgene(19) selgene(35) selgene(62) selgene(64) selgene(68)
 Optimization: 0
 Answer: 2
-selgene(0) selgene(1) selgene(35) affinity(e510936)
+selgene(0) selgene(1) selgene(2) selgene(3) selgene(4) selgene(19) selgene(62) selgene(64) selgene(68) selgene(78) affinity(e5131770)
 Optimization: -1
 Answer: 3
-selgene(0) selgene(1) selgene(35) affinity(e510936) affinity(e5121034)
+selgene(6) selgene(31) selgene(34) selgene(43) selgene(45) selgene(56) selgene(58) selgene(71) selgene(83) selgene(85) affinity(e5121029) affinity(e510933)
 Optimization: -2
 Answer: 4
-selgene(0) selgene(35) selgene(64) affinity(e5121034) affinity(e5131761) affinity(e510933)
+selgene(0) selgene(6) selgene(7) selgene(8) selgene(10) selgene(11) selgene(16) selgene(17) selgene(18) selgene(81) affinity(e510943) affinity(e510944) affinity(e510933)
 Optimization: -3
 Answer: 5
-selgene(1) selgene(35) selgene(64) affinity(e510936) affinity(e5121027) affinity(e5121034) affinity(e5131761)
+selgene(0) selgene(15) selgene(36) selgene(48) selgene(60) selgene(61) selgene(72) selgene(79) selgene(80) selgene(82) affinity(e510936) affinity(e510943) affinity(e5121027) affinity(e5131761)
 Optimization: -4
 Answer: 6
-selgene(35) selgene(62) selgene(64) affinity(e510936) affinity(e5121034) affinity(e5121039) affinity(e5131761) affinity(e510933)
+selgene(0) selgene(11) selgene(15) selgene(36) selgene(48) selgene(60) selgene(72) selgene(79) selgene(80) selgene(82) affinity(e510936) affinity(e510943) affinity(e5121027) affinity(e5131761) affinity(e5131762)
 Optimization: -5
 Answer: 7
-selgene(35) selgene(62) selgene(64) affinity(e510936) affinity(e5121034) affinity(e5121039) affinity(e5131761) affinity(e5131781) affinity(e510933)
+selgene(7) selgene(15) selgene(50) selgene(64) selgene(67) selgene(75) selgene(77) selgene(78) selgene(79) selgene(82) affinity(e510944) affinity(e5131760) affinity(e5131761) affinity(e5131766) affinity(e5131770) affinity(e510933)
 Optimization: -6
 Answer: 8
-selgene(62) selgene(64) selgene(68) affinity(e510936) affinity(e510943) affinity(e510944) affinity(e5121029) affinity(e5121034) affinity(e5131760) affinity(e510933)
+selgene(7) selgene(15) selgene(50) selgene(64) selgene(67) selgene(75) selgene(77) selgene(78) selgene(79) selgene(82) affinity(e510944) affinity(e5121034) affinity(e5131760) affinity(e5131761) affinity(e5131766) affinity(e5131770) affinity(e510933)
 Optimization: -7
-OPTIMUM FOUND
-
-Models       : 8
-  Optimum    : yes
-Optimization : -7
-Calls        : 1
-Time         : 1942.484s (Solving: 1941.63s 1st Model: 0.02s Unsat: 1941.60s)
-CPU Time     : 398.906s
+Answer: 9
+selgene(0) selgene(4) selgene(6) selgene(11) selgene(12) selgene(13) selgene(14) selgene(22) selgene(60) selgene(67) affinity(e5128) affinity(e5132) affinity(e510934) affinity(e510935) affinity(e510936) affinity(e5121029) affinity(e5121037) affinity(e510933)
+Optimization: -8
