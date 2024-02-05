@@ -1,0 +1,20 @@
+Voici le compte-rendu de la dernière réunion :
+
+D'abord, concernant l'optimisation de notre programme k classes, nous allons essayer de trouver une autre formulation pour notre contrainte. Néanmoins, pour la suite nous allons utiliser le code que nous avons déjà pour avancer dans le projet et fournir des résultats à l'autre groupe.
+
+Avec le cluster nous avons prévu d'utiliser :
+- 1 noeud pour étudier la convergence sans input, inter, parents
+- 1 noeud pour --project
+- 1 noeud en rajoutant les contraintes input, inter, parents pour l'autre groupe
+
+Nous allons utiliser le jeu de données 2023_PKN_earlyAndMediumAndLate.
+
+Pour l'étude de la convergence nous avons besoin du programme modifié (opti, #show selgene,...) et de la ligne de commande avec project. Pourriez vous nous l'envoyer?
+
+Pour la partie discrimination, nous allons évaluer l'impact de la normalisation différente des données vis-à-vis du programme à deux classes pour le jeu de données contenant les cellules de type medium et late. Pour cela, il faudra calculer les réseaux booléens obtenus avec caspo dans ce cas.
+
+Il faudra donc installer Caspo TS sur nautilus et prendre en main cet outil.
+
+Il nous reste encore à prendre en compte la bifurcation des clusters UMAP. 
+
+Il pourrait être intéressant de commencer à travailler sur la présentation fin mars.
