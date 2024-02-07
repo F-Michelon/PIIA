@@ -1,0 +1,10 @@
+caspo
+joblib
+networkx
+numpy
+pandas
+pydot
+pyparsing
+scikit-learn
+scipy
+seaborn
