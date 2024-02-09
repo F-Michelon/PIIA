@@ -1,14 +1,11 @@
 '''
-Ce script génère des readouts réels (non fictif) à partir du fichier raw_mtx.csv qui est trop volumineux pour être partagé dans le git
+Ce script génère le fichier MIDAS nécessaire aux calculs de réseaux booléens sur caspo.
 A chacun de l'ajouter dans son répertoire DONNEES mais sans le versionné sur git ! Donc fini les "git add --all". 
 '''
 
 import pandas as pd
 import json
 import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.preprocessing import LabelEncoder, normalize
-
 
 PATH = "../DONNEES/real_datasets/raw_mtx.csv"
 
@@ -17,40 +14,48 @@ with open('../DONNEES/setup.json') as setup_file:
 with open('../DONNEES/perturbations.json') as perturbation_file:
     perturbation = json.load(perturbation_file)
 
-D = pd.read_csv(PATH, usecols=['clusterUmap'] + setup['readouts'])
-labelEncode = LabelEncoder()
-D['classes'] = labelEncode.fit_transform(D['clusterUmap'])
+D = pd.read_csv(PATH, usecols=['Name', 'clusterUmap'] + setup["stimuli"] + setup["inhibitors"] + setup['readouts'])[['Name', 'clusterUmap'] + setup["stimuli"] + setup["inhibitors"] + setup['readouts']]
+D = D.set_index('Name').loc[list(np.array(perturbation).flatten())].sort_values(by=['clusterUmap'], ascending=False)
+
+time_cols = [f'DA:{name}' for name in setup['readouts']]
+D[time_cols] = 10 * np.ones((len(D) ,len(time_cols)))
+print(D)
 D = D.drop(columns='clusterUmap')
 
-# On défini des vecteurs booléens fictifs
-# readouts = (2/np.pi) * np.arctan(D[D.keys()[:10]].values)
-readouts = (2/np.pi) * np.arctan(D[D.keys()[:-1]])
+D[D[setup["stimuli"] + setup["inhibitors"]] == 1] = 0
+D[D[setup["stimuli"] + setup["inhibitors"]] > 1] = 1
+D[setup["readouts"]] = (2/np.pi) * np.arctan(D[setup['readouts']])
 
-# On crée des vecteurs booléens de taille 10 (4 types différents présents dans l'ensemble des classes)
+dict_cols = {}
+cols = []
+for name in setup['stimuli']:
+    dict_cols[name] = f'TR:{name}'
+    cols.append(f'TR:{name}')
+for name in setup['inhibitors']:
+    dict_cols[name] = f'TR:{name}i'
+    cols.append(f'TR:{name}i')
+cols = cols + time_cols
+readouts = []
+for name in setup['readouts']:
+    dict_cols[name] = f'DV:{name}'
+    cols.append(f'DV:{name}')
+    readouts.append(f'DV:{name}')
 
-vect_bool = np.zeros((len(D),10))
-vect_bool_types = np.random.randint(low=0, high=2, size=(4, 10))
-for i in D['classes'].unique():
-    index_i = D[D['classes'] == i].index
-    for k, idx in enumerate(index_i):
-        # On fait en sorte que chaque vecteur booléens soit présent dans chaque classe
-        if k < (len(index_i) // 4):
-            chosen_vect_bool = 0
-        elif k < (len(index_i) // 2) and k >= (len(index_i) // 4):
-            chosen_vect_bool = 1
-        elif k < (len(index_i) // 4) * 3 and k >= (len(index_i) // 2):
-            chosen_vect_bool = 2
-        else:
-            chosen_vect_bool = 3
-        vect_bool[idx] = vect_bool_types[chosen_vect_bool]
-data = np.concatenate((vect_bool, readouts), axis=1)
+D = D.rename(columns=dict_cols)
+D['TR:Toy:CellLine'] = 1
+cols = ['TR:Toy:CellLine'] + cols
+D = D[cols]
 
-D_new = pd.DataFrame(data)
-D_new['classes'] = D['classes']
-D_new.to_csv("../DONNEES/toy_datasets/readout_fictifs_raw_mtw.csv", index=False)
-
-print(D_new.head(5))
-for i in range(10):
-    print(np.sum(readouts[i]))
-print(D_new['classes'].value_counts())
-print(D_new[D_new.keys()[:10]])
+D_0 = D.iloc[:len(D)//2].copy()
+D_0[readouts] = 0
+D_0[time_cols] = 0
+D_1 = D.iloc[len(D)//2:].copy()
+D_1[readouts] = 0
+D_1[time_cols] = 0
+D_medium = pd.concat([D_0,D.iloc[:len(D)//2]], axis=0)
+D_late = pd.concat([D_1,D.iloc[len(D)//2:]], axis=0)
+D_late.to_csv("../DONNEES/dataset_late_midas .csv", index=False)
+D_medium.to_csv("../DONNEES/dataset_medium_midas .csv", index=False)
+print(D_0)
+print(D_late)
+print(D_medium)
