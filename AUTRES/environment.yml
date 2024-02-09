@@ -1,0 +1,7 @@
+name: caspo-env
+channels:
+  - bioasp
+  - potassco
+  - conda-forge
+dependencies:
+  - caspo
