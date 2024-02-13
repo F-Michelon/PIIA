@@ -50,12 +50,12 @@ INPUTS:
 """
 
 with open('../DONNEES/' + file_name + '_asp_data.lp', 'w') as asp_data:
-    #for gene in inputs:
-    #    asp_data.write(f"input({str(gene).lower().replace(' ', '_').replace('.', '')}).\n")
-    #for gene in readouts:
-    #    asp_data.write(f"readout({str(gene).lower().replace(' ', '_').replace('.', '')}).\n")
-    #for gene in intermediate:
-    #    asp_data.write(f"intermediate({str(gene).lower().replace(' ', '_').replace('.', '')}).\n")
+    for gene in inputs:
+        asp_data.write(f"input({str(gene).lower().replace(' ', '_').replace('.', '')}).\n")
+    for gene in readouts:
+        asp_data.write(f"readout({str(gene).lower().replace(' ', '_').replace('.', '')}).\n")
+    for gene in intermediate:
+        asp_data.write(f"intermediate({str(gene).lower().replace(' ', '_').replace('.', '')}).\n")
     #for p in parents:
     #    asp_data.write(f"parent({str(p[0]).lower().replace(' ', '_').replace('.', '')}, {str(p[1]).lower().replace(' ', '_').replace('.', '')}).\n")
     for index in data.index:
