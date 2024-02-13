@@ -25,5 +25,5 @@ def enlever_les_zeros(name_file):
     print(long_avant_modif)
     return dataframe
 
-enlever_les_zeros("../DONNEES/toy_datasets/D_3_classes.csv")
-enlever_les_zeros("../DONNEES/toy_datasets/D_4_classes.csv")
+enlever_les_zeros("../DONNEES/real_datasets/2023_PKN_earlyAndMediumAndLate.csv")
+#enlever_les_zeros("../DONNEES/toy_datasets/D_4_classes.csv")

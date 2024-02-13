@@ -114,6 +114,64 @@ intermediate(109).
 intermediate(111).
 intermediate(112).
 intermediate(114).
+parent(98, 9).
+parent(15, 64).
+parent(86, 71).
+parent(44, 109).
+parent(82, 0).
+parent(29, 3).
+parent(72, 54).
+parent(32, 85).
+parent(5, 92).
+parent(70, 81).
+parent(49, 105).
+parent(74, 77).
+parent(11, 78).
+parent(66, 89).
+parent(38, 22).
+parent(53, 47).
+parent(50, 21).
+parent(87, 108).
+parent(7, 103).
+parent(25, 23).
+parent(16, 6).
+parent(80, 100).
+parent(99, 67).
+parent(102, 97).
+parent(28, 17).
+parent(48, 18).
+parent(34, 4).
+parent(59, 112).
+parent(106, 56).
+parent(95, 55).
+parent(8, 62).
+parent(12, 63).
+parent(27, 107).
+parent(101, 96).
+parent(61, 68).
+parent(75, 91).
+parent(58, 42).
+parent(83, 88).
+parent(14, 2).
+parent(40, 20).
+parent(41, 45).
+parent(1, 39).
+parent(93, 65).
+parent(31, 69).
+parent(115, 10).
+parent(46, 76).
+parent(19, 51).
+parent(37, 13).
+parent(111, 90).
+parent(26, 110).
+parent(35, 36).
+parent(113, 104).
+parent(114, 94).
+parent(60, 79).
+parent(24, 57).
+parent(43, 52).
+parent(30, 73).
+parent(33, 84).
 pert(e5128,0,1,early_te).
 pert(e5128,1,1,early_te).
 pert(e5128,2,0,early_te).
