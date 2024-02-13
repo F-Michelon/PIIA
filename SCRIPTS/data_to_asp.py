@@ -36,12 +36,12 @@ for i in range(len(data.keys()[8:])):
         intermediate.append(i)
 
 # on crée artificiellement une moitié de gènes parents et fils pour le programme v10.2
-#permutation = random.sample(range(number_of_genes), number_of_genes)
-#sons_index = permutation[:len(permutation)//2]
-#parents_index = permutation[len(permutation)//2:]
-#parents = []
-#for i in range(len(sons_index)):
-#    parents.append([parents_index[i], sons_index[i]])
+permutation = random.sample(range(number_of_genes), number_of_genes)
+sons_index = permutation[:len(permutation)//2]
+parents_index = permutation[len(permutation)//2:]
+parents = []
+for i in range(len(sons_index)):
+    parents.append([parents_index[i], sons_index[i]])
 
 """
 INPUTS:
@@ -56,8 +56,8 @@ with open('../DONNEES/' + file_name + '_asp_data.lp', 'w') as asp_data:
         asp_data.write(f"readout({str(gene).lower().replace(' ', '_').replace('.', '')}).\n")
     for gene in intermediate:
         asp_data.write(f"intermediate({str(gene).lower().replace(' ', '_').replace('.', '')}).\n")
-    #for p in parents:
-    #    asp_data.write(f"parent({str(p[0]).lower().replace(' ', '_').replace('.', '')}, {str(p[1]).lower().replace(' ', '_').replace('.', '')}).\n")
+    for p in parents:
+        asp_data.write(f"parent({str(p[0]).lower().replace(' ', '_').replace('.', '')}, {str(p[1]).lower().replace(' ', '_').replace('.', '')}).\n")
     for index in data.index:
         for j in range(len(data.keys()[8:])):
             asp_data.write(f"pert({str(data.iloc[index,0]).lower().replace(' ', '_').replace('.', '')},{str(j).lower().replace(' ', '_').replace('.', '')},{str(data.iloc[index,j + 8]).lower().replace(' ', '_').replace('.', '')},{str(data.iloc[index,2]).lower().replace(' ', '_').replace('.', '')}).\n")
