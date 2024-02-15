@@ -9,7 +9,8 @@
 %   - affinity(I,J): a pair of cells where their expression for the k selected genes 
 %     are the same for both cells. I and J belong to two different classes.
 
-#const k = 3.
+% #const k.
+% #const opti.
 #const i = 1.
 
 % The N classes and the reference class
@@ -54,9 +55,11 @@ nbInputOnes(C,N) :- N={pert(C,G,1,_) : selinput(G), input(G)}, affinity(C).
 selgene(G) :- selinput(G).
 selgene(G) :- selinter(G).
 
+:- {affinity(I)} != opti.
+
 % Maximize the number of pairs of cells
 #maximize{1, I : affinity(I)}.
 
 % Show selgene/1 and affinity/1 predicates
 #show selgene/1.
-#show affinity/1.
+% #show affinity/1.
