@@ -1,0 +1,15 @@
+mapping,frequency,inclusive,exclusive
+MYC/Max/MIZ-1<-MYC,1.0,,
+CEBPD<-!MYC/Max/MIZ-1,1.0,,
+CEBPB<-!MYC/Max,1.0,,
+SMAD3/SMAD4/JUN/FOS<-SMAD3,1.0,,
+PSAT1<-JUN,1.0,,
+PSAT1<-MYC/Max,0.5,,PSAT1<-!JUN/FOS
+PSAT1<-!JUN/FOS,0.5,,PSAT1<-MYC/Max
+MYC<-MYB,1.0,,
+MYC<-!JUN/FOS,1.0,,
+JUN<-SMAD3/SMAD4/JUN/FOS,1.0,,
+MYC/Max<-MYC,1.0,,
+MYB<-E2F1,1.0,,
+GSR<-JUN/FOS,1.0,,
+JUN/FOS<-JUN,1.0,,
