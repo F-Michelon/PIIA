@@ -1,4 +1,4 @@
-Les commentaires commencent par un %
+**Les commentaires commencent par un %
 
 Un atome est un fait, une relation qui est considérée vraie. Par défaut, tout atome est considéré faux, jusqu'à ce qu'il soit explicitement statué comme vrai.
 
