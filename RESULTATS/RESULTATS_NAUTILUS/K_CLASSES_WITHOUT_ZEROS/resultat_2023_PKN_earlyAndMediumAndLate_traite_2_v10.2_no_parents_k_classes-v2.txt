@@ -1,0 +1,114 @@
+clingo version 5.4.0
+Reading from ...yAndMediumAndLate_traite_2_asp_data.lp ...
+Solving...
+Answer: 1
+selinput(46) selinput(119) selinput(178) selinput(179) selinput(198) selinput(238) selinter(57) selinter(102) selinter(133) selinter(144)
+Optimization: 0
+Answer: 2
+selinput(51) selinput(62) selinput(156) selinput(177) selinput(213) selinput(233) selinter(176) selinter(201) selinter(204) selinter(211) affinity(e5393262)
+Optimization: -1
+Answer: 3
+selinput(51) selinput(62) selinput(156) selinput(177) selinput(213) selinput(233) selinter(176) selinter(201) selinter(204) selinter(211) affinity(e5121037) affinity(e5393262)
+Optimization: -2
+Answer: 4
+selinput(51) selinput(62) selinput(156) selinput(177) selinput(213) selinput(233) selinter(176) selinter(201) selinter(204) selinter(211) affinity(e5121037) affinity(e5141788) affinity(e5393262)
+Optimization: -3
+Answer: 5
+selinput(51) selinput(62) selinput(156) selinput(177) selinput(213) selinput(233) selinter(176) selinter(201) selinter(204) selinter(211) affinity(e5121037) affinity(e5141788) affinity(e5393262) affinity(e59924)
+Optimization: -4
+Answer: 6
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(176) selinter(201) selinter(204) selinter(211) affinity(e510945) affinity(e5141798) affinity(e5360) affinity(e63396) affinity(e510933)
+Optimization: -5
+Answer: 7
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(176) selinter(201) selinter(204) selinter(211) affinity(e510945) affinity(e5141791) affinity(e5141798) affinity(e5360) affinity(e63396) affinity(e510933)
+Optimization: -6
+Answer: 8
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(176) selinter(201) selinter(204) selinter(211) affinity(e510945) affinity(e5141791) affinity(e5141798) affinity(e5161900) affinity(e5360) affinity(e63396) affinity(e510933)
+Optimization: -7
+Answer: 9
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(176) selinter(201) selinter(204) selinter(211) affinity(e510945) affinity(e5141791) affinity(e5141798) affinity(e5141802) affinity(e5161900) affinity(e5360) affinity(e63396) affinity(e510933)
+Optimization: -8
+Answer: 10
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(176) selinter(201) selinter(204) selinter(211) affinity(e510935) affinity(e510945) affinity(e5141791) affinity(e5141798) affinity(e5141802) affinity(e5161900) affinity(e5360) affinity(e63396) affinity(e510933)
+Optimization: -9
+Answer: 11
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(176) selinter(201) selinter(204) selinter(211) affinity(e510935) affinity(e510945) affinity(e5141791) affinity(e5141797) affinity(e5141798) affinity(e5141802) affinity(e5161900) affinity(e5360) affinity(e63396) affinity(e510933)
+Optimization: -10
+Answer: 12
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(176) selinter(201) selinter(204) selinter(211) affinity(e510935) affinity(e510945) affinity(e5131762) affinity(e5141791) affinity(e5141797) affinity(e5141798) affinity(e5141802) affinity(e5161900) affinity(e5360) affinity(e63396) affinity(e510933)
+Optimization: -11
+Answer: 13
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(176) selinter(201) selinter(204) selinter(211) affinity(e510935) affinity(e510945) affinity(e5121027) affinity(e5131762) affinity(e5141791) affinity(e5141797) affinity(e5141798) affinity(e5141802) affinity(e5161900) affinity(e5360) affinity(e63396) affinity(e510933)
+Optimization: -12
+Answer: 14
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(176) selinter(201) selinter(204) selinter(211) affinity(e510935) affinity(e510945) affinity(e5121027) affinity(e5131762) affinity(e5141791) affinity(e5141797) affinity(e5141798) affinity(e5141802) affinity(e5161900) affinity(e5360) affinity(e5592) affinity(e63396) affinity(e510933)
+Optimization: -13
+Answer: 15
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(176) selinter(201) selinter(204) selinter(211) affinity(e510935) affinity(e510945) affinity(e5121027) affinity(e5121039) affinity(e5131762) affinity(e5141791) affinity(e5141797) affinity(e5141798) affinity(e5141802) affinity(e5161900) affinity(e5360) affinity(e5592) affinity(e63396) affinity(e510933)
+Optimization: -14
+Answer: 16
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(176) selinter(201) selinter(204) selinter(211) affinity(e510935) affinity(e510945) affinity(e5121027) affinity(e5121039) affinity(e5131762) affinity(e5141791) affinity(e5141797) affinity(e5141798) affinity(e5141802) affinity(e5161900) affinity(e5360) affinity(e55100) affinity(e5592) affinity(e63396) affinity(e510933)
+Optimization: -15
+Answer: 17
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(176) selinter(201) selinter(204) selinter(211) affinity(e510935) affinity(e510945) affinity(e5121027) affinity(e5121039) affinity(e5131762) affinity(e5141791) affinity(e5141797) affinity(e5141798) affinity(e5141802) affinity(e5161893) affinity(e5161900) affinity(e5360) affinity(e55100) affinity(e5592) affinity(e63396) affinity(e510933)
+Optimization: -16
+Answer: 18
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(176) selinter(201) selinter(204) selinter(211) affinity(e510935) affinity(e510945) affinity(e5121027) affinity(e5121039) affinity(e5131762) affinity(e5141791) affinity(e5141797) affinity(e5141798) affinity(e5141802) affinity(e5161893) affinity(e5161899) affinity(e5161900) affinity(e5360) affinity(e55100) affinity(e5592) affinity(e63396) affinity(e510933)
+Optimization: -17
+Answer: 19
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(176) selinter(201) selinter(204) selinter(211) affinity(e510935) affinity(e510945) affinity(e5121027) affinity(e5121039) affinity(e5131762) affinity(e5141791) affinity(e5141797) affinity(e5141798) affinity(e5141802) affinity(e5161893) affinity(e5161899) affinity(e5161900) affinity(e5246) affinity(e5360) affinity(e55100) affinity(e5592) affinity(e63396) affinity(e510933)
+Optimization: -18
+Answer: 20
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(176) selinter(201) selinter(204) selinter(211) affinity(e510935) affinity(e510945) affinity(e5121027) affinity(e5121039) affinity(e5131762) affinity(e5141791) affinity(e5141797) affinity(e5141798) affinity(e5141802) affinity(e5161893) affinity(e5161899) affinity(e5161900) affinity(e5245) affinity(e5246) affinity(e5360) affinity(e55100) affinity(e5592) affinity(e63396) affinity(e510933)
+Optimization: -19
+Answer: 21
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(176) selinter(201) selinter(204) selinter(211) affinity(e5130) affinity(e510935) affinity(e510945) affinity(e5121027) affinity(e5121039) affinity(e5131762) affinity(e5141791) affinity(e5141797) affinity(e5141798) affinity(e5141802) affinity(e5161893) affinity(e5161899) affinity(e5161900) affinity(e5245) affinity(e5246) affinity(e5360) affinity(e55100) affinity(e5592) affinity(e63396) affinity(e510933)
+Optimization: -20
+Answer: 22
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(176) selinter(201) selinter(204) selinter(211) affinity(e5130) affinity(e510935) affinity(e510945) affinity(e5121027) affinity(e5121039) affinity(e5131762) affinity(e5141791) affinity(e5141797) affinity(e5141798) affinity(e5141802) affinity(e5161893) affinity(e5161899) affinity(e5161900) affinity(e5161908) affinity(e5245) affinity(e5246) affinity(e5360) affinity(e55100) affinity(e5592) affinity(e63396) affinity(e510933)
+Optimization: -21
+Answer: 23
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(176) selinter(201) selinter(204) selinter(211) affinity(e5130) affinity(e510935) affinity(e510945) affinity(e5121027) affinity(e5121039) affinity(e5131762) affinity(e5141791) affinity(e5141797) affinity(e5141798) affinity(e5141802) affinity(e5161893) affinity(e5161894) affinity(e5161899) affinity(e5161900) affinity(e5161908) affinity(e5245) affinity(e5246) affinity(e5360) affinity(e55100) affinity(e5592) affinity(e63396) affinity(e510933)
+Optimization: -22
+Answer: 24
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(176) selinter(201) selinter(204) selinter(211) affinity(e5130) affinity(e510935) affinity(e510945) affinity(e5121027) affinity(e5121039) affinity(e5131762) affinity(e5141791) affinity(e5141797) affinity(e5141798) affinity(e5141802) affinity(e5161893) affinity(e5161894) affinity(e5161899) affinity(e5161900) affinity(e5161908) affinity(e5245) affinity(e5246) affinity(e5357) affinity(e5360) affinity(e55100) affinity(e5592) affinity(e63396) affinity(e510933)
+Optimization: -23
+Answer: 25
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(176) selinter(201) selinter(204) selinter(211) affinity(e5130) affinity(e510935) affinity(e510936) affinity(e510945) affinity(e5121027) affinity(e5121039) affinity(e5131762) affinity(e5141791) affinity(e5141797) affinity(e5141798) affinity(e5141802) affinity(e5161893) affinity(e5161894) affinity(e5161899) affinity(e5161900) affinity(e5161908) affinity(e5245) affinity(e5246) affinity(e5357) affinity(e5360) affinity(e55100) affinity(e5592) affinity(e63396) affinity(e510933)
+Optimization: -24
+Answer: 26
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(176) selinter(201) selinter(204) selinter(211) affinity(e5130) affinity(e510935) affinity(e510936) affinity(e510945) affinity(e5121027) affinity(e5121039) affinity(e5131760) affinity(e5131762) affinity(e5141791) affinity(e5141797) affinity(e5141798) affinity(e5141802) affinity(e5161893) affinity(e5161894) affinity(e5161899) affinity(e5161900) affinity(e5161908) affinity(e5245) affinity(e5246) affinity(e5357) affinity(e5360) affinity(e55100) affinity(e5592) affinity(e63396) affinity(e510933)
+Optimization: -25
+Answer: 27
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(176) selinter(201) selinter(204) selinter(211) affinity(e5130) affinity(e510935) affinity(e510936) affinity(e510945) affinity(e5121027) affinity(e5121039) affinity(e5131760) affinity(e5131762) affinity(e5141791) affinity(e5141797) affinity(e5141798) affinity(e5141802) affinity(e5161893) affinity(e5161894) affinity(e5161899) affinity(e5161900) affinity(e5161908) affinity(e5245) affinity(e5246) affinity(e5357) affinity(e5360) affinity(e5393262) affinity(e55100) affinity(e5592) affinity(e63396) affinity(e510933)
+Optimization: -26
+Answer: 28
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(4) selinter(201) selinter(204) selinter(211) affinity(e5130) affinity(e510935) affinity(e510936) affinity(e5121027) affinity(e5121031) affinity(e5121034) affinity(e5121039) affinity(e5131760) affinity(e5131762) affinity(e5141791) affinity(e5141797) affinity(e5141798) affinity(e5141802) affinity(e5161893) affinity(e5161894) affinity(e5161899) affinity(e5161900) affinity(e5161908) affinity(e5243) affinity(e5245) affinity(e5246) affinity(e5360) affinity(e5413328) affinity(e55100) affinity(e5592) affinity(e63396) affinity(e510933)
+Optimization: -27
+Answer: 29
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(4) selinter(201) selinter(204) selinter(211) affinity(e5130) affinity(e510935) affinity(e510936) affinity(e5121027) affinity(e5121031) affinity(e5121034) affinity(e5121039) affinity(e5131760) affinity(e5131762) affinity(e5141791) affinity(e5141797) affinity(e5141798) affinity(e5141802) affinity(e5161893) affinity(e5161894) affinity(e5161899) affinity(e5161900) affinity(e5161908) affinity(e5161912) affinity(e5243) affinity(e5245) affinity(e5246) affinity(e5360) affinity(e5413328) affinity(e55100) affinity(e5592) affinity(e63396) affinity(e510933)
+Optimization: -28
+Answer: 30
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(4) selinter(201) selinter(204) selinter(211) affinity(e5130) affinity(e510935) affinity(e510936) affinity(e5121027) affinity(e5121031) affinity(e5121034) affinity(e5121039) affinity(e5131760) affinity(e5131762) affinity(e5141791) affinity(e5141797) affinity(e5141798) affinity(e5141802) affinity(e5161893) affinity(e5161894) affinity(e5161899) affinity(e5161900) affinity(e5161908) affinity(e5161912) affinity(e5243) affinity(e5245) affinity(e5246) affinity(e5360) affinity(e5393263) affinity(e5413328) affinity(e55100) affinity(e5592) affinity(e63396) affinity(e510933)
+Optimization: -29
+Answer: 31
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(4) selinter(201) selinter(204) selinter(211) affinity(e5130) affinity(e510935) affinity(e510936) affinity(e5121027) affinity(e5121031) affinity(e5121034) affinity(e5121039) affinity(e5131760) affinity(e5131762) affinity(e5141791) affinity(e5141797) affinity(e5141798) affinity(e5141802) affinity(e5161893) affinity(e5161894) affinity(e5161899) affinity(e5161900) affinity(e5161908) affinity(e5161912) affinity(e5243) affinity(e5245) affinity(e5246) affinity(e5360) affinity(e5393263) affinity(e5413328) affinity(e55100) affinity(e5592) affinity(e58918) affinity(e63396) affinity(e510933)
+Optimization: -30
+Answer: 32
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(4) selinter(201) selinter(204) selinter(211) affinity(e5130) affinity(e510935) affinity(e510936) affinity(e5121027) affinity(e5121031) affinity(e5121034) affinity(e5121039) affinity(e5131760) affinity(e5131762) affinity(e5141791) affinity(e5141797) affinity(e5141798) affinity(e5141802) affinity(e5161893) affinity(e5161894) affinity(e5161899) affinity(e5161900) affinity(e5161908) affinity(e5161912) affinity(e5243) affinity(e5245) affinity(e5246) affinity(e5248) affinity(e5360) affinity(e5393263) affinity(e5413328) affinity(e55100) affinity(e5592) affinity(e58918) affinity(e63396) affinity(e510933)
+Optimization: -31
+Answer: 33
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(108) selinter(201) selinter(204) selinter(211) affinity(e5130) affinity(e510935) affinity(e510936) affinity(e510943) affinity(e510945) affinity(e5121027) affinity(e5121031) affinity(e5121034) affinity(e5121039) affinity(e5131762) affinity(e5141791) affinity(e5141797) affinity(e5141798) affinity(e5141802) affinity(e5141923) affinity(e5161893) affinity(e5161894) affinity(e5161899) affinity(e5161900) affinity(e5161907) affinity(e5161908) affinity(e5161912) affinity(e5245) affinity(e5246) affinity(e5360) affinity(e5393262) affinity(e5393264) affinity(e55100) affinity(e5592) affinity(e63389) affinity(e63396) affinity(e510933)
+Optimization: -32
+Answer: 34
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(4) selinter(108) selinter(201) selinter(211) affinity(e5130) affinity(e510935) affinity(e510936) affinity(e510943) affinity(e5121031) affinity(e5121034) affinity(e5121037) affinity(e5121039) affinity(e5131762) affinity(e5141791) affinity(e5141792) affinity(e5141797) affinity(e5141798) affinity(e5141802) affinity(e5141923) affinity(e5161893) affinity(e5161894) affinity(e5161899) affinity(e5161900) affinity(e5161908) affinity(e5161912) affinity(e5243) affinity(e5245) affinity(e5246) affinity(e5248) affinity(e5360) affinity(e5393264) affinity(e5413328) affinity(e55100) affinity(e58915) affinity(e63389) affinity(e63396) affinity(e510933)
+Optimization: -33
+Answer: 35
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(4) selinter(108) selinter(201) selinter(211) affinity(e5130) affinity(e510935) affinity(e510936) affinity(e510943) affinity(e5121031) affinity(e5121034) affinity(e5121037) affinity(e5121039) affinity(e5131762) affinity(e5141791) affinity(e5141792) affinity(e5141797) affinity(e5141798) affinity(e5141802) affinity(e5141923) affinity(e5161893) affinity(e5161894) affinity(e5161899) affinity(e5161900) affinity(e5161908) affinity(e5161912) affinity(e5243) affinity(e5245) affinity(e5246) affinity(e5248) affinity(e5360) affinity(e5393264) affinity(e5413328) affinity(e55100) affinity(e55101) affinity(e58915) affinity(e63389) affinity(e63396) affinity(e510933)
+Optimization: -34
+Answer: 36
+selinput(24) selinput(49) selinput(96) selinput(110) selinput(145) selinput(171) selinter(4) selinter(108) selinter(201) selinter(211) affinity(e5130) affinity(e510935) affinity(e510936) affinity(e510943) affinity(e5121031) affinity(e5121034) affinity(e5121037) affinity(e5121039) affinity(e5131762) affinity(e5141791) affinity(e5141792) affinity(e5141797) affinity(e5141798) affinity(e5141802) affinity(e5141923) affinity(e5161893) affinity(e5161894) affinity(e5161899) affinity(e5161900) affinity(e5161908) affinity(e5161912) affinity(e5243) affinity(e5245) affinity(e5246) affinity(e5248) affinity(e5354) affinity(e5360) affinity(e5393264) affinity(e5413328) affinity(e55100) affinity(e55101) affinity(e58915) affinity(e63389) affinity(e63396) affinity(e510933)
+Optimization: -35
+Answer: 37
+selinput(56) selinput(74) selinput(121) selinput(125) selinput(198) selinput(230) selinter(102) selinter(142) selinter(143) selinter(211) affinity(e5128) affinity(e510934) affinity(e510935) affinity(e510936) affinity(e510945) affinity(e5121029) affinity(e5121031) affinity(e5121039) affinity(e5131760) affinity(e5131766) affinity(e5131770) affinity(e5131781) affinity(e5141797) affinity(e5141798) affinity(e5141802) affinity(e5161885) affinity(e5161887) affinity(e5161888) affinity(e5161899) affinity(e5161907) affinity(e5161915) affinity(e5242) affinity(e5247) affinity(e5393264) affinity(e5403279) affinity(e55101) affinity(e5591) affinity(e5592) affinity(e5596) affinity(e58919) affinity(e59923) affinity(e6185) affinity(e6189) affinity(e66727) affinity(e66728) affinity(e510933)
+Optimization: -36

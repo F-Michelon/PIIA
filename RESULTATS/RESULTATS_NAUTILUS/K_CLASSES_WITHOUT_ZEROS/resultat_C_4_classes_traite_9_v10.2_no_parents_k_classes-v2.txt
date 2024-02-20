@@ -1,0 +1,26 @@
+clingo version 5.4.0
+Reading from ...asets/C_4_classes_traite_9_asp_data.lp ...
+Solving...
+Answer: 1
+selgene(3) selgene(71) selgene(41)
+Optimization: 0
+Answer: 2
+selgene(18) selgene(78) selgene(38) affinity(e5121034)
+Optimization: -1
+Answer: 3
+selgene(69) selgene(78) selgene(65) affinity(e5131761) affinity(e510933)
+Optimization: -2
+Answer: 4
+selgene(64) selgene(69) selgene(61) affinity(e510936) affinity(e5131761) affinity(e510933)
+Optimization: -3
+Answer: 5
+selgene(69) selgene(71) selgene(61) affinity(e510934) affinity(e5131761) affinity(e5141788) affinity(e510933)
+Optimization: -4
+OPTIMUM FOUND
+
+Models       : 5
+  Optimum    : yes
+Optimization : -4
+Calls        : 1
+Time         : 12.569s (Solving: 11.62s 1st Model: 0.01s Unsat: 11.37s)
+CPU Time     : 12.128s

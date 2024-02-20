@@ -1,0 +1,75 @@
+clingo version 5.4.0
+Reading from ...asets/D_3_classes_traite_4_asp_data.lp ...
+Solving...
+Answer: 1
+selgene(3) selgene(77) selgene(100) selgene(104) selgene(106) selgene(109) selgene(111) selgene(112) selgene(114) selgene(67)
+Optimization: 0
+Answer: 2
+selgene(3) selgene(77) selgene(100) selgene(104) selgene(106) selgene(109) selgene(111) selgene(112) selgene(114) selgene(67) affinity(e5393266)
+Optimization: -1
+Answer: 3
+selgene(3) selgene(77) selgene(100) selgene(104) selgene(106) selgene(109) selgene(111) selgene(112) selgene(114) selgene(67) affinity(e5141791) affinity(e5393266)
+Optimization: -2
+Answer: 4
+selgene(3) selgene(77) selgene(100) selgene(104) selgene(106) selgene(109) selgene(111) selgene(112) selgene(114) selgene(67) affinity(e510935) affinity(e5141791) affinity(e5393266)
+Optimization: -3
+Answer: 5
+selgene(3) selgene(77) selgene(100) selgene(104) selgene(106) selgene(109) selgene(111) selgene(112) selgene(114) selgene(67) affinity(e510935) affinity(e5141791) affinity(e5141797) affinity(e5393266)
+Optimization: -4
+Answer: 6
+selgene(3) selgene(77) selgene(100) selgene(104) selgene(106) selgene(109) selgene(111) selgene(112) selgene(114) selgene(67) affinity(e510935) affinity(e5121039) affinity(e5141791) affinity(e5141797) affinity(e5393266)
+Optimization: -5
+Answer: 7
+selgene(3) selgene(77) selgene(100) selgene(104) selgene(106) selgene(109) selgene(111) selgene(112) selgene(114) selgene(67) affinity(e510935) affinity(e5121027) affinity(e5121039) affinity(e5141791) affinity(e5141797) affinity(e5393266)
+Optimization: -6
+Answer: 8
+selgene(3) selgene(77) selgene(100) selgene(104) selgene(106) selgene(109) selgene(111) selgene(112) selgene(114) selgene(67) affinity(e510935) affinity(e5121027) affinity(e5121039) affinity(e5141791) affinity(e5141797) affinity(e5141925) affinity(e5393266)
+Optimization: -7
+Answer: 9
+selgene(3) selgene(77) selgene(100) selgene(104) selgene(106) selgene(109) selgene(111) selgene(112) selgene(114) selgene(67) affinity(e510935) affinity(e5121027) affinity(e5121039) affinity(e5141791) affinity(e5141797) affinity(e5141802) affinity(e5141925) affinity(e5393266)
+Optimization: -8
+Answer: 10
+selgene(3) selgene(77) selgene(100) selgene(104) selgene(106) selgene(109) selgene(111) selgene(112) selgene(114) selgene(67) affinity(e510935) affinity(e5121027) affinity(e5121039) affinity(e5141791) affinity(e5141797) affinity(e5141802) affinity(e5141925) affinity(e5393264) affinity(e5393266)
+Optimization: -9
+Answer: 11
+selgene(3) selgene(77) selgene(100) selgene(104) selgene(106) selgene(109) selgene(111) selgene(112) selgene(114) selgene(67) affinity(e510935) affinity(e5121027) affinity(e5121039) affinity(e5141791) affinity(e5141797) affinity(e5141802) affinity(e5141925) affinity(e5393263) affinity(e5393264) affinity(e5393266)
+Optimization: -10
+Answer: 12
+selgene(3) selgene(77) selgene(100) selgene(104) selgene(106) selgene(109) selgene(111) selgene(112) selgene(114) selgene(67) affinity(e510935) affinity(e5121027) affinity(e5121039) affinity(e5141791) affinity(e5141797) affinity(e5141802) affinity(e5141925) affinity(e5161899) affinity(e5393263) affinity(e5393264) affinity(e5393266)
+Optimization: -11
+Answer: 13
+selgene(3) selgene(77) selgene(100) selgene(104) selgene(106) selgene(109) selgene(111) selgene(112) selgene(114) selgene(67) affinity(e510935) affinity(e5121027) affinity(e5121039) affinity(e5131760) affinity(e5141791) affinity(e5141797) affinity(e5141802) affinity(e5141925) affinity(e5161899) affinity(e5393263) affinity(e5393264) affinity(e5393266)
+Optimization: -12
+Answer: 14
+selgene(3) selgene(77) selgene(100) selgene(104) selgene(106) selgene(109) selgene(111) selgene(112) selgene(114) selgene(67) affinity(e510935) affinity(e5121027) affinity(e5121031) affinity(e5121039) affinity(e5131760) affinity(e5141791) affinity(e5141797) affinity(e5141802) affinity(e5141925) affinity(e5161899) affinity(e5393263) affinity(e5393264) affinity(e5393266)
+Optimization: -13
+Answer: 15
+selgene(3) selgene(77) selgene(100) selgene(104) selgene(106) selgene(109) selgene(111) selgene(112) selgene(114) selgene(67) affinity(e510935) affinity(e5121027) affinity(e5121031) affinity(e5121039) affinity(e5131760) affinity(e5141791) affinity(e5141797) affinity(e5141802) affinity(e5141925) affinity(e5161899) affinity(e5393263) affinity(e5393264) affinity(e5393266) affinity(e510933)
+Optimization: -14
+Answer: 16
+selgene(3) selgene(77) selgene(100) selgene(104) selgene(106) selgene(109) selgene(111) selgene(112) selgene(114) selgene(67) affinity(e510935) affinity(e510936) affinity(e5121027) affinity(e5121031) affinity(e5121039) affinity(e5131760) affinity(e5141791) affinity(e5141797) affinity(e5141802) affinity(e5141925) affinity(e5161899) affinity(e5393263) affinity(e5393264) affinity(e5393266) affinity(e510933)
+Optimization: -15
+Answer: 17
+selgene(3) selgene(77) selgene(100) selgene(104) selgene(106) selgene(109) selgene(111) selgene(112) selgene(114) selgene(67) affinity(e510935) affinity(e510936) affinity(e510943) affinity(e5121027) affinity(e5121031) affinity(e5121039) affinity(e5131760) affinity(e5141791) affinity(e5141797) affinity(e5141802) affinity(e5141925) affinity(e5161899) affinity(e5393263) affinity(e5393264) affinity(e5393266) affinity(e510933)
+Optimization: -16
+Answer: 18
+selgene(3) selgene(70) selgene(77) selgene(79) selgene(100) selgene(109) selgene(111) selgene(112) selgene(114) selgene(67) affinity(e510935) affinity(e510936) affinity(e5121027) affinity(e5121031) affinity(e5121039) affinity(e5131760) affinity(e5131781) affinity(e5141791) affinity(e5141797) affinity(e5141923) affinity(e5141925) affinity(e5161908) affinity(e5161911) affinity(e5245) affinity(e5354) affinity(e5393262) affinity(e510933)
+Optimization: -17
+Answer: 19
+selgene(3) selgene(70) selgene(77) selgene(79) selgene(100) selgene(109) selgene(111) selgene(112) selgene(114) selgene(67) affinity(e510935) affinity(e510936) affinity(e5121027) affinity(e5121031) affinity(e5121039) affinity(e5131760) affinity(e5131781) affinity(e5141791) affinity(e5141797) affinity(e5141923) affinity(e5141925) affinity(e5161908) affinity(e5161911) affinity(e5245) affinity(e5351) affinity(e5354) affinity(e5393262) affinity(e510933)
+Optimization: -18
+Answer: 20
+selgene(3) selgene(70) selgene(77) selgene(79) selgene(100) selgene(109) selgene(111) selgene(112) selgene(114) selgene(67) affinity(e510935) affinity(e510936) affinity(e510943) affinity(e5121027) affinity(e5121031) affinity(e5121039) affinity(e5131760) affinity(e5131781) affinity(e5141791) affinity(e5141797) affinity(e5141923) affinity(e5141925) affinity(e5161908) affinity(e5161911) affinity(e5245) affinity(e5351) affinity(e5354) affinity(e5393262) affinity(e510933)
+Optimization: -19
+Answer: 21
+selgene(3) selgene(56) selgene(75) selgene(77) selgene(96) selgene(104) selgene(106) selgene(111) selgene(114) selgene(15) affinity(e5130) affinity(e5132) affinity(e510934) affinity(e510943) affinity(e510944) affinity(e5121027) affinity(e5121031) affinity(e5121034) affinity(e5131760) affinity(e5131761) affinity(e5141788) affinity(e5141791) affinity(e5141792) affinity(e5141797) affinity(e5161894) affinity(e5240) affinity(e5393262) affinity(e5403283) affinity(e59924) affinity(e510933)
+Optimization: -20
+Answer: 22
+selgene(3) selgene(4) selgene(70) selgene(75) selgene(77) selgene(104) selgene(106) selgene(111) selgene(114) selgene(95) affinity(e5130) affinity(e5132) affinity(e510934) affinity(e510936) affinity(e510943) affinity(e510944) affinity(e5121031) affinity(e5121037) affinity(e5131760) affinity(e5131761) affinity(e5141792) affinity(e5141797) affinity(e5161894) affinity(e5240) affinity(e5247) affinity(e5403283) affinity(e5403294) affinity(e5596) affinity(e5599) affinity(e59923) affinity(e510933)
+Optimization: -21
+Answer: 23
+selgene(3) selgene(4) selgene(44) selgene(70) selgene(75) selgene(77) selgene(106) selgene(111) selgene(114) selgene(48) affinity(e5128) affinity(e5130) affinity(e510935) affinity(e510936) affinity(e510944) affinity(e5121031) affinity(e5121037) affinity(e5131761) affinity(e5141792) affinity(e5141797) affinity(e5141923) affinity(e5161894) affinity(e5161901) affinity(e5240) affinity(e5245) affinity(e5246) affinity(e5403294) affinity(e5596) affinity(e5599) affinity(e58915) affinity(e59923) affinity(e59924)
+Optimization: -22
+Answer: 24
+selgene(3) selgene(4) selgene(44) selgene(70) selgene(75) selgene(77) selgene(106) selgene(111) selgene(114) selgene(78) affinity(e5130) affinity(e510936) affinity(e510943) affinity(e510944) affinity(e5121028) affinity(e5121037) affinity(e5131760) affinity(e5131761) affinity(e5141791) affinity(e5141792) affinity(e5141797) affinity(e5141923) affinity(e5161901) affinity(e5240) affinity(e5243) affinity(e5245) affinity(e5246) affinity(e5403294) affinity(e5596) affinity(e5599) affinity(e59923) affinity(e59924) affinity(e510933)
+Optimization: -23
