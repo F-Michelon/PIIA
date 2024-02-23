@@ -67,16 +67,16 @@ class Discrimination:
         self.long_vect_bool = long_vect_bool
         self.nb_classes = len(self.data['classes'].unique())
         if genes_to_optim is None:
-            genes_to_optim = [str(i+self.long_vect_bool) for i in range(len(data.keys())-long_vect_bool-1)]
+            genes_to_optim = [str(i) for i in list(data.keys())[self.long_vect_bool:]]
         elif type(genes_to_optim) == int:
-            genes_to_optim = [str(i+self.long_vect_bool) for i in range(genes_to_optim)]
-        self.genes_to_optim = genes_to_optim
+            genes_to_optim = [str(i) for i in list(data.keys())[self.long_vect_bool:self.long_vect_bool + genes_to_optim]]
+        self.genes_to_optim = genes_to_optim[:-1] # on enlève classes
         self.children = children
     
     def __repr__(self) -> str:
         return f"data = {self.data.head(5)}\nscore = {self.score}\noptimization  = {self.optimization}\nsame_vect_bool = {self.same_vect_bool}\nbool_vect = {self.bool_vect}\ninit = {self.init}\nlong_vect_bool = {self.long_vect_bool}\nnb_classes = {self.nb_classes}"
 
-    def plot2(self, path=None) -> None:
+    def plot(self, path=None) -> None:
         """
         Fonction permettant d'afficher les readouts des cellules pour les gènes selectionnés pour l'optimisation
 
@@ -114,7 +114,7 @@ class Discrimination:
                 if j == 0:
                     axs[i][j].set_ylabel(f"pseudo perturbation {i + 1}", rotation=0, labelpad=60)
                 if i == 0:
-                    axs[i][j].set_title(f"gène \nn°{self.genes_to_optim[j]}")
+                    axs[i][j].set_title(f"{self.genes_to_optim[j]}")
 
         for ax in fig.get_axes():
             ax.label_outer()
@@ -309,6 +309,7 @@ class Discrimination:
         iter = 0
         no_change_iter = 0
         while iter < max_iter and no_change_iter < 100: #FIXME ameliorer ce critère, le paramétriser
+            print(iter)
             iter += 1
             old_init = self.init.copy()
             old_score = copy.copy(self.score)
@@ -382,7 +383,7 @@ class Discrimination:
             if verbose:
                 print(f"Le score maximal a été trouvé par le numéro {id_max_score} et vaut {max_score}")
         
-        Liste_discrimination[id_max_score].plot2()
+        Liste_discrimination[id_max_score].plot()
         if svg_score == True :
             plt.figure()
             abscisse = []
@@ -401,15 +402,12 @@ PATH = "../DONNEES/real_datasets/2023_PKN_earlyAndMediumAndLate_traite_2_readout
 
 D = pd.read_csv(PATH)
 
-# Test
-discrimination = Discrimination(D, None, 10) #, ['10','11','13','14','17','19'])
+discrimination = Discrimination(D, None, long_vect_bool=10)
 if discrimination.bool_vect is None:
     discrimination.find_same_vect_bool()
-    # print(discrimination.same_vect_bool, discrimination.bool_vect)
 if discrimination.init is None:
     discrimination.define_cells_for_each_vect()
 if discrimination.score is None:
     discrimination.compute_score_global()
-# discrimination.plot2()
-nb_parallele,max_iter_global,max_iter_tmp,when_print = 2,100,10,10
-Listes_scores = discrimination.recherche_parallele(nb_parallele,max_iter_global,max_iter_tmp,when_print,True)
+nb_parallele,max_iter_global,max_iter_tmp,when_print = 10, 1000, 50, 10
+Listes_scores = discrimination.recherche_parallele(nb_parallele, max_iter_global, max_iter_tmp, when_print, svg_score=True, verbose=True)
