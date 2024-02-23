@@ -397,7 +397,7 @@ class Discrimination:
             plt.show()
             return Liste_evolutions_scores
 
-PATH = "../DONNEES/toy_datasets/readout_fictifs.csv"
+PATH = "../DONNEES/real_datasets/2023_PKN_earlyAndMediumAndLate_traite_2_readouts.csv"
 
 D = pd.read_csv(PATH)
 
@@ -405,10 +405,11 @@ D = pd.read_csv(PATH)
 discrimination = Discrimination(D, None, 10) #, ['10','11','13','14','17','19'])
 if discrimination.bool_vect is None:
     discrimination.find_same_vect_bool()
+    # print(discrimination.same_vect_bool, discrimination.bool_vect)
 if discrimination.init is None:
     discrimination.define_cells_for_each_vect()
 if discrimination.score is None:
     discrimination.compute_score_global()
-discrimination.plot2()
+# discrimination.plot2()
 nb_parallele,max_iter_global,max_iter_tmp,when_print = 2,100,10,10
-# Listes_scores = discrimination.recherche_parallele(nb_parallele,max_iter_global,max_iter_tmp,when_print,True)
+Listes_scores = discrimination.recherche_parallele(nb_parallele,max_iter_global,max_iter_tmp,when_print,True)
