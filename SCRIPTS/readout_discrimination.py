@@ -211,7 +211,7 @@ class Discrimination:
     def choixcells(self, index_vect_bool, nb_cell_to_change=1):        
         """
         Fonction qui prend en argument 3 cellules ayant le même vecteur booléen
-        mais qui sont chacune de classe différentes.
+        mais qui sont chacune de classe différentes (self.init).
         La fonction renvoie un triplet de cellules dont 2 sont les mêmes que celles
         prises en argument et la troisième fait partie de la même classe que celle
         qui a été supprimé du triplet précédent.
@@ -230,10 +230,8 @@ class Discrimination:
                 index_cel_to_change = self.init[index_vect_bool][cell_to_change]
                 class_to_change = self.class_cell(index_cel_to_change)
                 
-                change = False
-                while not(change):
-                    index_new_cel = random.sample(self.same_vect_bool[index_vect_bool][class_to_change], 1)[0]
-                    change = index_new_cel != index_cel_to_change
+                index_new_cel = random.sample(self.same_vect_bool[index_vect_bool][class_to_change], 1)[0]
+                change = index_new_cel != index_cel_to_change
                 
                 self.init[index_vect_bool][cell_to_change] = index_new_cel
         else:
@@ -309,7 +307,6 @@ class Discrimination:
         iter = 0
         no_change_iter = 0
         while iter < max_iter and no_change_iter < 100: #FIXME ameliorer ce critère, le paramétriser
-            print(iter)
             iter += 1
             old_init = self.init.copy()
             old_score = copy.copy(self.score)
@@ -401,6 +398,8 @@ class Discrimination:
 PATH = "../DONNEES/real_datasets/2023_PKN_earlyAndMediumAndLate_traite_2_readouts.csv"
 
 D = pd.read_csv(PATH)
+cell_name = D['Name']
+D = D.drop(columns=['Name'])
 
 discrimination = Discrimination(D, None, long_vect_bool=10)
 if discrimination.bool_vect is None:
@@ -409,5 +408,9 @@ if discrimination.init is None:
     discrimination.define_cells_for_each_vect()
 if discrimination.score is None:
     discrimination.compute_score_global()
-nb_parallele,max_iter_global,max_iter_tmp,when_print = 10, 1000, 50, 10
+nb_parallele,max_iter_global,max_iter_tmp,when_print = 1, 10, 5, 10
 Listes_scores = discrimination.recherche_parallele(nb_parallele, max_iter_global, max_iter_tmp, when_print, svg_score=True, verbose=True)
+
+# On enregistre les meilleures cellules, permettant d'obtenir les meilleures traces.
+pd.DataFrame(Listes_scores).to_csv(path_or_buf="../RESULTATS/CASPO/2023_PKN_earlyAndMediumAndLate_traite_2_score.csv", index=False)
+pd.DataFrame(discrimination.init).to_csv(path_or_buf="../RESULTATS/CASPO/2023_PKN_earlyAndMediumAndLate_traite_2_discrimination.csv", index=False)

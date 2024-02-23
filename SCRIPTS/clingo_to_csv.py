@@ -84,4 +84,4 @@ for index in reduced_data['Name']:
         if add and index not in cells_to_keep:
             cells_to_keep.append(index)
 
-reduced_data[reduced_data['Name'].isin(cells_to_keep)].drop(columns=['Name']).to_csv(path + '2023_PKN_earlyAndMediumAndLate_traite_2_readouts.csv', index=False)
+reduced_data[reduced_data['Name'].isin(cells_to_keep)].to_csv(path + '2023_PKN_earlyAndMediumAndLate_traite_2_readouts.csv', index=False)
