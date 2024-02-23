@@ -408,7 +408,7 @@ if discrimination.init is None:
     discrimination.define_cells_for_each_vect()
 if discrimination.score is None:
     discrimination.compute_score_global()
-nb_parallele,max_iter_global,max_iter_tmp,when_print = 1, 10, 5, 10
+nb_parallele,max_iter_global,max_iter_tmp,when_print = 10, 1000, 50, 10
 Listes_scores = discrimination.recherche_parallele(nb_parallele, max_iter_global, max_iter_tmp, when_print, svg_score=True, verbose=True)
 
 # On enregistre les meilleures cellules, permettant d'obtenir les meilleures traces.
