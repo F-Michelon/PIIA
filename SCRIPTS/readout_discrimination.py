@@ -224,7 +224,7 @@ class Discrimination:
         nb_cell_to_change : int
             Nombre de cellules à changer, supérieur à 1.
         """
-        if nb_cell_to_change < self.nb_classes:
+        if nb_cell_to_change <= self.nb_classes:
             cells_to_change = np.random.randint(0, self.nb_classes, nb_cell_to_change)
             for cell_to_change in cells_to_change:
                 index_cel_to_change = self.init[index_vect_bool][cell_to_change]
