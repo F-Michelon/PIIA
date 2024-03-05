@@ -52,10 +52,10 @@ Etape 2 : Commandes à connaître
 --------------------------------------------------------------------------------------------------------------------------
 
 Local to Remote
-scp <file_name> nautilus:/scratch/users/<username>
+scp <file_name> nautilus:/home/<username>
 
 Remote to Local
-scp nautilus:/scratch/users/<username>/<file_name> /<local_path>
+scp nautilus:/home/<username>/<file_name> /<local_path>
 
 Command Syntax                     Description
 sbatch  sbatch <job_id>            To submit job script for later execution (batch mode)
