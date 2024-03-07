@@ -62,4 +62,4 @@ selgene(G) :- selinter(G).
 
 % Show selgene/1 and affinity/1 predicates
 #show selgene/1.
-% #show affinity/1.
+#show affinity/1.
