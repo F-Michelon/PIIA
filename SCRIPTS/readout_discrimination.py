@@ -311,6 +311,7 @@ class Discrimination:
             old_init = self.init.copy()
             old_score = copy.copy(self.score)
             for i in range(len(self.bool_vect)):
+                print(i, iter)
                 self.choixcells(i, nb_cell_to_change=int(1 + (no_change_iter > 10) + (no_change_iter > 30))) #FIXME ameliorer ce critère, le paramétriser
                 self.compute_score_global()
                 if old_score >= self.score:
@@ -363,8 +364,7 @@ class Discrimination:
         for i in range(max_iter_global):
             for j in range(nb_parallele):
                 if verbose :
-                    print(f"Maximisation du n°{j} en cours")
-                
+                    print(f"Maximisation du n°{j} en cours, iteration {i}")
                 if svg_score == False :
                     Liste_discrimination[j].maximize_score(max_iter_tmp,when_print)
                 else :
@@ -408,9 +408,9 @@ if discrimination.init is None:
     discrimination.define_cells_for_each_vect()
 if discrimination.score is None:
     discrimination.compute_score_global()
-nb_parallele,max_iter_global,max_iter_tmp,when_print = 10, 1000, 50, 10
-Listes_scores = discrimination.recherche_parallele(nb_parallele, max_iter_global, max_iter_tmp, when_print, svg_score=True, verbose=True)
+nb_parallele,max_iter_global,max_iter_tmp,when_print = 10, 50, 20, 10
+Listes_scores = discrimination.recherche_parallele(nb_parallele, max_iter_global, max_iter_tmp, when_print, svg_score=True, verbose=True, path="../RESULTATS/CASPO/fig_recherche")
 
 # On enregistre les meilleures cellules, permettant d'obtenir les meilleures traces.
-pd.DataFrame(Listes_scores).to_csv(path_or_buf="../RESULTATS/CASPO/2023_PKN_earlyAndMediumAndLate_traite_2_score.csv", index=False)
-pd.DataFrame(discrimination.init).to_csv(path_or_buf="../RESULTATS/CASPO/2023_PKN_earlyAndMediumAndLate_traite_2_discrimination.csv", index=False)
+pd.DataFrame(Listes_scores).to_csv(path_or_buf="../RESULTATS/CASPO/2023_PKN_earlyAndMediumAndLate_traite_2_score2.csv", index=False)
+pd.DataFrame(discrimination.init).to_csv(path_or_buf="../RESULTATS/CASPO/2023_PKN_earlyAndMediumAndLate_traite_2_discrimination2.csv", index=False)
