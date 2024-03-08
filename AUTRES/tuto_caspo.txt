@@ -1,0 +1,31 @@
+The command line interface (CLI) of caspo offers various subcommands:
+
+learn: for learning a family of (nearly) optimal logical networks
+classify: for classifying a family of networks wrt their I/O behaviors
+design: for designing experiments to discriminate a family of I/O behaviors
+predict: for predicting based on a family of networks and I/O behaviors
+control: for controlling a family of logical networks in several intervention scenarios
+visualize: for basic visualization of the subcommands outputs
+test: for running all subcommands using various examples
+
+un midas par classe
+
+time point 0 rien n'est activé et au suivant (à une valeure arbitraire 10, 20, etc..) readouts normalisé
+
+Tr toy = faire comme ça
+
++ i pour intermediate
+
+	10 = time point
+	fit tolérence pour les réseaux booléens (MSE)
+caspo --out outclassek learn pkn.sif dataset_classe1.csv 10 --fit 0.001 --length 2
+
+
+ caspo learn pkn.sif dataset_classe2.csv 10 --fit 0.04 --output out2
+
+--> network.csv = logical network
+
+caspo visualize --pkn pkn.sif --networks networks1.csv --setup setup.json
+caspo visualize --pkn pkn.sif --networks networks2.csv --setup setup.json
+
+caspo visualize --pkn pkn.sif --networks networks.csv --setup setup.json
