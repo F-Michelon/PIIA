@@ -92,6 +92,17 @@ clingo -n 0 test.lp > output
 
 !!! il faut load son env avant de lancer le script ou alors le faire dans une commande batch
 
+
+Pour lancer un job pour 7 jours, il faut paramétrer le 'qos' différemment de ce que vous devez faire actuellement. Si j'ai bien compris, vous devez avoir dans vos paramétrages quelque chose du type :
+#SBATCH --time=7-00:00:00
+#SBATCH --qos=short 
+
+Or, lorsque l'on indique 'short', la limite d'un job est de 1 jour. Si on veut plus, il faut mettre 'long', où la limite est de 7 jours. Donc avec les paramètres ci-dessous ça devrait fonctionner :
+
+#SBATCH --time=7-00:00:00
+#SBATCH --qos=long 
+
+
 Command                          Description
 module avail                     List modules
 module avail <package_name>      List all installed versions of python
