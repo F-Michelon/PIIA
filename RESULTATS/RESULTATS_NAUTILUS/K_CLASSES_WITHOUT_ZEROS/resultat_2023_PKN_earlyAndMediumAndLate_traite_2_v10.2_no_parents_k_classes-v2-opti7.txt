@@ -1,0 +1,6 @@
+clingo version 5.4.0
+Reading from ...yAndMediumAndLate_traite_2_asp_data.lp ...
+Solving...
+Answer: 1
+affinity(e510949) affinity(e5121027) affinity(e5121037) affinity(e5131781) affinity(e5141802) affinity(e5161905) affinity(e5413328) selgene(176) selgene(201) selgene(204) selgene(211) selgene(3) selgene(35) selgene(70) selgene(139) selgene(219) selgene(231)
+Optimization: -7

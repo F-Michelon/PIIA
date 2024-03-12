@@ -1,0 +1,9 @@
+clingo version 5.4.0
+Reading from ...yAndMediumAndLate_traite_2_asp_data.lp ...
+Solving...
+UNSATISFIABLE
+
+Models       : 0
+Calls        : 1
+Time         : 51.167s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 51.006s

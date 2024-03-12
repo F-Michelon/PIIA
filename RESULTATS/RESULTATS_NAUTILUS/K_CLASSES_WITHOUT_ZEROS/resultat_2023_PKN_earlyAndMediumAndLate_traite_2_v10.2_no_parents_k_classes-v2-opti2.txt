@@ -1,0 +1,14 @@
+clingo version 5.4.0
+Reading from ...yAndMediumAndLate_traite_2_asp_data.lp ...
+Solving...
+Answer: 1
+affinity(e5121037) affinity(e5393262) selgene(176) selgene(201) selgene(204) selgene(211) selgene(51) selgene(62) selgene(156) selgene(177) selgene(213) selgene(233)
+Optimization: -2
+OPTIMUM FOUND
+
+Models       : 1
+  Optimum    : yes
+Optimization : -2
+Calls        : 1
+Time         : 509.358s (Solving: 124.50s 1st Model: 11.40s Unsat: 113.10s)
+CPU Time     : 506.349s

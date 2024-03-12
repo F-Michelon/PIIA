@@ -1,12 +1,22 @@
 #!/bin/bash
 
-cd ../../
+#SBATCH --job-name=myjobPKN2023bash   # Name for your job
+#SBATCH --comment="Run My Job"  # Comment for your job
+
+#SBATCH --time=1-00:00:00       # Time limit
+#SBATCH --qos=long              # Length of task
+#SBATCH --nodes=1               # How many nodes to run on
+#SBATCH --ntasks=1              # How many tasks per node
+#SBATCH --cpus-per-task=2       # Number of CPUs per task
+#SBATCH --mem-per-cpu=100g       # Memory per CPU
+
+cd ../..
 
 # Spécifiez le chemin du fichier à surveiller
-FILE="./RESULTATS/RESULTATS_NAUTILUS/K_CLASSES_WITH_ZEROS/TESTBASH.txt"
+FILE="./RESULTATS/RESULTATS_NAUTILUS/K_CLASSES_WITHOUT_ZEROS/resultat_2023_PKN_earlyAndMediumAndLate_traite_2_v10.2_no_parents_k_classes-v2test.txt"
 
 # Commande d'exécution du programme
-clingo ./DONNEES/real_datasets/2023_PKN_earlyAndMediumAndLate_traite_2_asp_data.lp ./SCRIPTS/v10.2_no_parents_k_classes.lp > "$FILE" &
+clingo -n 0 ./DONNEES/real_datasets/2023_PKN_earlyAndMediumAndLate_traite_2_asp_data.lp SCRIPTS/v10.2_no_parents_k_classes-v2.lp > "$FILE" &
 
 # Boucle infinie pour surveiller les modifications du fichier
 while true; do

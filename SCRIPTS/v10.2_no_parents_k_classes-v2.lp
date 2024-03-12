@@ -7,11 +7,11 @@
 % OUTPUTS:  
 %   - selgene(G): gene G is a selected gene belonging to the k genes
 %   - affinity(I,J): a pair of cells where their expression for the k selected genes 
-%     are the same for both cells. I and J belong to two different classes.
+%     are the same for both cells. I and J belong to two different classes
 
-% #const k.
+#const k=10.
 % #const opti.
-#const i = 1.
+#const i = 6.
 
 % The N classes and the reference class
 class(CL) :- pert(_,_,_,CL).
@@ -55,7 +55,7 @@ nbInputOnes(C,N) :- N={pert(C,G,1,_) : selinput(G), input(G)}, affinity(C).
 selgene(G) :- selinput(G).
 selgene(G) :- selinter(G).
 
-:- {affinity(I)} != opti.
+%:- {affinity(I)} != opti.
 
 % Maximize the number of pairs of cells
 #maximize{1, I : affinity(I)}.

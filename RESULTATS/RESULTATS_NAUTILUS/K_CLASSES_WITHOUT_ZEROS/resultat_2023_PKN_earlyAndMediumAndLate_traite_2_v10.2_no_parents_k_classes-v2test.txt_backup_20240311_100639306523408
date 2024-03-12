@@ -1,0 +1,6 @@
+clingo version 5.4.0
+Reading from ...yAndMediumAndLate_traite_2_asp_data.lp ...
+Solving...
+Answer: 1
+selgene(57) selgene(102) selgene(133) selgene(144) selgene(46) selgene(119) selgene(178) selgene(179) selgene(198) selgene(238)
+Optimization: 0
